@@ -9,11 +9,12 @@ ENV PYTHONUNBUFFERED 1
 ARG PROJECT=server
 
 # Set work directory
-RUN mkdir /${PROJECT}
-WORKDIR -p /${PROJECT}
-COPY . /${PROJECT}
+RUN mkdir -p /${PROJECT}
+WORKDIR /${PROJECT}
 
 # Install dependencies
 RUN pip install pipenv
+COPY ./Pipfile /${PROJECT}
 RUN pipenv install --system --skip-lock
 
+COPY . /${PROJECT}

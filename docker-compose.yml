@@ -4,21 +4,32 @@ services:
   
   server:
     build: ./backend
+    image: dissertation-backend:latest
+    container_name: dissertation-backend-container
+    environment:
+      DJANGO_SERVER_PORT: ${DJANGO_SERVER_PORT}
     expose:
       - ${DJANGO_SERVER_PORT}
     ports:
       - ${DJANGO_SERVER_PORT}:${DJANGO_SERVER_PORT}
     volumes:
-      - ./backend
-    command:
+      - ./backend:/server
+    command: ["python", "manage.py", "runserver", "0.0.0.0:${DJANGO_SERVER_PORT}"]
 
   client:
     build: ./frontend
+    image: dissertation-frontend:latest
+    container_name: dissertation-frontend-container
+    environment: 
+      REACT_APP_PORT: ${REACT_APP_PORT}
     expose:
       - ${REACT_APP_PORT}
     ports:
       - ${REACT_APP_PORT}:${REACT_APP_PORT}
     volumes:
-      - ./frontend
-    command: npm run start
-	
+      - ./frontend/src:/client/src
+      - ./frontend/public:/client/public
+    links:
+      - server
+    command: ["npm", "start"]
+    

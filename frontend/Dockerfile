@@ -6,11 +6,9 @@ ARG PROJECT=client
 RUN mkdir -p /${PROJECT}
 WORKDIR /${PROJECT}
 
-COPY package.json /${PROJECT}
-COPY package-lock.json /${PROJECT}
+COPY ./package.json /${PROJECT}
+COPY ./package-lock.json /${PROJECT}
 
 RUN npm install
 
 COPY . /${PROJECT}
-
-CMD ["npm", "start"]
