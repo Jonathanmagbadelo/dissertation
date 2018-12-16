@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  
+  server:
+    build: ./backend
+    expose:
+      - ${DJANGO_SERVER_PORT}
+    ports:
+      - ${DJANGO_SERVER_PORT}:${DJANGO_SERVER_PORT}
+    volumes:
+      - ./backend
+    command:
+
+  client:
+    build: ./frontend
+    expose:
+      - ${REACT_APP_PORT}
+    ports:
+      - ${REACT_APP_PORT}:${REACT_APP_PORT}
+    volumes:
+      - ./frontend
+    command: npm run start
+	
