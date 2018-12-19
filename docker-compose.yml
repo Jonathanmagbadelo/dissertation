@@ -32,4 +32,17 @@ services:
     links:
       - server
     command: ["npm", "start"]
-    
+
+  training:
+    build: ./training
+    image: dissertation-training:latest
+    container_name: dissertation-training-container
+    environment:
+      JUPYTER_NOTEBOOK_PORT: ${JUPYTER_NOTEBOOK_PORT}
+    expose:
+      - ${JUPYTER_NOTEBOOK_PORT}
+    ports:
+      - ${JUPYTER_NOTEBOOK_PORT}:${JUPYTER_NOTEBOOK_PORT}
+    volumes:
+      - ./training/src:/opt/training/src
+    command: ["sh", "run_jupyter.sh"]    
