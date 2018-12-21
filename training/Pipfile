@@ -71,6 +71,7 @@ tffm = "*"
 rarfile = "*"
 tensorflow-gpu = "*"
 theano = "*"
+spacy = {extras = ["cuda"],version = "*"}
 
 [requires]
 python_version = "3"

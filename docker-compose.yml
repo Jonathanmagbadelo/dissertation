@@ -1,4 +1,4 @@
-version: '3'
+version: '2.3'
 
 services:
   
@@ -36,13 +36,15 @@ services:
   training:
     build: ./training
     image: dissertation-training:latest
+    runtime: nvidia
     container_name: dissertation-training-container
     environment:
+      NVIDIA_VISABLE_DEVICES: all      
       JUPYTER_NOTEBOOK_PORT: ${JUPYTER_NOTEBOOK_PORT}
     expose:
       - ${JUPYTER_NOTEBOOK_PORT}
     ports:
       - ${JUPYTER_NOTEBOOK_PORT}:${JUPYTER_NOTEBOOK_PORT}
     volumes:
-      - ./training/src:/opt/training/src
+      - ./training:/opt/training
     command: ["sh", "run_jupyter.sh"]    
