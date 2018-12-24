@@ -36,7 +36,7 @@ services:
   training:
     build: ./training
     image: dissertation-training:latest
-    runtime: nvidia
+###    runtime: nvidia
     container_name: dissertation-training-container
     environment:
       NVIDIA_VISABLE_DEVICES: all      
