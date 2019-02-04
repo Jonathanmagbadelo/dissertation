@@ -5,6 +5,7 @@ import re
 def tokenize_document(document):
     if document:
         document = re.sub(' +', ' ', document)
+        document = document.strip()
         return document.lower().translate(str.maketrans('', '', punctuation)).split(' ')
     return []
 

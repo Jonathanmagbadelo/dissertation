@@ -33,7 +33,7 @@ class Cover:
 
             self.corpus.show(10)
 
-            tokenized_dataframe = self.corpus.withColumn('tokens', tokenize(column_name).alias('tokens'))
+            tokenized_dataframe = self.corpus.withColumn('tokens', tokenize(column_name[0]).alias('tokens'))
 
             words_dataframe = tokenized_dataframe.withColumn('word', explode(col('tokens'))) \
                 .groupBy('word') \
@@ -66,24 +66,31 @@ class Cover:
 
             matrix = transformed_dataframe.withColumn("matrix", n_grams("transform").alias('matrix'))
 
-            matrix.select('matrix').show(10)
-
-            reduced = matrix.select(explode(col("matrix"))).groupBy(col("key")).agg(sum_("value").alias("value"))
+            reduced = matrix.select('Genre', explode(col("matrix")).alias('key', 'value'))\
+                .groupBy(col("key"), col(column_name[1]))\
+                .agg(sum_("value").alias("value"))
 
             print("There are {} ij pairs".format(reduced.count()))
 
             reduced.show(20)
 
-            x = reduced.select("value", "key").rdd.map(lambda row: (row.key, row.value)).collect()
+            x = reduced.select("value", "key", column_name[1]).rdd\
+                .map(lambda row: (row.key, row.Genre, row.value))\
+                .groupBy(lambda row: row[1])\
+                .mapValues(list)\
+                .collect()
 
-            self.coo_list = zip(*x)
+            self.coo_list = [zip(*y[1]) for y in x]
 
             self.spark_session.stop()
 
     def build_co_occurrence_matrix(self):
-        self.indexes, self.values = self.coo_list
+        self.indexes, genres, self.values = self.coo_list[0]
         num_entries = len(self.values)
         print(num_entries)
+
+        print(self.indexes[:5])
+        print(self.values[:5])
 
         index_tensor = LongTensor(self.indexes)
         value_tensor = FloatTensor(self.values)
