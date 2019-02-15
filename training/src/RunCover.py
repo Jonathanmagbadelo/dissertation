@@ -35,6 +35,7 @@ start_time = time.time()
 cover.import_data(filename)
 cover.fit_transform(column_name='Lyrics', covariate='Genre', min_occurrence_count=5, window_size=5)
 cover.build_co_occurrence_matrix()
+cover.train()
 end_time = time.time()
 
 print("Time taken is {}".format(end_time-start_time))

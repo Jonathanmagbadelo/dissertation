@@ -5,6 +5,8 @@ from processing.utils import tokenize_document, get_n_grams
 import torch
 from itertools import chain
 from tqdm import tqdm
+from math import log10
+import random
 import logging
 
 
@@ -126,29 +128,33 @@ class Cover:
 
         index_tensor = torch.LongTensor(self.indexes)
         value_tensor = torch.FloatTensor(self.values)
-        coo_tensor = torch.sparse.FloatTensor(index_tensor.t(), value_tensor, torch.Size([self.num_of_covariates, self.num_of_words, self.num_of_words]))
+        self.right_bias = torch.tensor(torch.sparse.FloatTensor(index_tensor.t(), torch.randn(self.num_of_occurrences, requires_grad=True)), requires_grad=True)
 
         self.left_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True)
         self.right_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True)
-        self.covariate_diagonal_tensor = torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size, requires_grad=True))
-        weights = torch.min((value_tensor / self.x_max), torch.ones(value_tensor.shape)) ** self.alpha
-        self.weights = torch.sparse.FloatTensor(index_tensor.t(), weights, torch.Size([self.num_of_covariates, self.num_of_words, self.num_of_words]))
-        #self.left_bias = torch.sparse.FloatTensor(index_tensor.t(), torch.randn(self.num_of_occurrences, requires_grad=True), torch.Size([self.num_of_covariates, self.num_of_words, self.num_of_words]))
-        #self.right_bias = torch.sparse.FloatTensor(index_tensor.t(), torch.randn(self.num_of_occurrences, requires_grad=True), torch.Size([self.num_of_covariates, self.num_of_words, self.num_of_words]))
-        log_values = torch.log(value_tensor)
-        self.log_values = torch.sparse.FloatTensor(index_tensor.t(), log_values, torch.Size([self.num_of_covariates, self.num_of_words, self.num_of_words]))
+        self.covariate_diagonal_tensor = torch.tensor(torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size, requires_grad=True)), requires_grad=True)
+        self.weights = {key: self.get_weight(value) for key, value in self.coo_dict.items()}
+        self.left_bias = {(covariate, left): torch.tensor(random.uniform(-.5, .5), requires_grad=True) for covariate, left, right in self.indexes}
+        self.right_bias = {(covariate, right): torch.tensor(random.uniform(-.5, .5), requires_grad=True) for covariate, left, right in self.indexes}
+        self.log_values = {key: log10(value) for key, value in self.coo_dict.items()}
+        self.parameters = [self.left_word_tensor, self.right_word_tensor, self.covariate_diagonal_tensor, self.left_bias, self.right_bias]
+
+
+    def get_weight(self, value):
+        return min((value/self.x_max), 1) ** self.alpha
 
     def get_batch(self):
         indices = torch.randperm(self.num_of_occurrences)
-        for idx in range(0, self.num_of_occurrences):
-            left_idx, right_idx, covariate_idx = zip(*self.indexes[idx].tolist())
+        for idx in range(0, self.num_of_occurrences - self.batch_size + 1, self.batch_size):
+            sample = indices[idx:idx + self.batch_size]
+            left_idx, right_idx, covariate_idx = zip(*self.indexes[sample].tolist())
             left_words = self.left_word_tensor[left_idx]
             right_words = self.right_word_tensor[right_idx]
             covariate = self.covariate_diagonal_tensor[covariate_idx]
-            left_bias = self.left_bias[left_idx, covariate_idx]
-            right_bias = self.right_bias[right_idx, covariate_idx]
-            log_vals = [self.log_values]
-            weights = self.weights[left_idx]
+            left_bias = self.left_bias[covariate_idx, left_idx]
+            right_bias = self.right_bias[covariate_idx, right_idx]
+            log_vals = self.log_values[(left_idx, right_idx, covariate_idx)]
+            weights = self.weights[(covariate_idx, left_idx, right_idx)]
             yield left_words, right_words, covariate, left_bias, right_bias, log_vals, weights
 
     def train(self):
@@ -158,7 +164,8 @@ class Cover:
             logging.info("Start epoch %i", epoch)
             num_batches = int(self.num_of_occurrences/self.batch_size)
             avg_loss = 0.0
-            for batch in tqdm(self.get_batch(), total=num_batches, mininterval=1):
+            n_batch = int(self.num_of_occurrences/self.batch_size)
+            for batch in tqdm(self.get_batch(), total=n_batch, mininterval=1):
                 optimizer.zero_grad()
                 loss = self.get_loss(*batch)
                 avg_loss += loss.data[0] / num_batches
