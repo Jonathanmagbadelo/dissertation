@@ -9,6 +9,9 @@ from math import log10
 from operator import itemgetter
 import logging
 
+#FORMAT = '%(asctime)-15s %(message)s'
+#logging.basicConfig(level=logging.DEBUG, format=FORMAT)
+
 
 class Cover:
     def __init__(self, spark_session, embedding_size, x_max, alpha, learning_rate, weight_decay, epochs, batch_size):
@@ -37,6 +40,7 @@ class Cover:
         self.covariate_diagonal_tensor = None
         self.weights = None
         self.log_values = None
+        self.embeddings = None
 
     def import_data(self, filename):
         self.corpus = self.spark_session.read. \
@@ -62,23 +66,24 @@ class Cover:
                 .count() \
                 .sort('count', ascending=True)
 
+            filtered_words = words_dataframe.where(col('count') > min_occurrence_count)
+
             windowSpec = window.orderBy("count")
 
-            words_with_id_dataframe = words_dataframe.withColumn('id', row_number().over(windowSpec) - 1) \
+            filtered_words_with_id_dataframe = filtered_words.withColumn('id', row_number().over(windowSpec)) \
                 .sort('id', ascending=False)
 
-            words_with_id_dataframe.show(20)
-
-            filtered_words_with_id_dataframe = words_with_id_dataframe.withColumn('id', when(
-                words_with_id_dataframe['count'] <= min_occurrence_count, 0).otherwise(words_with_id_dataframe.id))
+            filtered_words.show(100)
 
             token_to_id = filtered_words_with_id_dataframe.rdd.map(lambda row: (row.word, row.id)).collectAsMap()
 
-            self.num_of_words = len(token_to_id)
+            id_to_token = {value: key for key, value in token_to_id.items()}
+
+            self.num_of_words = len(id_to_token) + 1
 
             print("There are {} unique tokens".format(self.num_of_words))
 
-            get_id = udf(lambda x: [token_to_id[word] for word in x], ArrayType(StringType()))
+            get_id = udf(lambda x: [token_to_id[word] if word in token_to_id else 0 for word in x], ArrayType(StringType()))
             transformed_dataframe = tokenized_dataframe.withColumn('transform', get_id('tokens').alias('transform'))
 
             print("Mapped tokens to unique id".format(len(token_to_id)))
@@ -170,6 +175,8 @@ class Cover:
                 avg_loss += loss.data.item() / num_batches
                 loss.backward()
                 optimizer.step()
+        self.embeddings = self.left_word_tensor + self.right_word_tensor
+        logging.info("Finished training!")
 
     def get_loss(self, left_words, right_words, covariate, left_bias, right_bias, log_vals, weights):
         left_context = (left_words.unsqueeze(1) * covariate).sum(1)
