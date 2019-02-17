@@ -29,7 +29,7 @@ spark_session.sparkContext.addPyFile("/opt/training/src/modelling/Cover.py")
 spark_session.sparkContext.addPyFile("/opt/training/src/processing/utils.py")
 
 filename = '/opt/training/data/raw/test-lyrics.csv'
-cover = Cover.Cover(spark_session=spark_session, embedding_size=300, x_max=100, alpha=.75, weight_decay=1, learning_rate=1e-8, epochs=10, batch_size=512)
+cover = Cover.Cover(spark_session=spark_session, embedding_size=300, x_max=100, alpha=.75, weight_decay=1, learning_rate=1e-8, epochs=10, batch_size=25)
 
 start_time = time.time()
 cover.import_data(filename)

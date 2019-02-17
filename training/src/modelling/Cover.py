@@ -6,7 +6,7 @@ import torch
 from itertools import chain
 from tqdm import tqdm
 from math import log10
-import random
+from operator import itemgetter
 import logging
 
 
@@ -121,6 +121,7 @@ class Cover:
 
     def build_co_occurrence_matrix(self):
         self.indexes, self.values = zip(*self.coo_dict.items())
+        self.indexes = list(self.indexes)
 
         print("Number of Covariates should be 2  and is {}".format(self.num_of_covariates))
 
@@ -128,14 +129,12 @@ class Cover:
 
         index_tensor = torch.LongTensor(self.indexes)
         value_tensor = torch.FloatTensor(self.values)
-        self.right_bias = torch.tensor(torch.sparse.FloatTensor(index_tensor.t(), torch.randn(self.num_of_occurrences, requires_grad=True)), requires_grad=True)
-
+        self.right_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True)
+        self.left_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True)
         self.left_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True)
         self.right_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True)
         self.covariate_diagonal_tensor = torch.tensor(torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size, requires_grad=True)), requires_grad=True)
         self.weights = {key: self.get_weight(value) for key, value in self.coo_dict.items()}
-        self.left_bias = {(covariate, left): torch.tensor(random.uniform(-.5, .5), requires_grad=True) for covariate, left, right in self.indexes}
-        self.right_bias = {(covariate, right): torch.tensor(random.uniform(-.5, .5), requires_grad=True) for covariate, left, right in self.indexes}
         self.log_values = {key: log10(value) for key, value in self.coo_dict.items()}
         self.parameters = [self.left_word_tensor, self.right_word_tensor, self.covariate_diagonal_tensor, self.left_bias, self.right_bias]
 
@@ -146,15 +145,15 @@ class Cover:
     def get_batch(self):
         indices = torch.randperm(self.num_of_occurrences)
         for idx in range(0, self.num_of_occurrences - self.batch_size + 1, self.batch_size):
-            sample = indices[idx:idx + self.batch_size]
-            left_idx, right_idx, covariate_idx = zip(*self.indexes[sample].tolist())
+            sample = indices[idx:idx + self.batch_size].tolist()
+            covariate_idx, left_idx, right_idx = [list(x) for x in zip(*itemgetter(*sample)(self.indexes))]
             left_words = self.left_word_tensor[left_idx]
             right_words = self.right_word_tensor[right_idx]
             covariate = self.covariate_diagonal_tensor[covariate_idx]
             left_bias = self.left_bias[covariate_idx, left_idx]
             right_bias = self.right_bias[covariate_idx, right_idx]
-            log_vals = self.log_values[(left_idx, right_idx, covariate_idx)]
-            weights = self.weights[(covariate_idx, left_idx, right_idx)]
+            log_vals = torch.tensor([self.log_values[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))])
+            weights = torch.tensor([self.weights[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))])
             yield left_words, right_words, covariate, left_bias, right_bias, log_vals, weights
 
     def train(self):
@@ -168,13 +167,13 @@ class Cover:
             for batch in tqdm(self.get_batch(), total=n_batch, mininterval=1):
                 optimizer.zero_grad()
                 loss = self.get_loss(*batch)
-                avg_loss += loss.data[0] / num_batches
+                avg_loss += loss.data.item() / num_batches
                 loss.backward()
                 optimizer.step()
 
     def get_loss(self, left_words, right_words, covariate, left_bias, right_bias, log_vals, weights):
-        left_context = covariate.mul(left_words).sum(1).view(-1)
-        right_context = covariate.mul(right_words).sum(1).view(-1)
+        left_context = (left_words.unsqueeze(1) * covariate).sum(1)
+        right_context = (right_words.unsqueeze(1) * covariate).sum(1)
         sim = left_context.mul(right_context).sum(1).view(-1)
         x = (sim + left_bias + right_bias - log_vals) ** 2
         loss = torch.mul(x, weights)
