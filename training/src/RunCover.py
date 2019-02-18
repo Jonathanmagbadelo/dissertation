@@ -36,6 +36,7 @@ cover.import_data(filename)
 cover.fit_transform(column_name='Lyrics', covariate='Genre', min_occurrence_count=2, window_size=4)
 cover.build_co_occurrence_matrix()
 cover.train()
+cover.tsne_plot()
 end_time = time.time()
 
 print("Time taken is {}".format(end_time-start_time))
