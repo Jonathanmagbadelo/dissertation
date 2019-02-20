@@ -1,5 +1,5 @@
 from pyspark.sql.types import StringType, ArrayType, MapType, IntegerType, FloatType
-from pyspark.sql.functions import udf, explode, when, col, row_number, sum as sum_
+from pyspark.sql.functions import udf, explode, when, col, row_number, sum as sum_, lit
 from pyspark.sql.window import Window as window
 from processing.utils import tokenize_document, get_n_grams
 import torch
@@ -10,13 +10,14 @@ from operator import itemgetter
 from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import logging
+import time
 
 #FORMAT = '%(asctime)-15s %(message)s'
 #logging.basicConfig(level=logging.DEBUG, format=FORMAT)
 
 
 class Cover:
-    def __init__(self, spark_session, embedding_size, x_max, alpha, learning_rate, weight_decay, epochs, batch_size):
+    def __init__(self, spark_session, embedding_size, x_max, alpha, learning_rate, weight_decay, epochs, batch_size, device_type='cpu'):
         self.transformed_data = []
         self.corpus = None
         self.spark_session = spark_session
@@ -45,6 +46,8 @@ class Cover:
         self.embeddings = None
         self.token_to_id = None
         self.id_to_token = None
+        print(torch.cuda.is_available())
+        self.device_type = torch.device(device_type)
 
     def import_data(self, filename):
         self.corpus = self.spark_session.read. \
@@ -63,7 +66,9 @@ class Cover:
 
             self.corpus.show(10)
 
-            tokenized_dataframe = self.corpus.withColumn('tokens', tokenize(column_name).alias('tokens'))
+            o = self.corpus.withColumn("genre", lit('pop'))
+
+            tokenized_dataframe = o.withColumn('tokens', tokenize(column_name).alias('tokens'))
 
             words_dataframe = tokenized_dataframe.withColumn('word', explode(col('tokens'))) \
                 .groupBy('word') \
@@ -138,37 +143,41 @@ class Cover:
 
         self.num_of_occurrences = len(self.values)
 
-        index_tensor = torch.LongTensor(self.indexes)
-        value_tensor = torch.FloatTensor(self.values)
-        self.right_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True)
-        self.left_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True)
-        self.left_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True)
-        self.right_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True)
-        self.covariate_diagonal_tensor = torch.tensor(torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size, requires_grad=True)), requires_grad=True)
+        self.right_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True, device=self.device_type)
+        self.left_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True, device=self.device_type)
+        self.left_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True, device=self.device_type)
+        self.right_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True, device=self.device_type)
+        self.covariate_diagonal_tensor = torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size)).clone().detach().cuda().requires_grad_(True)
         self.weights = {key: self.get_weight(value) for key, value in self.coo_dict.items()}
         self.log_values = {key: log10(value) for key, value in self.coo_dict.items()}
         self.parameters = [self.left_word_tensor, self.right_word_tensor, self.covariate_diagonal_tensor, self.left_bias, self.right_bias]
-
 
     def get_weight(self, value):
         return min((value/self.x_max), 1) ** self.alpha
 
     def get_batch(self):
         indices = torch.randperm(self.num_of_occurrences)
+        if self.device_type == 'cuda:0':
+            indices = indices.cuda()
         for idx in range(0, self.num_of_occurrences - self.batch_size + 1, self.batch_size):
+
             sample = indices[idx:idx + self.batch_size].tolist()
-            covariate_idx, left_idx, right_idx = [list(x) for x in zip(*itemgetter(*sample)(self.indexes))]
-            left_words = self.left_word_tensor[left_idx]
-            right_words = self.right_word_tensor[right_idx]
-            covariate = self.covariate_diagonal_tensor[covariate_idx]
-            left_bias = self.left_bias[covariate_idx, left_idx]
-            right_bias = self.right_bias[covariate_idx, right_idx]
-            log_vals = torch.tensor([self.log_values[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))])
-            weights = torch.tensor([self.weights[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))])
+            covariate_idx, left_idx, right_idx = [torch.tensor(list(x)).cuda() for x in zip(*itemgetter(*sample)(self.indexes))]
+            start = time.time()
+            left_words = torch.index_select(self.left_word_tensor, 0, left_idx)
+            right_words = torch.index_select(self.right_word_tensor, 0, right_idx)
+            covariate = torch.index_select(self.covariate_diagonal_tensor, 0, covariate_idx)
+
+            left_bias = torch.index_select(self.left_bias, 0, left_idx)
+            right_bias = torch.index_select(self.right_bias, 0, right_idx)
+            end = time.time()
+            print(end - start)
+            log_vals = torch.tensor([self.log_values[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))], device=self.device_type)
+            weights = torch.tensor([self.weights[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))], device=self.device_type )
             yield left_words, right_words, covariate, left_bias, right_bias, log_vals, weights
 
     def train(self):
-        optimizer = torch.optim.Adam(self.parameters, lr=self.learning_rate, weight_decay=self.weight_decay)
+        optimizer = torch.optim.Adam(self.parameters, weight_decay=self.weight_decay)
         optimizer.zero_grad()
         for epoch in tqdm(range(self.epochs)):
             logging.info("Start epoch %i", epoch)
@@ -220,5 +229,6 @@ class Cover:
                          textcoords='offset points',
                          ha='right',
                          va='bottom')
+        plt.savefig('embd.png')
         plt.show(block=True)
         print('done')
