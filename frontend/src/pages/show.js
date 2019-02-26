@@ -9,6 +9,6 @@ export default class ShowPage extends React.Component {
 				<h1>{lyric.title}</h1>
 				<div>{lyric.body}</div>
 			</div>
-		)
+		);
 	}
 }
