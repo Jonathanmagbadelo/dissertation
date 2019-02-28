@@ -8,6 +8,8 @@ services:
     container_name: dissertation-backend-container
     environment:
       DJANGO_SERVER_PORT: ${DJANGO_SERVER_PORT}
+      http_proxy: http://proxy-chain.xxx.com:911/
+      https_proxy: http://proxy-chain.xxx.com:912/
     expose:
       - ${DJANGO_SERVER_PORT}
     ports:
