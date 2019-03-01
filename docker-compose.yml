@@ -1,4 +1,4 @@
-version: '2.3'
+version: '3'
 
 services:
   
@@ -31,6 +31,8 @@ services:
     volumes:
       - ./frontend/src:/client/src
       - ./frontend/public:/client/public
+    depends_on:
+      - server
     links:
       - server
     command: ["npm", "start"]
@@ -38,7 +40,6 @@ services:
   training:
     build: ./training
     image: dissertation-training:latest
-###    runtime: nvidia
     container_name: dissertation-training-container
     environment:
       NVIDIA_VISABLE_DEVICES: all      

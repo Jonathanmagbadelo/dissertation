@@ -31,17 +31,20 @@ class App extends Component {
 			}
 		}
 	};
+
 	render() {
 		return (
 			<BrowserRouter>
-				<div>
-					<LyricNavbar/>
-					<Container>
-						<Route exact path="/" component={(props) => <IndexPage {...props} lyrics={this.state.lyrics}/>}/>
-						<Route exact path="/lyrics/:id" component={(props) => <ShowPage {...props} lyric={this.state.lyrics[props.match.params.id]}/>}/>
-						<Route exact path="/new" component={NewPage}/>
-					</Container>
-				</div>
+				<switch>
+					<div>
+						<LyricNavbar/>
+						<Container>
+							<Route exact path="/api/lyric/" component={(props) => <IndexPage {...props} lyrics={this.state.lyrics}/>}/>
+							<Route exact path="/lyrics/:id" component={(props) => <ShowPage {...props} lyric={this.state.lyrics[props.match.params.id]}/>}/>
+							<Route exact path="/new" component={NewPage}/>
+						</Container>
+					</div>
+				</switch>
 			</BrowserRouter>
 		);
 	}
