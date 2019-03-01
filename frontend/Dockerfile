@@ -7,7 +7,6 @@ RUN mkdir -p /${PROJECT}
 WORKDIR /${PROJECT}
 
 COPY ./package.json /${PROJECT}
-COPY ./package-lock.json /${PROJECT}
 
 RUN npm install
 

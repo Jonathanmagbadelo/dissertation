@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from .assistant import views
+
+router = routers.DefaultRouter()  # add this
+router.register(r'lyrics', views.LyricView, 'lyric')  # add this
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('app.assistant.urls'))
+    path('api/', include(router.urls))
 ]
