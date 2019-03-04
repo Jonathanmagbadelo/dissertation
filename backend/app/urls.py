@@ -19,7 +19,7 @@ from rest_framework import routers
 from .assistant import views
 
 router = routers.DefaultRouter()  # add this
-router.register(r'lyrics', views.LyricView, 'lyric')  # add this
+router.register(r'lyrics', views.LyricsView, 'lyric')  # add this
 
 urlpatterns = [
     path('admin/', admin.site.urls),

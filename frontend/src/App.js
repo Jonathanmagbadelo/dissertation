@@ -12,10 +12,20 @@ import ShowPage from './pages/show';
 import NewPage from './pages/new';
 import {LyricNavbar} from './components/lyric-navbar'
 
+import axios from "axios";
+
 library.add(faHome, faPlusSquare);
 
 class App extends Component {
-	state = {
+	constructor(props) {
+		super(props);
+		this.state = {
+			lyrics: []
+		};
+		this.refreshLyricsList()
+	}
+
+/*	state = {
 		lyrics: {
 			1: {
 				_id: 1,
@@ -30,9 +40,16 @@ class App extends Component {
 				updatedAt: new Date()
 			}
 		}
+	};*/
+	refreshLyricsList = () => {
+		axios
+			.get("/api/lyrics/")
+			.then(res => this.setState({ lyrics: res.data }))
+			.catch(err => console.log(err));
 	};
 
 	render() {
+		console.log(this.state.lyrics);
 		return (
 			<BrowserRouter>
 				<switch>
@@ -40,7 +57,7 @@ class App extends Component {
 						<LyricNavbar/>
 						<Container>
 							<Route exact path="/" component={(props) => <IndexPage {...props} lyrics={this.state.lyrics}/>}/>
-							<Route exact path="/lyrics/:id" component={(props) => <ShowPage {...props} lyric={this.state.lyrics[props.match.params.id]}/>}/>
+							<Route exact path="/lyrics/:id" component={(props) => <ShowPage {...props} lyric={this.state.lyrics[this.props.match.params.id]}/>}/>
 							<Route exact path="/new" component={NewPage}/>
 						</Container>
 					</div>

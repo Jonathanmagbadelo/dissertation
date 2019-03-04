@@ -7,7 +7,7 @@ export default class ShowPage extends React.Component {
 		return (
 			<div>
 				<h1>{lyric.title}</h1>
-				<div>{lyric.body}</div>
+				<div>{lyric.content}</div>
 			</div>
 		);
 	}

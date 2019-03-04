@@ -11,6 +11,8 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 import logging
 import time
+import numpy as np
+from math import log
 
 #FORMAT = '%(asctime)-15s %(message)s'
 #logging.basicConfig(level=logging.DEBUG, format=FORMAT)
@@ -38,9 +40,12 @@ class Cover:
         self.batch_size = batch_size
         self.left_word_tensor = None
         self.right_word_tensor = None
+        self.left_vectors = None
+        self.right_vectors = None
         self.left_bias = None
         self.right_bias = None
         self.covariate_diagonal_tensor = None
+        self.covariate_tensor = None
         self.weights = None
         self.log_values = None
         self.embeddings = None
@@ -64,7 +69,7 @@ class Cover:
         else:
             tokenize = udf(lambda document: tokenize_document(document), ArrayType(StringType()))
 
-            self.corpus.show(10)
+            #self.corpus.show(10)
 
             o = self.corpus.withColumn("genre", lit('pop'))
 
@@ -82,7 +87,7 @@ class Cover:
             filtered_words_with_id_dataframe = filtered_words.withColumn('id', row_number().over(windowSpec)) \
                 .sort('id', ascending=False)
 
-            filtered_words.show(100)
+            #filtered_words.show(100)
 
             token_to_id = filtered_words_with_id_dataframe.rdd.map(lambda row: (row.word, row.id)).collectAsMap()
 
@@ -121,7 +126,7 @@ class Cover:
 
             reduced = reduced.withColumn(covariate, covariate_2_id(covariate).cast(IntegerType()))
 
-            reduced.show(20)
+            #reduced.show(20)
 
             x = reduced.select("value", "key", covariate).rdd\
                 .map(lambda row: (list(chain([row[covariate]], row['key'])), row['value']))\
@@ -135,22 +140,24 @@ class Cover:
 
             self.spark_session.stop()
 
-    def build_co_occurrence_matrix(self):
+    def build_coo_matrix(self):
         self.indexes, self.values = zip(*self.coo_dict.items())
-        self.indexes = list(self.indexes)
-
-        print("Number of Covariates should be 2  and is {}".format(self.num_of_covariates))
-
         self.num_of_occurrences = len(self.values)
+        covariate, left, right = zip(*list(self.indexes))
+        #print("Number of Covariates should be 2  and is {}".format(self.num_of_covariates))
+        self.log_values = torch.tensor([log(val) for val in self.values], device=self.device_type)
+        self.left_word_tensor = torch.tensor(left, device=self.device_type)
+        self.right_word_tensor = torch.tensor(right, device=self.device_type)
+        self.covariate_tensor = torch.tensor(covariate, device=self.device_type)
+        self.weights = torch.tensor([self.get_weight(val) for val in self.values], device=self.device_type)
 
+        self.left_vectors = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True, device=self.device_type)
+        self.right_vectors = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True, device=self.device_type)
         self.right_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True, device=self.device_type)
         self.left_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True, device=self.device_type)
-        self.left_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True, device=self.device_type)
-        self.right_word_tensor = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True, device=self.device_type)
         self.covariate_diagonal_tensor = torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size)).clone().detach().cuda().requires_grad_(True)
-        self.weights = {key: self.get_weight(value) for key, value in self.coo_dict.items()}
-        self.log_values = {key: log10(value) for key, value in self.coo_dict.items()}
-        self.parameters = [self.left_word_tensor, self.right_word_tensor, self.covariate_diagonal_tensor, self.left_bias, self.right_bias]
+        self.parameters = [self.left_vectors, self.right_vectors, self.covariate_diagonal_tensor, self.left_bias, self.right_bias]
+        print("Ypp")
 
     def get_weight(self, value):
         return min((value/self.x_max), 1) ** self.alpha
@@ -161,20 +168,22 @@ class Cover:
             indices = indices.cuda()
         for idx in range(0, self.num_of_occurrences - self.batch_size + 1, self.batch_size):
 
-            sample = indices[idx:idx + self.batch_size].tolist()
-            covariate_idx, left_idx, right_idx = [torch.tensor(list(x)).cuda() for x in zip(*itemgetter(*sample)(self.indexes))]
-            start = time.time()
-            left_words = torch.index_select(self.left_word_tensor, 0, left_idx)
-            right_words = torch.index_select(self.right_word_tensor, 0, right_idx)
-            covariate = torch.index_select(self.covariate_diagonal_tensor, 0, covariate_idx)
+            sample = indices[idx:idx + self.batch_size]
+            covariates, left_words, right_words = self.covariate_tensor[sample], self.left_word_tensor[sample], self.right_word_tensor[sample]
 
-            left_bias = torch.index_select(self.left_bias, 0, left_idx)
-            right_bias = torch.index_select(self.right_bias, 0, right_idx)
+            start = time.time()
+            left_vecs = self.left_vectors[left_words]
+            right_vecs = self.right_vectors[right_words]
+            covariate = self.covariate_diagonal_tensor[covariates]
+            left_bias = self.left_bias[covariates, left_words]
+            right_bias = self.right_bias[covariates, right_words]
             end = time.time()
             print(end - start)
-            log_vals = torch.tensor([self.log_values[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))], device=self.device_type)
-            weights = torch.tensor([self.weights[x] for x in list(zip(*[covariate_idx, left_idx, right_idx]))], device=self.device_type )
-            yield left_words, right_words, covariate, left_bias, right_bias, log_vals, weights
+
+            weights = self.weights[sample]
+            log_vals = self.log_values[sample]
+
+            yield left_vecs, right_vecs, covariate, left_bias, right_bias, log_vals, weights
 
     def train(self):
         optimizer = torch.optim.Adam(self.parameters, weight_decay=self.weight_decay)
@@ -197,6 +206,14 @@ class Cover:
         left_context = (left_words.unsqueeze(1) * covariate).sum(1)
         right_context = (right_words.unsqueeze(1) * covariate).sum(1)
         sim = left_context.mul(right_context).sum(1).view(-1)
+        x = (sim + left_bias + right_bias - log_vals) ** 2
+        loss = torch.mul(x, weights)
+        return loss.mean()
+
+    def get_loss2(self, left_words, right_words, covariate, left_bias, right_bias, log_vals, weights):
+        left_context = (left_words.unsqueeze(1) * covariate).sum(1)
+        right_context = (right_words.unsqueeze(1) * covariate).sum(1)
+        sim = (left_context * right_context).sum(1).view(-1)
         x = (sim + left_bias + right_bias - log_vals) ** 2
         loss = torch.mul(x, weights)
         return loss.mean()
