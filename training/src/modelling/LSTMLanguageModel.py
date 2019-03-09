@@ -52,6 +52,10 @@ class LSTMLanguageModel:
             optimizer = Adam(lr=lr)
             self.model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
+            file_path = "./checkpoints/LSTM_LYRICS-epoch{epoch:03d}-words%d-sequence%d-minfreq%d-" \
+                        "loss{loss:.4f}-acc{acc:.4f}-val_loss{val_loss:.4f}-val_acc{val_acc:.4f}" % \
+                        (self.num_words, self.sequence_size, self.min_occurrence)
+
             checkpoint = ModelCheckpoint(file_path, monitor='val_acc', save_best_only=True)
             print_callback = LambdaCallback(on_batch_end=self.on_epoch_end)
             early_stopping = EarlyStopping(monitor='val_acc', patience=20)
@@ -88,36 +92,35 @@ class LSTMLanguageModel:
         probas = np.random.multinomial(1, preds, 1)
         return np.argmax(probas)
 
-    def on_epoch_end(epoch, _):
+    def on_epoch_end(self, epoch, logs):
         # Function invoked at end of each epoch. Prints generated text.
+        print('\n----- Generating text after Epoch: %d\n' % epoch)
+
+        # Randomly pick a seed sequence
+        seed_index = np.random.randint(self.num_sentences)
+        seed = self.sentences[seed_index]
+
+        for diversity in [0.3, 0.4, 0.5, 0.6, 0.7]:
+            sentence = seed
+            print('----- Diversity:' + str(diversity) + '\n')
+            print('----- Generating with seed:\n"' + ' '.join(sentence) + '"\n')
+            print(' '.join(sentence))
+
+            for i in range(50):
+                x_pred = np.zeros((1, self.sequence_size))
+                for t, word in enumerate(sentence):
+                    x_pred[0, t] = self.word_2_id[word]
+
+                preds = self.model.predict(x_pred, verbose=0)[0]
+                next_index = self.sample(preds, diversity)
+                next_word = self.id_2_word[next_index]
+
+                sentence = sentence[1:]
+                sentence.append(next_word)
+
+                print(" " + next_word)
+            print('\n')
         print()
-        print('----- Generating text after Epoch: %d' % epoch)
-
-        start_index = random.randint(0, len(text) - maxlen - 1)
-        for diversity in [0.2, 0.5, 1.0, 1.2]:
-            print('----- diversity:', diversity)
-
-            generated = ''
-            sentence = text[start_index: start_index + maxlen]
-            generated += sentence
-            print('----- Generating with seed: "' + sentence + '"')
-            sys.stdout.write(generated)
-
-            for i in range(400):
-                x_pred = np.zeros((1, maxlen, len(chars)))
-                for t, char in enumerate(sentence):
-                    x_pred[0, t, char_indices[char]] = 1.
-
-                preds = model.predict(x_pred, verbose=0)[0]
-                next_index = sample(preds, diversity)
-                next_char = indices_char[next_index]
-
-                generated += next_char
-                sentence = sentence[1:] + next_char
-
-                sys.stdout.write(next_char)
-                sys.stdout.flush()
-            print()
 
     def get_embedding_layer(self, should_train=False):
         if not self.sentences:
