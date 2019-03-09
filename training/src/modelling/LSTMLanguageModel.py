@@ -139,7 +139,7 @@ class LSTMLanguageModel:
 
     def format_corpus(self, training_split):
         if 1 < training_split < 0:
-            print("The training split should be a number between 0 and 1!")
+            logger.info("The training split should be a number between 0 and 1!")
             return
 
         self.corpus = (lyric.lower().replace('\n', ' \n ') for lyric in self.corpus)
@@ -170,8 +170,3 @@ class LSTMLanguageModel:
     def chunks(self, corpus, chunk_size):
         args = [iter(corpus)] * chunk_size
         return zip(*args)
-
-
-test_corpus = ["One day I went to asda", "I went to shoplift in asda", "I to asda", "jay jay jay", "I I I"]
-lm = LSTMLanguageModel(embeddings=[], embedding_dim=300, corpus=test_corpus, min_occurrence=2, sequence_size=3, max_num_words=20000)
-lm.format_corpus(training_split=0.5)
