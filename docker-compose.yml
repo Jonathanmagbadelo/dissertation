@@ -46,8 +46,10 @@ services:
       JUPYTER_NOTEBOOK_PORT: ${JUPYTER_NOTEBOOK_PORT}
     expose:
       - ${JUPYTER_NOTEBOOK_PORT}
+      - ${PYSPARK_PORT}
     ports:
       - ${JUPYTER_NOTEBOOK_PORT}:${JUPYTER_NOTEBOOK_PORT}
+      - ${PYSPARK_PORT}:${PYSPARK_PORT}  
     volumes:
       - ./training:/opt/training
     command: ["sh", "run_jupyter.sh"]    

@@ -1,0 +1,174 @@
+import itertools
+import logging as logger
+import random
+from collections import Counter
+
+import numpy as np
+from keras import Sequential
+from keras.callbacks import LambdaCallback, ModelCheckpoint, EarlyStopping
+from keras.initializers import Constant
+from keras.layers import Bidirectional, LSTM, Dense, Embedding, Input, Dropout
+from keras.optimizers import Adam
+
+
+class LSTMLanguageModel:
+    def __init__(self, embeddings, embedding_dim, corpus, min_occurrence, sequence_size, max_num_words):
+        self.embeddings = embeddings
+        self.embedding_dim = embedding_dim
+        self.corpus = corpus
+        self.corpus_words = None
+        self.word_frequencies = None
+        self.min_occurrence = min_occurrence
+        self.word_2_id = None
+        self.id_2_word = None
+        self.sequence_size = sequence_size
+        self.ignored_words = set()
+        self.sentences = []
+        self.next_words = []
+        self.testing_sentences = []
+        self.training_sentences = []
+        self.testing_next_words = []
+        self.training_next_words = []
+        self.num_words = 0
+        self.max_num_words = max_num_words
+        self.num_sentences = 0
+        self.model = None
+
+    def set_model(self, units, dropout, activation_function='softmax'):
+        model = Sequential()
+        model.add(Bidirectional(LSTM(units), input_shape=(self.sequence_size, self.num_words)))
+        if dropout > 0:
+            model.add(Dropout(rate=dropout))
+        model.add(Dense(self.num_words, activation=activation_function))
+        embedding_layer = self.get_embedding_layer()
+        sequence_input = Input(shape=(self.sequence_size,), dtype='int32')
+        embedded_sequences = embedding_layer(sequence_input)
+        self.model = model
+
+    def train(self, batch_size, epochs, lr=0.0001):
+        if self.model is None:
+            logger.info("You must set the model first by calling the set_model() method!!")
+        else:
+            optimizer = Adam(lr=lr)
+            self.model.compile(optimizer=optimizer, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+            checkpoint = ModelCheckpoint(file_path, monitor='val_acc', save_best_only=True)
+            print_callback = LambdaCallback(on_batch_end=self.on_epoch_end)
+            early_stopping = EarlyStopping(monitor='val_acc', patience=20)
+            callbacks_list = [checkpoint, print_callback, early_stopping]
+
+            self.model.fit_generator(self.generator(self.training_sentences, self.training_next_words, batch_size),
+                                     steps_per_epoch=int(len(self.training_sentences) / batch_size) + 1,
+                                     epochs=epochs,
+                                     callbacks=callbacks_list,
+                                     validation_data=self.generator(self.testing_sentences, self.testing_next_words,
+                                                                    batch_size),
+                                     validation_steps=int(len(self.testing_sentences) / batch_size) + 1)
+
+    # This assumes that all the words in both the sentences and next words are in the word_2_id dict
+    def generator(self, sentences, next_words, batch_size):
+        index = 0
+        sentences_size = len(sentences)
+        while True:
+            x = np.zeros((batch_size, self.sequence_size), dtype=np.int32)
+            y = np.zeros(batch_size, dtype=np.int32)
+            for i in range(batch_size):
+                for t, w in enumerate(sentences[index % sentences_size]):
+                    x[i, t] = self.word_2_id[w]
+                y[i] = self.word_2_id[next_words[index % sentences_size]]
+                index = index + 1
+            yield x, y
+
+    def sample(preds, temperature=1.0):
+        # helper function to sample an index from a probability array
+        preds = np.asarray(preds).astype('float64')
+        preds = np.log(preds) / temperature
+        exp_preds = np.exp(preds)
+        preds = exp_preds / np.sum(exp_preds)
+        probas = np.random.multinomial(1, preds, 1)
+        return np.argmax(probas)
+
+    def on_epoch_end(epoch, _):
+        # Function invoked at end of each epoch. Prints generated text.
+        print()
+        print('----- Generating text after Epoch: %d' % epoch)
+
+        start_index = random.randint(0, len(text) - maxlen - 1)
+        for diversity in [0.2, 0.5, 1.0, 1.2]:
+            print('----- diversity:', diversity)
+
+            generated = ''
+            sentence = text[start_index: start_index + maxlen]
+            generated += sentence
+            print('----- Generating with seed: "' + sentence + '"')
+            sys.stdout.write(generated)
+
+            for i in range(400):
+                x_pred = np.zeros((1, maxlen, len(chars)))
+                for t, char in enumerate(sentence):
+                    x_pred[0, t, char_indices[char]] = 1.
+
+                preds = model.predict(x_pred, verbose=0)[0]
+                next_index = sample(preds, diversity)
+                next_char = indices_char[next_index]
+
+                generated += next_char
+                sentence = sentence[1:] + next_char
+
+                sys.stdout.write(next_char)
+                sys.stdout.flush()
+            print()
+
+    def get_embedding_layer(self, should_train=False):
+        if not self.sentences:
+            logger.info("Load data!")
+            return
+        num_of_words = min(self.max_num_words, len(self.word_2_id)) + 1
+        embedding_matrix = np.zeros((num_of_words, self.embedding_dim))
+
+        return Embedding(num_of_words, self.embedding_dim, embeddings_initializer=Constant(embedding_matrix),
+                         input_length=self.sequence_size, trainable=should_train)
+
+    """"
+        Need to format corpus(which is a nested list of strings) so its a list of lists where each list is of uniform length
+        Assuming Corpus is a list of lists of strings
+    """""
+
+    def format_corpus(self, training_split):
+        if 1 < training_split < 0:
+            print("The training split should be a number between 0 and 1!")
+            return
+
+        self.corpus = (lyric.lower().replace('\n', ' \n ') for lyric in self.corpus)
+        self.corpus_words = list(itertools.chain.from_iterable([lyric.split() for lyric in self.corpus]))
+        self.word_frequencies = Counter(self.corpus_words)
+        words_2_keep = (word if count >= self.min_occurrence else self.ignored_words.add(word) for word, count in
+                        self.word_frequencies.items())
+        self.word_2_id = {word: index for (index, word) in enumerate(words_2_keep) if word}
+        self.id_2_word = {index: word for (word, index) in self.word_2_id.items()}
+        chunks = self.chunks(self.corpus_words, self.sequence_size)
+        filtered_chunks = [(chunk[:-1], chunk[-1]) for chunk in chunks if set(chunk).isdisjoint(self.ignored_words)]
+        self.num_sentences = len(filtered_chunks)
+
+        # shuffle
+        random.shuffle(filtered_chunks)
+        self.sentences, self.next_words = zip(*filtered_chunks)
+
+        # split
+        training_indicies = int(self.num_sentences * training_split)
+        self.training_sentences, self.testing_sentences = self.sentences[:training_indicies], self.sentences[
+                                                                                              training_indicies:]
+        self.training_next_words, self.testing_next_words = self.next_words[:training_indicies], self.next_words[
+                                                                                                 training_indicies:]
+
+        logger.info("Finished corpus formatting! There are {} training examples and {} test examples".format(
+            len(self.training_sentences), len(self.testing_sentences)))
+
+    def chunks(self, corpus, chunk_size):
+        args = [iter(corpus)] * chunk_size
+        return zip(*args)
+
+
+test_corpus = ["One day I went to asda", "I went to shoplift in asda", "I to asda", "jay jay jay", "I I I"]
+lm = LSTMLanguageModel(embeddings=[], embedding_dim=300, corpus=test_corpus, min_occurrence=2, sequence_size=3, max_num_words=20000)
+lm.format_corpus(training_split=0.5)

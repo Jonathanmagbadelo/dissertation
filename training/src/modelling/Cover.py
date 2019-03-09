@@ -1,7 +1,7 @@
 from pyspark.sql.types import StringType, ArrayType, MapType, IntegerType, FloatType
 from pyspark.sql.functions import udf, explode, when, col, row_number, sum as sum_, lit
 from pyspark.sql.window import Window as window
-from processing.utils import tokenize_document, get_n_grams
+from processing.utils import tokenize_document, get_n_grams, pre_process
 import torch
 from itertools import chain
 from tqdm import tqdm
@@ -13,7 +13,7 @@ import logging
 import time
 import numpy as np
 from math import log
-
+import nltk
 #FORMAT = '%(asctime)-15s %(message)s'
 #logging.basicConfig(level=logging.DEBUG, format=FORMAT)
 
@@ -53,6 +53,7 @@ class Cover:
         self.id_to_token = None
         print(torch.cuda.is_available())
         self.device_type = torch.device(device_type)
+        nltk.download('stopwords')
 
     def import_data(self, filename):
         self.corpus = self.spark_session.read. \
@@ -67,13 +68,15 @@ class Cover:
         if self.corpus is None:
             print("Please load corpus first!")
         else:
-            tokenize = udf(lambda document: tokenize_document(document), ArrayType(StringType()))
+            tokenize = udf(lambda document: pre_process(document), ArrayType(StringType()))
 
-            #self.corpus.show(10)
+            self.corpus.show(10)
 
             o = self.corpus.withColumn("genre", lit('pop'))
 
             tokenized_dataframe = o.withColumn('tokens', tokenize(column_name).alias('tokens'))
+
+            tokenized_dataframe.show(50)
 
             words_dataframe = tokenized_dataframe.withColumn('word', explode(col('tokens'))) \
                 .groupBy('word') \
@@ -87,7 +90,7 @@ class Cover:
             filtered_words_with_id_dataframe = filtered_words.withColumn('id', row_number().over(windowSpec)) \
                 .sort('id', ascending=False)
 
-            #filtered_words.show(100)
+            filtered_words.show(100)
 
             token_to_id = filtered_words_with_id_dataframe.rdd.map(lambda row: (row.word, row.id)).collectAsMap()
 
@@ -155,8 +158,9 @@ class Cover:
         self.right_vectors = torch.randn(self.num_of_words, self.embedding_size, requires_grad=True, device=self.device_type)
         self.right_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True, device=self.device_type)
         self.left_bias = torch.randn(self.num_of_covariates, self.num_of_words, requires_grad=True, device=self.device_type)
-        self.covariate_diagonal_tensor = torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size)).clone().detach().cuda().requires_grad_(True)
-        self.parameters = [self.left_vectors, self.right_vectors, self.covariate_diagonal_tensor, self.left_bias, self.right_bias]
+        #self.covariate_diagonal_tensor = torch.diag_embed(torch.randn(self.num_of_covariates, self.embedding_size)).clone().detach().cuda().requires_grad_(True)
+        self.covariate_diagonal_tensor = torch.randn(self.num_of_covariates, self.embedding_size, requires_grad=True, device=self.device_type)
+        self.parameters = [self.left_vectors, self.right_vectors, self.left_bias, self.right_bias]
         print("Ypp")
 
     def get_weight(self, value):
@@ -174,7 +178,7 @@ class Cover:
             start = time.time()
             left_vecs = self.left_vectors[left_words]
             right_vecs = self.right_vectors[right_words]
-            covariate = self.covariate_diagonal_tensor[covariates]
+            #covariate = self.covariate_diagonal_tensor[covariates]
             left_bias = self.left_bias[covariates, left_words]
             right_bias = self.right_bias[covariates, right_words]
             end = time.time()
@@ -183,10 +187,10 @@ class Cover:
             weights = self.weights[sample]
             log_vals = self.log_values[sample]
 
-            yield left_vecs, right_vecs, covariate, left_bias, right_bias, log_vals, weights
+            yield left_vecs, right_vecs, left_bias, right_bias, log_vals, weights
 
     def train(self):
-        optimizer = torch.optim.Adam(self.parameters, weight_decay=self.weight_decay)
+        optimizer = torch.optim.Adam(self.parameters, lr=self.learning_rate, weight_decay=self.weight_decay)
         optimizer.zero_grad()
         for epoch in tqdm(range(self.epochs)):
             logging.info("Start epoch %i", epoch)
@@ -195,11 +199,11 @@ class Cover:
             n_batch = int(self.num_of_occurrences/self.batch_size)
             for batch in tqdm(self.get_batch(), total=n_batch, mininterval=1):
                 optimizer.zero_grad()
-                loss = self.get_loss(*batch)
+                loss = self.get_loss2(*batch)
                 avg_loss += loss.data.item() / num_batches
                 loss.backward()
                 optimizer.step()
-        self.embeddings = self.left_word_tensor + self.right_word_tensor
+        self.embeddings = self.left_vectors + self.right_vectors
         logging.info("Finished training!")
 
     def get_loss(self, left_words, right_words, covariate, left_bias, right_bias, log_vals, weights):
@@ -210,15 +214,13 @@ class Cover:
         loss = torch.mul(x, weights)
         return loss.mean()
 
-    def get_loss2(self, left_words, right_words, covariate, left_bias, right_bias, log_vals, weights):
-        left_context = (left_words.unsqueeze(1) * covariate).sum(1)
-        right_context = (right_words.unsqueeze(1) * covariate).sum(1)
-        sim = (left_context * right_context).sum(1).view(-1)
-        x = (sim + left_bias + right_bias - log_vals) ** 2
-        loss = torch.mul(x, weights)
+    def get_loss2(self, l_vecs, r_vecs, l_bias, r_bias, log_covals, weight):
+        sim = (l_vecs * r_vecs).sum(1).view(-1)
+        x = (sim + l_bias + r_bias - log_covals) ** 2
+        loss = torch.mul(x, weight)
         return loss.mean()
 
-    def tsne_plot(self):
+    def tsne_plot(self, word_count=1000):
         "Creates and TSNE model and plots it"
         plt.interactive(True)
         labels = []
@@ -228,7 +230,9 @@ class Cover:
             tokens.append(self.embeddings[index].tolist())
             labels.append(word)
 
-        tsne_model = TSNE(perplexity=40, n_components=2, init='pca', n_iter=2500, random_state=23)
+        tokens, labels = tokens[:word_count], labels[:word_count]
+
+        tsne_model = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)
         new_values = tsne_model.fit_transform(tokens)
 
         x = []
@@ -237,7 +241,7 @@ class Cover:
             x.append(value[0])
             y.append(value[1])
 
-        plt.figure(figsize=(16, 16))
+        plt.figure(figsize=(100, 100))
         for i in range(len(x)):
             plt.scatter(x[i], y[i])
             plt.annotate(labels[i],
