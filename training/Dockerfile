@@ -38,6 +38,7 @@ RUN curl https://raw.githubusercontent.com/kennethreitz/pipenv/master/get-pipenv
 RUN mkdir -p /opt/${PROJECT}
 COPY ./Pipfile /opt/${PROJECT}
 WORKDIR /opt/${PROJECT}
+RUN export PYTHONPATH="$PYTHONPATH:/src"
 RUN pipenv install --system --skip-lock
 
 RUN pip3 install --upgrade http://download.pytorch.org/whl/cu90/torch-0.3.1-cp35-cp35m-linux_x86_64.whl

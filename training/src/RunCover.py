@@ -4,18 +4,6 @@ from pyspark import SparkConf
 import os
 from modelling import Cover
 
-# os.environ['PYSPARK_PYTHON'] = '/usr/bin/python3'
-# os.environ['PYSPARK_DRIVER_PYTHON'] = '/usr/bin/python3'
-# os.environ['PYTHONPATH'] = '$PYTHONPATH:/opt/training'
-#
-# spark_session = SparkSession\
-#     .builder\
-#     .appName("Cover")\
-#     .getOrCreate()
-#
-# spark_session.sparkContext.addPyFile("/opt/training/src/modelling/Cover.py")
-# spark_session.sparkContext.addPyFile("/opt/training/src/processing/utils.py")
-
 os.environ['PYSPARK_PYTHON'] = '/usr/bin/python3'
 os.environ['PYSPARK_DRIVER_PYTHON'] = '/usr/bin/python3'
 os.environ['PYTHONPATH'] = '$PYTHONPATH:/opt/training'
