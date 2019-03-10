@@ -54,6 +54,7 @@ class Cover:
         print(torch.cuda.is_available())
         self.device_type = torch.device(device_type)
         nltk.download('stopwords')
+        nltk.download('words')
 
     def import_data(self, filename):
         self.corpus = self.spark_session.read. \
@@ -76,7 +77,7 @@ class Cover:
 
             tokenized_dataframe = o.withColumn('tokens', tokenize(column_name).alias('tokens'))
 
-            tokenized_dataframe.show(50)
+            tokenized_dataframe.show(20)
 
             words_dataframe = tokenized_dataframe.withColumn('word', explode(col('tokens'))) \
                 .groupBy('word') \
@@ -89,8 +90,8 @@ class Cover:
 
             filtered_words_with_id_dataframe = filtered_words.withColumn('id', row_number().over(windowSpec)) \
                 .sort('id', ascending=False)
-
-            filtered_words.show(100)
+            #bottleneck here
+            #filtered_words.show(10)
 
             token_to_id = filtered_words_with_id_dataframe.rdd.map(lambda row: (row.word, row.id)).collectAsMap()
 

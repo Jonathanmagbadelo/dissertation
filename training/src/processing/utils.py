@@ -1,9 +1,8 @@
-# import enchant
 import re
 import string
 from string import punctuation
 
-from nltk.corpus import stopwords
+from nltk.corpus import stopwords, words
 
 
 def tokenize_document(document):
@@ -56,7 +55,7 @@ def normalize(lyrics):
     lyrics = __lowercase__(lyrics)
     lyrics = __remove_stopwords__(lyrics)
     lyrics = __remove_punctuation__(lyrics)
-    #lyrics = __remove_non_english_words__(lyrics)
+    lyrics = __remove_non_english_words__(lyrics)
     return lyrics
 
 
@@ -76,6 +75,7 @@ def __lowercase__(lyrics):
 def __remove_punctuation__(lyrics):
     return [word.rstrip(string.punctuation) for word in lyrics]
 
-# def __remove_non_english_words__(lyrics):
-#   dictionary = enchant.Dict("en_US")
-#    return [word for word in lyrics if dictionary.check(word)]
+
+def __remove_non_english_words__(lyrics):
+    dictionary = set(words.words())
+    return [word for word in lyrics if word in dictionary]
