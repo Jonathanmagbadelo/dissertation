@@ -9,6 +9,8 @@ verify_ssl = true
 django = "==2.1"
 djangorestframework = "*"
 django-cors-headers = "*"
+better_profanity = "*"
+pronouncing = "*"
 
 [requires]
 python_version = "3.6"

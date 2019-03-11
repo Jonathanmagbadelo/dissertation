@@ -23,6 +23,11 @@ class NewLyricView(generics.CreateAPIView):
     serializer_class = LyricSerializer
 
 
+class DeleteLyricView(generics.DestroyAPIView):
+    authentication_classes = []
+    serializer_class = LyricSerializer
+
+
 class SuggestWordView(View):
 
     def get(self, request, *args, **kwargs):

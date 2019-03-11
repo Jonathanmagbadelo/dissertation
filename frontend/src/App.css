@@ -1,0 +1,16 @@
+textarea.form-control{
+    background: #90A4AE;
+}
+
+.submit-button{
+    color: #00897B;
+    background: #00897B;
+}
+
+h3 {
+    display: inline-block;
+}
+
+.lyric-left {
+    text-align: center;
+}

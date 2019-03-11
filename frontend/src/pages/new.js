@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Button, Modal} from 'react-bootstrap';
+import {Form, Button, Modal, ButtonGroup} from 'react-bootstrap';
 import axios from "axios";
 
 export default class NewPage extends React.Component {
@@ -28,7 +28,7 @@ export default class NewPage extends React.Component {
             withCredentials: true,
         })
             .then(response => {
-                if (response.status === 201){
+                if (response.status === 201) {
                     this.props.history.push("/");
                 }
             })
@@ -39,32 +39,31 @@ export default class NewPage extends React.Component {
 
     render() {
         return (
-            <Modal.Dialog>
-                <Modal.Header>
-                    <Modal.Title>New Lyric</Modal.Title>
-                    <h6>Created At: {new Date().toLocaleDateString('en-GB')}</h6>
-                </Modal.Header>
+            <Form>
+                <Form.Group controlId="formBasicEmail" align="center">
+                    <Form.Label><h2>Title</h2></Form.Label>
+                    <Form.Control type="email" placeholder="Enter title"/>
+                </Form.Group>
 
-                <Modal.Body>
-                    <Form>
-                        <Form.Group>
-                            <Form.Label>Title</Form.Label>
-                            <Form.Control id="title" onChange={this.updateValue} type="email"
-                                          placeholder="Enter Lyric Title..."/>
-                        </Form.Group>
-                        <Form.Group>
-                            <Form.Label>Lyrics</Form.Label>
-                            <Form.Control id="content" onChange={this.updateValue} as="textarea" rows="15"
-                                          placeholder="Enter Lyrics..."/>
-                        </Form.Group>
-                    </Form>
-                </Modal.Body>
+                <Form.Group controlId="exampleForm.ControlTextarea1" align="center">
+                    <Form.Label><h2>Lyrics</h2></Form.Label>
+                    <Form.Control as="textarea" rows="15" placeholder="Enter Lyrics..."/>
+                </Form.Group>
 
-                <Modal.Footer>
-                    <Button variant="secondary" href="/">Close</Button>
-                    <Button variant="primary" onClick={this.post_lyric}>Save changes</Button>
-                </Modal.Footer>
-            </Modal.Dialog>
+                <Form.Group align="center">
+                    <ButtonGroup aria-label="Basic example">
+                        <Button variant="secondary" size="lg">Left</Button>
+                        <Button variant="secondary" size="lg">Middle</Button>
+                        <Button variant="secondary" size="lg">Right</Button>
+                    </ButtonGroup>
+                </Form.Group>
+
+                <Form.Group align="center">
+                    <Button variant="info" size="lg">Post</Button>
+                </Form.Group>
+
+                <h4 align="right">Created At: {new Date().toLocaleDateString('en-GB')}</h4>
+            </Form>
         );
     }
 }
