@@ -42,12 +42,12 @@ export default class NewPage extends React.Component {
             <Form>
                 <Form.Group controlId="formBasicEmail" align="center">
                     <Form.Label><h2>Title</h2></Form.Label>
-                    <Form.Control type="email" placeholder="Enter title"/>
+                    <Form.Control id="title" type="email" placeholder="Enter title" onChange={this.updateValue}/>
                 </Form.Group>
 
                 <Form.Group controlId="exampleForm.ControlTextarea1" align="center">
                     <Form.Label><h2>Lyrics</h2></Form.Label>
-                    <Form.Control as="textarea" rows="15" placeholder="Enter Lyrics..."/>
+                    <Form.Control id="content" as="textarea" rows="15" placeholder="Enter Lyrics..." onChange={this.updateValue}/>
                 </Form.Group>
 
                 <Form.Group align="center">
@@ -59,7 +59,7 @@ export default class NewPage extends React.Component {
                 </Form.Group>
 
                 <Form.Group align="center">
-                    <Button variant="info" size="lg">Post</Button>
+                    <Button variant="info" size="lg" onClick={this.post_lyric}>Post</Button>
                 </Form.Group>
 
                 <h4 align="right">Created At: {new Date().toLocaleDateString('en-GB')}</h4>

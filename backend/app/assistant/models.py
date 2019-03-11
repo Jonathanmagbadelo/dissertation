@@ -15,7 +15,7 @@ class Lyric(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=30)
-    content = models.CharField(max_length=500)
+    content = models.CharField(max_length=5000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     classification = models.CharField(max_length=5, choices=CLASSIFICATIONS, default=POP)
