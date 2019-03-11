@@ -56,6 +56,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'app.urls'
 
+REST_FRAMEWORK = {
+'DEFAULT_AUTHENTICATION_CLASSES': (
+'rest_framework.authentication.BasicAuthentication',
+)
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -120,16 +126,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# CSRF_COOKIE_NAME = "XSRF-TOKEN"
+#
 # CORS_ALLOW_CREDENTIALS = True
 #
-# CORS_ORIGIN_WHITELIST = ['localhost:3000', '0.0.0.0:3000']
+# CSRF_TRUSTED_ORIGINS = ['localhost:3000', '0.0.0.0:3000', 'client:3000']
 #
-# CSRF_TRUSTED_ORIGINS = ['localhost:3000', '0.0.0.0:3000']
-
-CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:3000',
     'client:3000',
     '0.0.0.0:3000'
 )
+
+SESSION_COOKIE_SECURE = False
+
+CSRF_COOKIE_SECURE = True

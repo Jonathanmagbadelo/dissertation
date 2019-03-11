@@ -2,6 +2,9 @@
 from app.assistant.models import Lyric
 from app.assistant.serializers import LyricSerializer
 from rest_framework import generics
+from django.views import View
+from django.http import HttpResponse
+from app.assistant.utils import utils
 
 
 class LyricsView(generics.ListCreateAPIView):
@@ -13,3 +16,14 @@ class LyricsView(generics.ListCreateAPIView):
         if lyric_uuid is not None:
             queryset = queryset.filter(id=lyric_uuid)
         return queryset
+
+
+class NewLyricView(generics.CreateAPIView):
+    authentication_classes = []
+    serializer_class = LyricSerializer
+
+
+class SuggestWordView(View):
+
+    def get(self, request, *args, **kwargs):
+        return HttpResponse("Hello")
