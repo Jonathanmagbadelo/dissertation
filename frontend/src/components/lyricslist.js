@@ -1,10 +1,7 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {ListGroup} from 'react-bootstrap';
 import axios from "axios";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import {withStyles} from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -13,7 +10,6 @@ import Avatar from '@material-ui/core/Avatar';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 export default class LyricsList extends React.Component {
 

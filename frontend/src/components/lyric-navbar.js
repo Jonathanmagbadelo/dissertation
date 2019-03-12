@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Nav, Button, Form, FormControl} from 'react-bootstrap';
+import {Navbar, Nav, Button} from 'react-bootstrap';
 import Switch from "react-switch";
 
 class LyricNavbar extends React.Component {

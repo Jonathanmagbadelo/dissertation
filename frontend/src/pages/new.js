@@ -1,5 +1,5 @@
 import React from 'react';
-import {Form, Button, Modal, ButtonGroup} from 'react-bootstrap';
+import {Form, Button, ButtonGroup} from 'react-bootstrap';
 import axios from "axios";
 
 export default class NewPage extends React.Component {
