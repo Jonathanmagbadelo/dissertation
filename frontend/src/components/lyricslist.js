@@ -43,7 +43,7 @@ export default class LyricsList extends React.Component {
                         <MusicNoteIcon/>
                     </Avatar>
                 </ListItemAvatar>
-                    <ListItemText primary={lyric.title} secondary="Last Updated At: "/>
+                    <ListItemText primary={lyric.title} secondary= {`Last Updated At: ${lyric.updated_at}`}/>
                     <ListItemSecondaryAction>
                         <IconButton aria-label="Edit">
                             <EditIcon/>

@@ -10,7 +10,8 @@ export default class NewPage extends React.Component {
             createdAt: undefined,
             updatedAt: undefined,
             classification: undefined
-        }
+        },
+        suggested_words: []
     };
 
     updateValue = (e) => {
@@ -19,6 +20,9 @@ export default class NewPage extends React.Component {
         this.setState({
             lyric: {...lyric, [e.target.id]: e.target.value}
         });
+
+        this.get_suggestions();
+
     };
 
     post_lyric = () => {
@@ -37,6 +41,16 @@ export default class NewPage extends React.Component {
             });
     };
 
+    get_suggestions = () => {
+        axios.get('api/assistant/suggest/').then(result => this.setState({suggested_words: result.data}));
+        //console.log(this.state.suggested_words)
+    };
+
+    show_suggestions = () => {
+        const words = Object.values(this.state.suggested_words);
+        return words.flatMap(word => <Button variant="secondary" size="lg">{word}</Button>)
+    };
+
     render() {
         return (
             <Form>
@@ -47,15 +61,12 @@ export default class NewPage extends React.Component {
 
                 <Form.Group controlId="exampleForm.ControlTextarea1" align="center">
                     <Form.Label><h2>Lyrics</h2></Form.Label>
-                    <Form.Control id="content" as="textarea" rows="15" placeholder="Enter Lyrics..." onChange={this.updateValue}/>
+                    <Form.Control id="content" as="textarea" rows="15" placeholder="Enter Lyrics..."
+                                  onChange={event => this.updateValue(event)}/>
                 </Form.Group>
 
                 <Form.Group align="center">
-                    <ButtonGroup aria-label="Basic example">
-                        <Button variant="secondary" size="lg">Left</Button>
-                        <Button variant="secondary" size="lg">Middle</Button>
-                        <Button variant="secondary" size="lg">Right</Button>
-                    </ButtonGroup>
+                    <ButtonGroup aria-label="Basic example">{this.show_suggestions()}</ButtonGroup>
                 </Form.Group>
 
                 <Form.Group align="center">

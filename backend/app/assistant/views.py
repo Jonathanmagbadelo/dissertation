@@ -3,7 +3,7 @@ from app.assistant.models import Lyric
 from app.assistant.serializers import LyricSerializer
 from rest_framework import generics
 from django.views import View
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from app.assistant.utils import utils
 
 
@@ -31,4 +31,4 @@ class DeleteLyricView(generics.DestroyAPIView):
 class SuggestWordView(View):
 
     def get(self, request, *args, **kwargs):
-        return HttpResponse("Hello")
+        return JsonResponse({'data': utils.suggest_words(False, False, "TODO")})

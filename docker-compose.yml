@@ -12,8 +12,10 @@ services:
       https_proxy: http://proxy-chain.xxx.com:912/
     expose:
       - ${DJANGO_SERVER_PORT}
+      - ${DB_PORT}
     ports:
       - ${DJANGO_SERVER_PORT}:${DJANGO_SERVER_PORT}
+      - 12345:${DB_PORT}
     volumes:
       - ./backend:/server
     command: ["python", "manage.py", "runserver", "0.0.0.0:${DJANGO_SERVER_PORT}"]
