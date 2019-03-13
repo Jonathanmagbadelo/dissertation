@@ -3,10 +3,10 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import './App.css';
 import {Container} from 'react-bootstrap'
 
-import IndexPage from './pages/index';
-import ShowPage from './pages/show';
-import NewPage from './pages/new';
-import {LyricNavbar} from './components/lyric-navbar'
+import IndexPage from './pages/Index';
+import LyricView from './pages/LyricView';
+import LyricModal from './pages/LyricModal';
+import {LyricNavbar} from './components/LyricNavbar'
 
 class App extends Component {
 	render() {
@@ -17,8 +17,8 @@ class App extends Component {
 						<LyricNavbar/>
 						<Container>
 							<Route exact path="/" component={IndexPage}/>
-							<Route exact path="/lyrics/:id" component={ShowPage}/>
-							<Route exact path="/new" component={NewPage}/>
+							<Route exact path="/lyrics/:id" component={LyricView}/>
+							<Route exact path="/lyric" component={LyricModal}/>
 						</Container>
 					</div>
 				</switch>

@@ -12,11 +12,9 @@ export default class ShowPage extends React.Component {
 	}
 
 	getLyric = (lyric_id) => {
-		let lyric = axios
+		axios
 			.get("/api/lyrics/?id="+lyric_id)
 			.then(result => this.setState({lyric: result.data[0]}));
-
-		return lyric;
 	};
 
 	render() {

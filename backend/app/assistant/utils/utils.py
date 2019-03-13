@@ -4,9 +4,9 @@ import random
 
 WORD_LIST = ["this", "is", "test", "yo", "fuck", "this", "shit", "nigga", "pussy", "bitch", "twerk", "ass", "dick", "hoes", "niggas"]
 
-TEST_WORD_LIST = ["This", "is", "a", "test"]
+TEST_WORD_LIST = ["This", "is", "a", "test", "to", "see", "how", "stuff", "changes"]
 
-
+# possibly use bigrams/trigrams
 def suggest_words(clean, rhyme, context_word):
     words = TEST_WORD_LIST
     words = filter_suggested_words(words) if clean else words

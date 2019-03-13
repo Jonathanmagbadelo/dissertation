@@ -20,7 +20,7 @@ class LyricNavbar extends React.Component {
                 <Nav className="ml-auto">
                     <Nav.Item><Nav.Link>{this.switch()}</Nav.Link></Nav.Item>
                     <Nav.Item><Nav.Link>{this.switch()}</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/new"><Button  variant="outline-info">New</Button></Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/lyric"><Button  variant="outline-info">New</Button></Nav.Link></Nav.Item>
                 </Nav>
             </Navbar>
         );
