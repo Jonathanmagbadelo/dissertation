@@ -8,6 +8,7 @@ export default class AboutPage extends React.Component {
 				<Col>
 					<br/>
 					<h1>About</h1>
+					<hr/>
 					<p>Computer Science & Artificial Intelligence Final Year Project 2019</p>
 				</Col>
 			</Container>

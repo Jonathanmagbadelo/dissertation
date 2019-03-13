@@ -11,6 +11,7 @@ export default class IndexPage extends React.Component {
                 <Col>
                     <LyricList/>
                 </Col>
+                <hr/>
             </Container>
         )
     }
