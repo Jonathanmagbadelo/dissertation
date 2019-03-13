@@ -20,9 +20,6 @@ export default class NewPage extends React.Component {
         this.setState({
             lyric: {...lyric, [e.target.id]: e.target.value}
         });
-
-        this.get_suggestions();
-
     };
 
     post_lyric = () => {
@@ -41,9 +38,10 @@ export default class NewPage extends React.Component {
             });
     };
 
-    get_suggestions = () => {
-        axios.get('api/assistant/suggest/').then(result => this.setState({suggested_words: result.data}));
-        //console.log(this.state.suggested_words)
+    get_suggestions = (event) => {
+        if( event.which === 32 ) {
+            axios.get('api/assistant/suggest/').then(result => this.setState({suggested_words: result.data}));
+        }
     };
 
     show_suggestions = () => {
@@ -62,7 +60,7 @@ export default class NewPage extends React.Component {
                 <Form.Group controlId="exampleForm.ControlTextarea1" align="center">
                     <Form.Label><h2>Lyrics</h2></Form.Label>
                     <Form.Control id="content" as="textarea" rows="15" placeholder="Enter Lyrics..."
-                                  onChange={event => this.updateValue(event)}/>
+                                  onChange={this.updateValue} onKeyPress={this.get_suggestions}/>
                 </Form.Group>
 
                 <Form.Group align="center">
