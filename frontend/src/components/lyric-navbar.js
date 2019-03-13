@@ -13,7 +13,7 @@ class LyricNavbar extends React.Component {
 
     render() {
         return (
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="#005662" variant="dark" style={{backgroundColor: '#005662'}}>
                 <Nav>
                     <Nav.Item><Nav.Link href="/"><Button  variant="outline-info">Home</Button></Nav.Link></Nav.Item>
                 </Nav>
@@ -32,8 +32,8 @@ class LyricNavbar extends React.Component {
                 <Switch
                     checked={this.state.checked}
                     onChange={this.handleChange}
-                    onColor="#4DB6AC"
-                    onHandleColor="#009688"
+                    onColor="#4fb3bf"
+                    onHandleColor="#00838f"
                     handleDiameter={30}
                     uncheckedIcon={false}
                     checkedIcon={false}

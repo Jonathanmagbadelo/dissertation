@@ -47,8 +47,8 @@ export default class NewPage extends React.Component {
     };
 
     show_suggestions = () => {
-        const words = Object.values(this.state.suggested_words);
-        return words.flatMap(word => <Button variant="secondary" size="lg">{word}</Button>)
+        const words = Object.values(this.state.suggested_words).flat(1);
+        return words.flatMap(word => <Button variant="secondary" size="lg" style={{border: '1px solid #4fb3bf'}}>{word}</Button>)
     };
 
     render() {
@@ -70,7 +70,7 @@ export default class NewPage extends React.Component {
                 </Form.Group>
 
                 <Form.Group align="center">
-                    <Button variant="info" size="lg" onClick={this.post_lyric}>Post</Button>
+                    <Button variant="info" size="lg" onClick={this.post_lyric} style={{background: '#4fb3bf', color: 'black'}}>Post</Button>
                 </Form.Group>
 
                 <h4 align="right">Created At: {new Date().toLocaleDateString('en-GB')}</h4>
