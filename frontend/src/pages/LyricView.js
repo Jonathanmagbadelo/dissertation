@@ -21,7 +21,7 @@ export default class ShowPage extends React.Component {
 		return (
 			<div>
 				<h1>{this.state.lyric.title}</h1>
-				<div>{this.state.lyric.content}</div>
+				<p style={{whiteSpace:"pre"}}>{this.state.lyric.content}</p>
 			</div>
 		);
 	}

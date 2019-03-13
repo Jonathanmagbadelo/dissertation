@@ -7,12 +7,11 @@ export default class IndexPage extends React.Component {
     render() {
         return (
             <Container>
+                <br></br>
                 <Col>
-                    <h1 align="center">Lyrics</h1>
                     <LyricList/>
                 </Col>
             </Container>
         )
     }
-
 }
