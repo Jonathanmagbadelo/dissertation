@@ -30,7 +30,9 @@
 \contentsline {subsubsection}{Neural Language Models}{10}{section*.16}
 \contentsline {subsection}{\numberline {3.2.3}Text Classification}{10}{subsection.3.2.3}
 \contentsline {subsubsection}{Traditional Methods}{11}{section*.17}
-\contentsline {subsubsection}{Deep Learning Methods}{11}{section*.18}
+\contentsline {paragraph}{Naive Bayes}{11}{section*.18}
+\contentsline {paragraph}{Support Vector Machines}{11}{section*.19}
+\contentsline {subsubsection}{Deep Learning Methods}{11}{section*.20}
 \contentsline {chapter}{\numberline {4}Requirements Analysis}{12}{chapter.4}
 \contentsline {section}{\numberline {4.1}Existing Solutions}{12}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}MasterWriter}{12}{subsection.4.1.1}
@@ -43,34 +45,46 @@
 \contentsline {section}{\numberline {5.1}Collecting Data}{14}{section.5.1}
 \contentsline {section}{\numberline {5.2}Data Analysis and Restructuring}{14}{section.5.2}
 \contentsline {section}{\numberline {5.3}Data Pre-processing}{15}{section.5.3}
-\contentsline {section}{\numberline {5.4}Hyperparametrs}{16}{section.5.4}
+\contentsline {section}{\numberline {5.4}Hyperparameters}{16}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}CoVeR}{16}{subsection.5.4.1}
+\contentsline {subsubsection}{Embedding Size}{16}{section*.21}
+\contentsline {subsubsection}{Optimiser}{16}{section*.22}
+\contentsline {subsubsection}{Window Size}{16}{section*.23}
+\contentsline {subsubsection}{Asymmetric vs Symmetric Windows}{16}{section*.24}
+\contentsline {subsection}{\numberline {5.4.2}Language Model}{16}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Text Classifier}{16}{subsection.5.4.3}
 \contentsline {chapter}{\numberline {6}Implementation}{17}{chapter.6}
 \contentsline {section}{\numberline {6.1}Hardware Specification}{17}{section.6.1}
 \contentsline {section}{\numberline {6.2}Calculating Co-occurrence Statistics}{17}{section.6.2}
 \contentsline {section}{\numberline {6.3}CoVeR Implementation}{18}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Initialisation of Learnable Parameters}{19}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Hyperparameters}{19}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}Language Model Implementation}{19}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Text Prediction}{19}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Text Classification}{19}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.4}Model Implementation}{19}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Language Model}{19}{subsection.6.4.1}
+\contentsline {subsubsection}{Hyperparameter Tuning}{19}{section*.25}
+\contentsline {subsection}{\numberline {6.4.2}Text Classifier}{19}{subsection.6.4.2}
+\contentsline {subsubsection}{Hyperparameter Tuning}{19}{section*.26}
 \contentsline {section}{\numberline {6.5}SONGIFAI}{19}{section.6.5}
 \contentsline {subsection}{\numberline {6.5.1}Architecture}{19}{subsection.6.5.1}
-\contentsline {subsubsection}{Client Side}{19}{section*.19}
-\contentsline {subsubsection}{Server Side}{19}{section*.20}
+\contentsline {subsubsection}{Client Side}{19}{section*.27}
+\contentsline {subsubsection}{Server Side}{19}{section*.28}
 \contentsline {subsection}{\numberline {6.5.2}Class Overview}{19}{subsection.6.5.2}
 \contentsline {chapter}{\numberline {7}Evaluation}{20}{chapter.7}
 \contentsline {section}{\numberline {7.1}CoVeR Evaluation}{20}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Validating Implementation}{20}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}Nearest Neighbours}{20}{subsection.7.1.2}
-\contentsline {section}{\numberline {7.2}Language Model Evaluation}{20}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Text Generation}{20}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}Classification}{20}{subsection.7.2.2}
+\contentsline {subsubsection}{Base Embeddings}{20}{section*.29}
+\contentsline {subsubsection}{Covariate Specific Embeddings}{20}{section*.30}
+\contentsline {section}{\numberline {7.2}Model Evaluations}{20}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Language Model}{20}{subsection.7.2.1}
+\contentsline {subsubsection}{Perplexity}{20}{section*.31}
+\contentsline {subsubsection}{Penn Treebank Dataset}{20}{section*.32}
+\contentsline {subsection}{\numberline {7.2.2}Text Classification}{20}{subsection.7.2.2}
 \contentsline {section}{\numberline {7.3}SONGIFAI}{20}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}Requirements}{20}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.1}Requirements Evaluation}{20}{subsection.7.3.1}
 \contentsline {subsection}{\numberline {7.3.2}Expert User Testing}{20}{subsection.7.3.2}
 \contentsline {chapter}{\numberline {8}Conclusion}{21}{chapter.8}
 \contentsline {section}{\numberline {8.1}What was I right about?}{21}{section.8.1}
 \contentsline {subsection}{\numberline {8.1.1}Previous theories were wrong}{21}{subsection.8.1.1}
 \contentsline {subsection}{\numberline {8.1.2}My new idea is right}{21}{subsection.8.1.2}
-\contentsline {chapter}{Bibliography}{22}{section*.21}
+\contentsline {chapter}{Bibliography}{22}{section*.33}
 \contentsline {chapter}{\numberline {A}Code}{23}{appendix.A}

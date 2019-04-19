@@ -9,7 +9,7 @@ As previously mentioned, there exists no central repository from which song lyri
 
 \noindent
 \newline
-In view of this, a publicly available dataset containing over 250,000 lyrics was used. The dataset comprised of two CSV files, one mapping individual artists to their respective genres/sub genres, whilst the other contained data on individual songs, mapping lyrics to artists. 
+In view of this, a publicly available dataset containing over 250,000 lyrics was used. The dataset comprised of two .csv files: artists and lyrics. The artists .csv file mapped individual artists to their respective genres/sub genres, whilst the lyrics .csv file contained data on individual songs, mapping lyrics to artists. 
 \section{Data Analysis and Restructuring}
 The CoVeR algorithm requires sub corpora to be labelled in order to jointly learn word embeddings and the relevant transformation matrices. With regards to this project a mapping between lyrics and genre was required. To fulfil this requirement Pandas, a Python data manipulation/analysis library was used  perform a SQL like join on both sets of data, specifically on the artist name.
 
@@ -57,5 +57,12 @@ P(w_{ik}) = \sqrt{\dfrac{z(w_{ik})}{t}} + 1 \cdot \dfrac{t}{z(w_{ik})}
 \newline
 where \(z(w_{ik})\) is the percentage of word \(w_{ik}\) in covariate \(k\) and \(t\) is a chosen threshold.
 
-\section{Hyperparametrs}
+\section{Hyperparameters}
+\subsection{CoVeR}
+\subsubsection{Embedding Size}
+\subsubsection{Optimiser}
+\subsubsection{Window Size}
+\subsubsection{Asymmetric vs Symmetric Windows}
+\subsection{Language Model}
+\subsection{Text Classifier}
 

@@ -57,24 +57,20 @@ Formal languages such as programming languages are fully specified with precise 
 Language modelling is the task of estimating the probability distribution of various linguistic units such as characters, words and sentences. In recent years, the application of LM  has been essential to many natural language process tasks such as speech to text and text summarization. Language models can be classified into two categories, count-based and continuous-space language models. 
 
 \subsection{Count Based Models}
-Count based methods such as statistical language models attempt to create the joint probability distribution of a sequence of words. An example of a count based method is the n-gram model which is based on the Markov assumption. N-grams
+Count based methods such as statistical language models attempt to create the joint probability distribution of a sequence of words. An example of a count based method is the n-gram model.
 
 \noindent
 \newline
-An n-gram is a sequence of N words: a bigram is a two-word sequence of words like "My name", "is Joe" and a trigram is a three-word sequence like "Hello my name" "is Joe Bloggs". In genral ngrams calculate the probability of a word w given some history of words h. 
-
-p(w|h)
+An n-gram is a sequence of N words. Examples of a two word sequences or bigrams include, "My name" and "is Aubrey", whilst examples of three word sequences or trigrams, include sequences such as "Hello my name" and "is Aubrey Graham". The n-gram model which considers the past n-1 words can be formailsed as 
 
 \noindent
 \newline
-Unfortunately the n-gram model suffers from sparsity as, unseen combination of words would be assigned a zero probability. To help mitigate this, various back-off and smoothing techniques have been used. Enhanced n-gram techniques still suffer from the curse of dimensionality due to increased vocabulary sizes. Another drawback with n-gram models is that they rely on exact pattern, meaning n-gram models fail to recognise syntactically and semantically similar sentences such as "the cat sat on the mat" and "the dog sat on the mat". N-grams are also limited due to there usage of Markov assumptions which fail to model the true conditional probabilities due to the limited context window a given n-gram model utilizes. In general n-gram models struggle to capture longer dependencies between words as well as the syntactic and semantic relationships between words. 
+The n-gram model relies on Markov assumptions to model the probability of word sequences P(w1....wm) as being equal to a limited number of previous words. An inherent problem with the n-gram model is sparsity as some word sequences occur rarely or not at all, even in large text corpora. Using the standard n-gram model would yield to many zero probabilities. To circumvent this, techniques such as back-off and smoothing exist. Another disadvantage of n-gram models is that they rely on exact patterns, meaning n-gram models fail to recognise syntactically and semantically similar sentences such as "the cat sat on the mat" and "the dog sat on the mat". N-gram models also suffer from the curse of dimensionality due to increased vocabulary sizes. As a result, limited window sizes are used, causing longer dependencies between words to not be captured.
 
 \noindent
 \newline
-To overcome these issues, deep learning methods have been used to create neural language models. Bengio et al (2003) proposed a feed forward neural language model to help tackle the problem of data sparsity. Recent state of the art approaches have implored recurrent neural networks to help longer dependencies between sequences.
-. 
-
-
+To overcome these issues, deep learning methods have been used to create neural language models by simultaneously learning word embeddings and the parameters needed to create a joint probability distribution between the word embeddings. Bengio et al (2003) proposed a feed forward neural language model to help tackle the problem of data sparsity. Recent state of the art approaches have implored recurrent neural networks to help longer dependencies between sequences.
+ 
 
 \subsection{Neural Language Models}
 \subsubsection{Artificial Neural Networks}
@@ -156,5 +152,13 @@ RNN's have been used successfully in a range of NLP tasks such as language model
 
 \subsection{Text Classification}
 Text classification is the task of assigning pre-defined labels to text according to its content. Automated classification of text can be achieved through rule based and machine learning based systems. Rule based methods tackle classification through the use of handcrafted linguistic rules, which assign patterns in text to predefined categories. For example, given two word lists which  Rule based systems don't come without drawbacks, firstly to create such a system requires deep domain knowledge. Moreover, unlike the previous example, creating, maintaining and scaling such rules is challenging and time consuming. 
-\subsubsection{Traditional Methods} 
+\subsubsection{Traditional Methods}
+\paragraph{Naive Bayes} 
+Naive Bayes Classification is a generative approach which uses bayes theorom to learn a join probability distribution .... Naive bayes classification is a robust method for training a text classifier which can achieve accurate results without large amounts of training data.
+
+Naive bayes is a classification techinque based on bayes theroem with an assumpoion of inde[endence among preictors. A naives bayes c;assifier assumes that the precence of a particular fgeature in a class is unrelsted tp the [recence of any other fetaure.
+
+\paragraph{Support Vector Machines}
+A Support Vector Machines (SVM) (Vapnik et al 1995) is a discriminative classifier that aims to find a linear classification boundary or \textit{hyperplane} to discriminate between classes in high dimensional space. SVM's achieve this through support vectors, random training data points, which are used to maximise the margin between ... Similar to naive bayes classifiers, SVM's do not require large amounts of training data to achieve accurate results. SVM's were introduced to the problem of text classification by Joachims(REF)
+
 \subsubsection{Deep Learning Methods}
