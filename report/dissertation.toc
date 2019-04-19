@@ -1,15 +1,76 @@
 \babel@toc {british}{}
-\contentsline {chapter}{List of Tables}{vi}{section*.5}
-\contentsline {chapter}{List of Figures}{vii}{section*.7}
+\contentsline {chapter}{List of Tables}{vii}{section*.5}
+\contentsline {chapter}{List of Figures}{viii}{section*.7}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Overview}{1}{section.1.1}
-\contentsline {chapter}{\numberline {2}Professional Considerations}{2}{chapter.2}
-\contentsline {section}{\numberline {2.1}Code of Conduct}{2}{section.2.1}
-\contentsline {section}{\numberline {2.2}Good Practices}{2}{section.2.2}
-\contentsline {section}{\numberline {2.3}Ethical Considerations}{2}{section.2.3}
-\contentsline {chapter}{\numberline {3}Conclusion}{3}{chapter.3}
-\contentsline {section}{\numberline {3.1}What was I right about?}{3}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Previous theories were wrong}{3}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}My new idea is right}{3}{subsection.3.1.2}
-\contentsline {chapter}{Bibliography}{4}{section*.8}
-\contentsline {chapter}{\numberline {A}Code}{5}{appendix.A}
+\contentsline {section}{\numberline {1.2}The Songwriters Dilemma}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}Goals and Objectives}{3}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}SONGIFAI - A proposed solution}{3}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}High Level Architecture}{3}{subsection.1.3.2}
+\contentsline {chapter}{\numberline {2}Professional Considerations}{4}{chapter.2}
+\contentsline {section}{\numberline {2.1}Code of Conduct}{4}{section.2.1}
+\contentsline {subsubsection}{Professional Competence and Integrity}{4}{section*.8}
+\contentsline {subsubsection}{Duty of Relevant Authority}{4}{section*.9}
+\contentsline {subsubsection}{Duty to Professionalism}{4}{section*.10}
+\contentsline {section}{\numberline {2.2}Good Practices}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Ethical Considerations}{5}{section.2.3}
+\contentsline {chapter}{\numberline {3}Background}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}Word Embeddings}{6}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Historic Methods}{6}{subsection.3.1.1}
+\contentsline {subsubsection}{Global Matrix Factorization methods}{6}{section*.11}
+\contentsline {subsubsection}{Shallow Window-Based methods}{6}{section*.12}
+\contentsline {subsection}{\numberline {3.1.2}GloVe - Global Vectors for Word Representation}{7}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}CoVeR - Covariate-Specific Word Embeddings}{7}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Language Models}{7}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Count Based Models}{8}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Neural Language Models}{8}{subsection.3.2.2}
+\contentsline {subsubsection}{Artificial Neural Networks}{8}{section*.13}
+\contentsline {subsubsection}{Recurrent Neural Network}{9}{section*.14}
+\contentsline {subsubsection}{Long Short-Term Memory}{10}{section*.15}
+\contentsline {subsubsection}{Neural Language Models}{10}{section*.16}
+\contentsline {subsection}{\numberline {3.2.3}Text Classification}{10}{subsection.3.2.3}
+\contentsline {subsubsection}{Traditional Methods}{11}{section*.17}
+\contentsline {subsubsection}{Deep Learning Methods}{11}{section*.18}
+\contentsline {chapter}{\numberline {4}Requirements Analysis}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}Existing Solutions}{12}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}MasterWriter}{12}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Rhymer's Block}{12}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Evaluation of existing solutions}{12}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Requirements}{12}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Functional}{13}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Non-Functional}{13}{subsection.4.2.2}
+\contentsline {chapter}{\numberline {5}Methodology}{14}{chapter.5}
+\contentsline {section}{\numberline {5.1}Collecting Data}{14}{section.5.1}
+\contentsline {section}{\numberline {5.2}Data Analysis and Restructuring}{14}{section.5.2}
+\contentsline {section}{\numberline {5.3}Data Pre-processing}{15}{section.5.3}
+\contentsline {section}{\numberline {5.4}Hyperparametrs}{16}{section.5.4}
+\contentsline {chapter}{\numberline {6}Implementation}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Hardware Specification}{17}{section.6.1}
+\contentsline {section}{\numberline {6.2}Calculating Co-occurrence Statistics}{17}{section.6.2}
+\contentsline {section}{\numberline {6.3}CoVeR Implementation}{18}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Initialisation of Learnable Parameters}{19}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Hyperparameters}{19}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}Language Model Implementation}{19}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Text Prediction}{19}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Text Classification}{19}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}SONGIFAI}{19}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Architecture}{19}{subsection.6.5.1}
+\contentsline {subsubsection}{Client Side}{19}{section*.19}
+\contentsline {subsubsection}{Server Side}{19}{section*.20}
+\contentsline {subsection}{\numberline {6.5.2}Class Overview}{19}{subsection.6.5.2}
+\contentsline {chapter}{\numberline {7}Evaluation}{20}{chapter.7}
+\contentsline {section}{\numberline {7.1}CoVeR Evaluation}{20}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Validating Implementation}{20}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Nearest Neighbours}{20}{subsection.7.1.2}
+\contentsline {section}{\numberline {7.2}Language Model Evaluation}{20}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Text Generation}{20}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Classification}{20}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}SONGIFAI}{20}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Requirements}{20}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Expert User Testing}{20}{subsection.7.3.2}
+\contentsline {chapter}{\numberline {8}Conclusion}{21}{chapter.8}
+\contentsline {section}{\numberline {8.1}What was I right about?}{21}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Previous theories were wrong}{21}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}My new idea is right}{21}{subsection.8.1.2}
+\contentsline {chapter}{Bibliography}{22}{section*.21}
+\contentsline {chapter}{\numberline {A}Code}{23}{appendix.A}

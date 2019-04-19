@@ -39,19 +39,3 @@ services:
       - server
     command: ["npm", "start"]
 
-  training:
-    build: ./training
-    image: dissertation-training:latest
-    container_name: dissertation-training-container
-    environment:
-      NVIDIA_VISABLE_DEVICES: all      
-      JUPYTER_NOTEBOOK_PORT: ${JUPYTER_NOTEBOOK_PORT}
-    expose:
-      - ${JUPYTER_NOTEBOOK_PORT}
-      - ${PYSPARK_PORT}
-    ports:
-      - ${JUPYTER_NOTEBOOK_PORT}:${JUPYTER_NOTEBOOK_PORT}
-      - ${PYSPARK_PORT}:${PYSPARK_PORT}  
-    volumes:
-      - ./training:/opt/training
-    command: ["sh", "run_jupyter.sh"]    

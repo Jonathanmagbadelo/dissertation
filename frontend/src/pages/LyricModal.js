@@ -1,7 +1,6 @@
 import React from 'react';
 import {Form, Button, ButtonGroup} from 'react-bootstrap';
 import axios from "axios";
-import FormatBoldIcon from '@material-ui/icons/FormatBold';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import ToggleButton from 'react-bootstrap/ToggleButton'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
@@ -24,6 +23,7 @@ export default class NewPage extends React.Component {
 			edit: (props.location.state !== undefined),
 			assist: false,
 			rhyme: false,
+			filter: false,
 		};
 		console.log("Test")
 	}
@@ -82,7 +82,10 @@ export default class NewPage extends React.Component {
 	handle_toggle = (event) => {
 		const target = event.target.value;
 		this.setState({[target]: !this.state[target]});
-		console.log(target);
+		if (!this.state.assist){
+			this.setState({suggested_words: []});
+			this.show_suggestions();
+		}
 	};
 
 	render() {
@@ -99,8 +102,9 @@ export default class NewPage extends React.Component {
 					<Form.Label><h2>Lyrics</h2></Form.Label>
 					<ButtonToolbar>
 						<ToggleButtonGroup type="checkbox" defaultValue={[]}>
-							<ToggleButton value="assist" onChange={this.handle_toggle}>ASSIST</ToggleButton>
-							<ToggleButton value="rhyme" onChange={this.handle_toggle}>RHYME</ToggleButton>
+							<ToggleButton value="assist" onChange={this.handle_toggle} style={{border: '3px solid #005662'}} >ASSIST</ToggleButton>
+							<ToggleButton value="rhyme" onChange={this.handle_toggle} style={{border: '3px solid #005662'}} >RHYME</ToggleButton>
+							<ToggleButton value="filter" onChange={this.handle_toggle} style={{border: '3px solid #005662'}} >FILTER</ToggleButton>
 						</ToggleButtonGroup>
 					</ButtonToolbar>
 					<Form.Control id="content" as="textarea" rows="15" placeholder="Enter Lyrics..."

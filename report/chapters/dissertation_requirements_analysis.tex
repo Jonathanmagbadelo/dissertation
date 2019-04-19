@@ -1,0 +1,55 @@
+%-----------------------------------------------------
+% Chapter: Requirements Analysis
+%-----------------------------------------------------
+\chapter{Requirements Analysis}
+\label{chap:requirements_analysis}
+As the project involves the development of a prototype software system, it is important to consider the project from a software engineering perspective. Moreover, the project involves the integration of a novel machine learning model, with the success of the project relying heavily on factors such as data availability, data quality and processing power. With this and other considerations such as training time and implementation complexity in mind, it is necessary to define software requirements in order to constrain the project goal to one that is achievable. Software requirements should also be inferred from the needs of the end-user and as such it is necessary to understand user needs through existing solutions. This chapter briefly evaluates two existing solutions and outlines the functional and non-functional requirements by which the prototype will be evaluated.
+\section{Existing Solutions}
+\subsection{MasterWriter}
+Self-described as "The most powerful suite of writing tools ever assembled in one program.",
+MasterWriter 5 is a software application which aims to help songwriters, poets and creative
+writers with their works. Available as a desktop, mobile or tablet application, it consolidates a
+number of writing tools into one application. These tools are outlined in the table below:
+
+
+\subsection{Rhymer's Block}
+Rhymer's block is a mobile application intended to help writers specifically with rhymes. Providing real time rhyme suggestions, the application allows users to quickly write lyrics and provides a social feature in order to share lyrics and review lyrics from other users.
+
+\subsection{Evaluation of existing solutions}
+A common feature to both software solutions is that of word suggestion, specifically suggestion of rhyming words. Furthermore both solutions provide functionality for users to write, edit and save lyrics within the application.
+\section{Requirements}
+In this section the requirements for the project will be set out. The functional requirements will specify what the software will do whilst the non-functional requirements will detail how these will be done.
+
+\subsection{Functional}
+\begin{table}[ht]
+	\caption{SONGIFAI Functional Requirements}
+	\centering
+	\begin{tabular}{ | l | p{10cm} | l | }
+		\hline
+		\textbf{ID} & \textbf{Description} & \textbf{Dependency} \\ \hline
+		FR1 & The system should allow users to input lyrics & N/A \\ \hline
+		FR2 & The system should allow users to load/save lyrics & N/A  \\ \hline
+		FR3 & The system should be able to classify user submitted lyrics as either Pop/Rock/Hip Hop & N/A \\ \hline
+		FR4 & The system should be be able to suggest words from a given word. These words should be the most similar words in the covariate word embedding space & N/A \\ \hline
+		FR5 & The system should be able to provide real time text prediction whilst a user is in edit mode & N/A \\ \hline
+		FR6 & The system should allow for the filtering of explicit content in both the word suggestion and word prediction feature & N/A \\ \hline
+		FR7 & The user should be able to change the underlying covariate specific word embeddings used or the base embeddings if required & N/A \\ \hline
+		FR8 & 10C & N/A \\ \hline
+	\end{tabular}
+	\label{Tab:Tcru}
+\end{table}
+\subsection{Non-Functional}
+\begin{table}[ht]
+\caption{SONGIFAI Non-Functional Requirements}
+\centering
+	\begin{tabular}{ | l | p{10cm} | l | }
+		\hline
+		\textbf{ID} & \textbf{Description} & \textbf{Dependency} \\ \hline
+		NFR1 & The system should take the form of a web application and be able to be rendered on different device types & N/A \\ \hline
+		NFR2 & The word prediction process should return a list of candidate words in real time & N/A \\ \hline
+		NFR3 & 10C & N/A \\ \hline
+	\end{tabular}
+	\label{Tab:Tcr}
+\end{table}
+
+

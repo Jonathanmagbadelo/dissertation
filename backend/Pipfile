@@ -11,6 +11,7 @@ djangorestframework = "*"
 django-cors-headers = "*"
 better_profanity = "*"
 pronouncing = "*"
+gensim = "*"
 
 [requires]
 python_version = "3.6"

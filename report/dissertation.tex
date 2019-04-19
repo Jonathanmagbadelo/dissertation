@@ -1,6 +1,4 @@
 \documentclass[a4paper,11pt]{report}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % University of Sussex thesis template
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,6 +12,8 @@
 % New alternative hyperref options for print version, AJS, 11 Sep 2008
 % "DRAFT" on header, AJS, 12 Sep 2008
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{lmodern}
+\usepackage{amsmath}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,6 +35,7 @@
 % OTHER FORMATTING/LAYOUT DECLARATIONS
 % Graphics
 \usepackage{graphicx,color}
+\graphicspath{./figures}
 \usepackage{epstopdf}
 \usepackage[british]{babel}
 % The left-hand-side should be 40mm.  The top and bottom margins should be
@@ -98,14 +99,14 @@
 \vskip40mm
 \begin{center}
 % TITLE
-\huge\textbf{Using Jointly Learned Covariate Specific Word Embeddings to train a Bidirectional LSTM based Language Model}
+\huge\textbf{SONGIFAI}
 \vskip2mm
 % SUBTITLE (optional)
-\LARGE\textit{TODO}
+\LARGE\textit{Exploring the use of Covariate Specific Word Embeddings}
 \vskip5mm
 % AUTHOR
 \Large\textbf{Jonathan Magbadelo} \\
-\Large\textit{Candidate Number: 148708} \\
+\Large\textit{Candidate Number: 149708} \\
 \Large\textit{Supervisor: Dr. Julie Weeds}
 \normalsize
 \end{center}
@@ -123,8 +124,8 @@ April 2019
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DECLARATIONS
-\chapter*{Declaration}
-I hereby declare that this thesis has not been and will not be submitted in whole or in part to another University for the award of any other degree.
+\chapter*{Statement of Originality}
+This report is submitted as part requirement for the degree of Computer Science and Artificial Intelligence at the University of Sussex. It is the product of my own labour except where indicated in the text. The report may be freely copied and distributed provided the source is acknowledged. 
 	
 % ADDITIONAL DECLARATIONS HERE (IF ANY)
 
@@ -132,9 +133,17 @@ I hereby declare that this thesis has not been and will not be submitted in whol
 Signature:
 \vskip20mm
 % AUTHOR
-Joe Bloggs
+Jonathan Magbadelo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ACKNOWLEDGEMENTS
+\chapter*{Acknowledgements}
+\renewcommand{\baselinestretch}{\linespacing}
+\small\normalsize
+% ACKNOWLEDGEMENTS HERE:
+I would like to thank my project supervisor, Dr Julie Weeds for her constant support throughout the development of this project. I would also like to thank my colleagues at Brandwatch who provided expert advice whenever I required it.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SUMMARY PAGE
@@ -146,14 +155,14 @@ Joe Bloggs
 \underline{UNIVERSITY OF SUSSEX}
 \vskip20mm
 % AUTHOR, QUALIFICATION
-\textsc{Joe Bloggs, Doctor of Philosophy}
+\textsc{Jonathan Magbadelo}
 \vskip20mm
 % TITLE
-\underline{\textsc{My Theory of Everything}}
+\underline{\textsc{SONGIFAI}}
 \vskip0mm
 % SUBTITLE (optional)
-\underline{\textsc{How it all works}}
-\vskip20mm
+\textsc{Exploring the use of Covariate Specific Word Embeddings}
+\vskip15mm
 \underline{\textsc{Summary}}
 \vskip2mm
 \end{center}
@@ -161,19 +170,26 @@ Joe Bloggs
 \renewcommand{\baselinestretch}{1.0}
 \small\normalsize
 % SUMMARY HERE (300 word limit for most subjects):
+Word embedding algorithms such as GloVe are vector space models capable of providing a distributed representation of words. By utilising vast amounts of text corpora, these representations are able to encapsulate semantic and syntactic regularities along with relationships between words. Traditional word embedding algorithms tend to operate on corpus documents in solidarity, often neglecting additional covariate metadata attached to corpus documents. 
 
+\noindent
+\newline
+CoVeR, an extension of the GloVe algorithm, jointly learns word embeddings together with a set of diagonal weight matrices, representing the affect of a particular covariate on the base embeddings.
+
+\noindent
+\newline
+This project explores the use of covariate specific word embeddings for both neural language modelling and text classification. Specifically, both models are applied to a possible use case: a songwriting assistant application. The main areas covered in this dissertation are:
+\begin{itemize}
+	\item An overview of issues songwriters face whilst writing songs.
+	\item An introduction to word embeddings, neural language modelling and text classification.
+	\item Requirements analysis for SONGIFAI, the prototype application.
+	\item A detailed account of the implementation process.
+	\item An evaluation of CoVeR and its usage in each model.
+	\item An evaluation of SONGIFAI
+	\item Limitations and future work
+	
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ACKNOWLEDGEMENTS
-\chapter*{Acknowledgements}
-\renewcommand{\baselinestretch}{\linespacing}
-\small\normalsize
-% ACKNOWLEDGEMENTS HERE:
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TABLE OF CONTENTS, LISTS OF TABLES & FIGURES
@@ -186,9 +202,9 @@ Joe Bloggs
 \listoffigures
 \phantomsection
 \addcontentsline{toc}{chapter}{List of Figures}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+\input{./chapters/quote}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % MAIN THESIS TEXT: arabic page numbering 1, 2, 3, ...
 \newpage
@@ -199,29 +215,14 @@ Joe Bloggs
 % If you put the following in a file called "thesis_introduction.tex"
 % then you can include it with the following:
 
- \input{dissertation_introduction}
- \input{dissertation_proffessional_considerations}
-
-%-----------------------------------------------------
-% Chapter: Conclusion
-%-----------------------------------------------------
-\chapter{Conclusion}
-\label{chap:conc}
-
-I was right all along.
-
-\section{What was I right about?}
-
-I was right about the following things.
-
-\subsection{Previous theories were wrong}
-
-People thought they understood, but they didn't.
-
-\subsection{My new idea is right}
-
-Of course.
-
+ \input{./chapters/dissertation_introduction}
+ \input{./chapters/dissertation_professional_considerations}
+ \input{./chapters/dissertation_background}
+ \input{./chapters/dissertation_requirements_analysis}
+ \input{./chapters/dissertation_methodology}
+ \input{./chapters/dissertation_implementation}
+ \input{./chapters/dissertation_evaluation}
+ \input{./chapters/dissertation_conclusion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BIBLIOGRAPHY

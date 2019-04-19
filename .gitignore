@@ -1,5 +1,7 @@
 # ignore lyrics file
 lyrics.csv
+lyrics-data.csv
+dataset-big.csv
 
 #All idea stuff
 .idea/

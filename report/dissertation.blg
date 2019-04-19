@@ -1,7 +1,8 @@
-This is BibTeX, Version 0.99d (TeX Live 2018)
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation.aux
 The style file: apalike.bst
+I found no \citation commands---while reading file dissertation.aux
 Database file #1: bib.bib
 You're missing a field name---line 23 of file bib.bib
  : 
@@ -18,45 +19,45 @@ You're missing a field name---line 54 of file bib.bib
  : % Required
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-You've used 1 entry,
+You've used 0 entries,
             1935 wiz_defined-function locations,
-            479 strings with 3832 characters,
-and the built_in function-call counts, 365 in all, are:
-= -- 35
-> -- 7
-< -- 1
-+ -- 2
-- -- 2
-* -- 27
-:= -- 68
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 6
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 14
-empty$ -- 30
-format.name$ -- 3
-if$ -- 71
+            471 strings with 3679 characters,
+and the built_in function-call counts, 17 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 0
+:= -- 7
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 8
-num.names$ -- 3
-pop$ -- 3
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 0
 quote$ -- 0
-skip$ -- 12
+skip$ -- 1
 stack$ -- 0
-substring$ -- 33
-swap$ -- 1
+substring$ -- 0
+swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 6
+type$ -- 0
 warning$ -- 0
-while$ -- 3
+while$ -- 0
 width$ -- 0
-write$ -- 15
-(There were 3 error messages)
+write$ -- 2
+(There were 4 error messages)
