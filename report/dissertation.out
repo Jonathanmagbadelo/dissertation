@@ -33,33 +33,36 @@
 \BOOKMARK [1][-]{section.5.2}{5.2 Data Analysis and Restructuring}{chapter.5}% 33
 \BOOKMARK [1][-]{section.5.3}{5.3 Data Pre-processing}{chapter.5}% 34
 \BOOKMARK [1][-]{section.5.4}{5.4 Hyperparameters}{chapter.5}% 35
-\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 CoVeR}{section.5.4}% 36
-\BOOKMARK [2][-]{subsection.5.4.2}{5.4.2 Language Model}{section.5.4}% 37
-\BOOKMARK [2][-]{subsection.5.4.3}{5.4.3 Text Classifier}{section.5.4}% 38
-\BOOKMARK [0][-]{chapter.6}{6 Implementation}{}% 39
-\BOOKMARK [1][-]{section.6.1}{6.1 Hardware Specification}{chapter.6}% 40
-\BOOKMARK [1][-]{section.6.2}{6.2 Calculating Co-occurrence Statistics}{chapter.6}% 41
-\BOOKMARK [1][-]{section.6.3}{6.3 CoVeR Implementation}{chapter.6}% 42
-\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1 Initialisation of Learnable Parameters}{section.6.3}% 43
-\BOOKMARK [2][-]{subsection.6.3.2}{6.3.2 Hyperparameters}{section.6.3}% 44
-\BOOKMARK [1][-]{section.6.4}{6.4 Model Implementation}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.4.1}{6.4.1 Language Model}{section.6.4}% 46
-\BOOKMARK [2][-]{subsection.6.4.2}{6.4.2 Text Classifier}{section.6.4}% 47
-\BOOKMARK [1][-]{section.6.5}{6.5 SONGIFAI}{chapter.6}% 48
-\BOOKMARK [2][-]{subsection.6.5.1}{6.5.1 Architecture}{section.6.5}% 49
-\BOOKMARK [2][-]{subsection.6.5.2}{6.5.2 Class Overview}{section.6.5}% 50
-\BOOKMARK [0][-]{chapter.7}{7 Evaluation}{}% 51
-\BOOKMARK [1][-]{section.7.1}{7.1 CoVeR Evaluation}{chapter.7}% 52
-\BOOKMARK [2][-]{subsection.7.1.1}{7.1.1 Validating Implementation}{section.7.1}% 53
-\BOOKMARK [1][-]{section.7.2}{7.2 Model Evaluations}{chapter.7}% 54
-\BOOKMARK [2][-]{subsection.7.2.1}{7.2.1 Language Model}{section.7.2}% 55
-\BOOKMARK [2][-]{subsection.7.2.2}{7.2.2 Text Classification}{section.7.2}% 56
-\BOOKMARK [1][-]{section.7.3}{7.3 SONGIFAI}{chapter.7}% 57
-\BOOKMARK [2][-]{subsection.7.3.1}{7.3.1 Requirements Evaluation}{section.7.3}% 58
-\BOOKMARK [2][-]{subsection.7.3.2}{7.3.2 Expert User Testing}{section.7.3}% 59
-\BOOKMARK [0][-]{chapter.8}{8 Conclusion}{}% 60
-\BOOKMARK [1][-]{section.8.1}{8.1 What was I right about?}{chapter.8}% 61
-\BOOKMARK [2][-]{subsection.8.1.1}{8.1.1 Previous theories were wrong}{section.8.1}% 62
-\BOOKMARK [2][-]{subsection.8.1.2}{8.1.2 My new idea is right}{section.8.1}% 63
-\BOOKMARK [0][-]{section*.33}{Bibliography}{}% 64
-\BOOKMARK [0][-]{appendix.A}{A Code}{}% 65
+\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 Context Windows}{section.5.4}% 36
+\BOOKMARK [2][-]{subsection.5.4.2}{5.4.2 Embedding Size}{section.5.4}% 37
+\BOOKMARK [2][-]{subsection.5.4.3}{5.4.3 Optimisation Methods}{section.5.4}% 38
+\BOOKMARK [2][-]{subsection.5.4.4}{5.4.4 title}{section.5.4}% 39
+\BOOKMARK [2][-]{subsection.5.4.5}{5.4.5 Dropout}{section.5.4}% 40
+\BOOKMARK [2][-]{subsection.5.4.6}{5.4.6 Embedding Layer}{section.5.4}% 41
+\BOOKMARK [0][-]{chapter.6}{6 Implementation}{}% 42
+\BOOKMARK [1][-]{section.6.1}{6.1 Hardware Specification}{chapter.6}% 43
+\BOOKMARK [1][-]{section.6.2}{6.2 Calculating Co-occurrence Statistics}{chapter.6}% 44
+\BOOKMARK [1][-]{section.6.3}{6.3 CoVeR Implementation}{chapter.6}% 45
+\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1 Initialisation of Learnable Parameters}{section.6.3}% 46
+\BOOKMARK [2][-]{subsection.6.3.2}{6.3.2 Hyperparameters}{section.6.3}% 47
+\BOOKMARK [1][-]{section.6.4}{6.4 Model Implementation}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.4.1}{6.4.1 Language Model}{section.6.4}% 49
+\BOOKMARK [2][-]{subsection.6.4.2}{6.4.2 Text Classifier}{section.6.4}% 50
+\BOOKMARK [1][-]{section.6.5}{6.5 SONGIFAI}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.5.1}{6.5.1 Architecture}{section.6.5}% 52
+\BOOKMARK [2][-]{subsection.6.5.2}{6.5.2 Class Overview}{section.6.5}% 53
+\BOOKMARK [0][-]{chapter.7}{7 Evaluation}{}% 54
+\BOOKMARK [1][-]{section.7.1}{7.1 CoVeR Evaluation}{chapter.7}% 55
+\BOOKMARK [2][-]{subsection.7.1.1}{7.1.1 Validating Implementation}{section.7.1}% 56
+\BOOKMARK [1][-]{section.7.2}{7.2 Model Evaluations}{chapter.7}% 57
+\BOOKMARK [2][-]{subsection.7.2.1}{7.2.1 Language Model}{section.7.2}% 58
+\BOOKMARK [2][-]{subsection.7.2.2}{7.2.2 Text Classification}{section.7.2}% 59
+\BOOKMARK [1][-]{section.7.3}{7.3 SONGIFAI}{chapter.7}% 60
+\BOOKMARK [2][-]{subsection.7.3.1}{7.3.1 Requirements Evaluation}{section.7.3}% 61
+\BOOKMARK [2][-]{subsection.7.3.2}{7.3.2 Expert User Testing}{section.7.3}% 62
+\BOOKMARK [0][-]{chapter.8}{8 Conclusion}{}% 63
+\BOOKMARK [1][-]{section.8.1}{8.1 What was I right about?}{chapter.8}% 64
+\BOOKMARK [2][-]{subsection.8.1.1}{8.1.1 Previous theories were wrong}{section.8.1}% 65
+\BOOKMARK [2][-]{subsection.8.1.2}{8.1.2 My new idea is right}{section.8.1}% 66
+\BOOKMARK [0][-]{section*.28}{Bibliography}{}% 67
+\BOOKMARK [0][-]{appendix.A}{A Code}{}% 68

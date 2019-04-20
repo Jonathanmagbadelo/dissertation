@@ -58,11 +58,13 @@ P(w_{ik}) = \sqrt{\dfrac{z(w_{ik})}{t}} + 1 \cdot \dfrac{t}{z(w_{ik})}
 where \(z(w_{ik})\) is the percentage of word \(w_{ik}\) in covariate \(k\) and \(t\) is a chosen threshold.
 
 \section{Hyperparameters}
-\subsection{CoVeR}
-\subsubsection{Embedding Size}
-\subsubsection{Optimiser}
-\subsubsection{Window Size}
-\subsubsection{Asymmetric vs Symmetric Windows}
-\subsection{Language Model}
-\subsection{Text Classifier}
+Hyperparameters within machine learning are parameters that govern a given model. The choice of these parameters directly impacts the performance of a given training algorithm and as such, optimal hyperparameter selection is vital for yielding optimal performance for a given model. All three models implemented, namely CoVeR, the BiLSTM language model and the BiLSTM text classifier, have hyperparameters which are discussed in the following sections.
+\subsection{Context Windows}
+Like GloVe, CoVeR also uses weighted context windows during the process of calculating co-occurrence statistics. The CoVeR paper uses a context window size of 8, however the paper does not specify whether they used symmetric or asymmetric windows during their experiments.  
+\subsection{Embedding Size}
+\subsection{Optimisation Methods}
+\subsection{title}
+\subsection{Dropout}
+Dropout is a regularization technique proposed by Srivastava et el 2014), which involves the random dropping of nodes and their connections within a network. Selected nodes are picked at random using a probability known as the dropout rate. Dropout helps to decrease over-fitting as 
+\subsection{Embedding Layer}
 

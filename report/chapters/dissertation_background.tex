@@ -6,7 +6,8 @@
 This chapter provides an introduction to the theory and previous work within the areas of word embeddings, neural language models and text classification. 
 
 \section{Word Embeddings}
-Word embeddings are vectors of predefined size which aim to encode a distributional numerical representation of word features. They have found usage in a variety of applications such as document classification (REF) and named entity recognition (REF). Conceptually they exploit the idea that words which appear in a similar context have similar meanings. Recent aforementioned methods of learning these representations include both the GloVe and Word2Vec algorithms. Previous techniques for creating such representations can be categorised into two categories: matrix factorization methods and shallow window-based methods.
+Word embeddings are vectors of predefined size which aim to encode a distributional numerical representation of word features. They have found usage in a variety of applications such as document classification (REF) and named entity recognition (REF). Conceptually they are based on the distributional hypothesis that states that words which appear in a similar context have similar meanings. Recent aforementioned methods of learning these representations include both the GloVe and Word2Vec algorithms.
+The utilization of word embeddings has been highly successful in many natural language processing tasks such as sentiment analysis (soccer, perelygin, wu, cghuang, manning, ng. Potts 2013) and syntactic parsing(soccer, Bauer, manning  ng 2013). Previous techniques for creating such representations can be categorised into two categories: matrix factorization methods and shallow window-based methods.
 \subsection{Historic Methods}
 \subsubsection{Global Matrix Factorization methods}
 Global matrix factorization is the process of using matrix factorisation in order to perform rank reduction on a large term-frequency matrix. Within natural language processing, these matrices usually take one of two forms, term-document frequencies, where each entry represents the count of a particular word within a document, and term-term frequencies, which measures the co-occurrence of words within a given context. Matrix factorisation techniques such as Latent Sentiment Analysis (LSA) allow for fast training and perform well on word similarity tasks by leveraging word occurrence statistics however they suffer from the disproportionate importance given to large word counts.
@@ -67,12 +68,13 @@ An n-gram is a sequence of N words. Examples of a two word sequences or bigrams 
 \newline
 The n-gram model relies on Markov assumptions to model the probability of word sequences P(w1....wm) as being equal to a limited number of previous words. An inherent problem with the n-gram model is sparsity as some word sequences occur rarely or not at all, even in large text corpora. Using the standard n-gram model would yield to many zero probabilities. To circumvent this, techniques such as back-off and smoothing exist. Another disadvantage of n-gram models is that they rely on exact patterns, meaning n-gram models fail to recognise syntactically and semantically similar sentences such as "the cat sat on the mat" and "the dog sat on the mat". N-gram models also suffer from the curse of dimensionality due to increased vocabulary sizes. As a result, limited window sizes are used, causing longer dependencies between words to not be captured.
 
+\subsection{Neural Language Models}
+To overcome issues faced by count based models, deep learning methods have been used to create neural language models by simultaneously learning word embeddings and the parameters needed to create a joint probability distribution between the word embeddings. Bengio et al (2003) proposed a feed forward neural language model to help tackle the problem of data sparsity. Recent state of the art approaches such as Mikolov et al, abstract language modelling as a form of sequential data prediction and have implored recurrent neural networks to help encode longer dependencies between sequences of words. The strength of these models comes from their ability to consider several preceding words and thus generalise well.
+
 \noindent
 \newline
-To overcome these issues, deep learning methods have been used to create neural language models by simultaneously learning word embeddings and the parameters needed to create a joint probability distribution between the word embeddings. Bengio et al (2003) proposed a feed forward neural language model to help tackle the problem of data sparsity. Recent state of the art approaches have implored recurrent neural networks to help longer dependencies between sequences.
- 
+An overview of generic neural network architectures as well as recurrent neural networks and Long-Short Memory networks are given in the following sections.
 
-\subsection{Neural Language Models}
 \subsubsection{Artificial Neural Networks}
 In any neural network architecture, the elementary unit of computation is the artificial neuron which takes inspiration from biological neurons. The artificial neuron receives \(n\) inputs which are each weighted by \(n\) weights and summed together with a bias \(b\). The output \(y\) of a neuron is calculated by passing the weighted sum of the inputs into an activation function \(f\). 
 
@@ -119,18 +121,21 @@ where W and U are weight matrices.
 \par
 \noindent
 \newline
-RNN's are trained using gradient descent and backpropagation through time (BBTT), which is identical to performing backpropagation on an \textit{"unrolled"} RNN; DESCRIBE UNROLLED RNN.
+RNN's are trained using gradient descent and backpropagation through time (BBTT), which is identical to performing backpropagation on an \textit{"unrolled"} RNN (seen in figure X.X)
 
 \begin{figure}[h]
 	\includegraphics[width=10cm, height=6cm]{./figures/fig3}
 	\centering
-	\caption{\textit{Unrolled} Recurrent Neural Network}
+	\caption{An \textit{unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}
 	\label{fig:fig3}
 \end{figure}
 
 \par
 \noindent
 \newline
+During BBTT, back propagation is performed on an unrolled recurrent architecture, causing gradients to back-propagate through numerous network layers. Unfortunately, this has a few major problems. Firstly, a single forward/backward pass through the network is computationally expensive due to the number of hidden layers of the unrolled network being linear to the number of time steps in a sequence. Secondly, this method suffers from the issue of vanishing or exploding gradients(REF) where gradients can decay or grow exponentially as they propagate over time
+
+
 In BBTT, the gradient is back-propagated through network layers at each time step to adjust weights accordingly. During this process, weights in each layer are adjusted using previous gradients from output layers causing gradients to become increasing smaller. Ever decreasing gradients, or "vanishing gradients", can prevent the network from learning entirely due to the minimal updates applied to weights in earlier layers.
 
 \subsubsection{Long Short-Term Memory}
@@ -147,18 +152,23 @@ The core component of the LSTM is the cell state which is able to propagate \tex
 	\label{fig:fig3}
 \end{figure}
 
-\subsubsection{Neural Language Models}
-RNN's have been used successfully in a range of NLP tasks such as language modelling (Bengio et al. (2006)) and statistical machine translation (Cho et al. (2014)) Mikolov et el, abstracts statistical language models as a form of sequential data prediction. Unlike Bengio et al, feed-forward neural network architecture, the paper takes advantage of the recurrent connections within an RNN. 
-
 \subsection{Text Classification}
-Text classification is the task of assigning pre-defined labels to text according to its content. Automated classification of text can be achieved through rule based and machine learning based systems. Rule based methods tackle classification through the use of handcrafted linguistic rules, which assign patterns in text to predefined categories. For example, given two word lists which  Rule based systems don't come without drawbacks, firstly to create such a system requires deep domain knowledge. Moreover, unlike the previous example, creating, maintaining and scaling such rules is challenging and time consuming. 
+Text classification is a supervised NLP task which involves assigning pre-defined labels to text according to its content. Automated classification of text can be achieved through rule based and machine learning based systems. Rule based methods tackle classification through the use of handcrafted linguistic rules, which assign patterns in text to predefined categories. For example, given two word lists which  Rule based systems don't come without drawbacks, firstly to create such a system requires deep domain knowledge. Moreover, unlike the previous example, creating, maintaining and scaling such rules is challenging and time consuming. 
 \subsubsection{Traditional Methods}
-\paragraph{Naive Bayes} 
+Before a classifier can be trained, textual inputs must be transformed into numerical representations in a process known as feature extraction. A common method for feature extraction is the bag of words approach which given a vocabulary set \(V\), creates an input vector which represents word counts for each word of the vocabulary. For example, if we define the vocabulary \(V\) ..
+
+Two common classifiers, namely Naive Bayes classifiers and support vector machines are outlined below
+
+\paragraph{Naive Bayes}
+\noindent
+\newline 
 Naive Bayes Classification is a generative approach which uses bayes theorom to learn a join probability distribution .... Naive bayes classification is a robust method for training a text classifier which can achieve accurate results without large amounts of training data.
 
 Naive bayes is a classification techinque based on bayes theroem with an assumpoion of inde[endence among preictors. A naives bayes c;assifier assumes that the precence of a particular fgeature in a class is unrelsted tp the [recence of any other fetaure.
 
 \paragraph{Support Vector Machines}
+\noindent
+\newline 
 A Support Vector Machines (SVM) (Vapnik et al 1995) is a discriminative classifier that aims to find a linear classification boundary or \textit{hyperplane} to discriminate between classes in high dimensional space. SVM's achieve this through support vectors, random training data points, which are used to maximise the margin between ... Similar to naive bayes classifiers, SVM's do not require large amounts of training data to achieve accurate results. SVM's were introduced to the problem of text classification by Joachims(REF)
 
 \subsubsection{Deep Learning Methods}
