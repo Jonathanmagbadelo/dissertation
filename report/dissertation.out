@@ -4,65 +4,63 @@
 \BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 4
 \BOOKMARK [1][-]{section.1.1}{1.1 Overview}{chapter.1}% 5
 \BOOKMARK [1][-]{section.1.2}{1.2 The Songwriters Dilemma}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.3}{1.3 Goals and Objectives}{chapter.1}% 7
-\BOOKMARK [2][-]{subsection.1.3.1}{1.3.1 SONGIFAI - A proposed solution}{section.1.3}% 8
-\BOOKMARK [2][-]{subsection.1.3.2}{1.3.2 High Level Architecture}{section.1.3}% 9
-\BOOKMARK [0][-]{chapter.2}{2 Professional Considerations}{}% 10
-\BOOKMARK [1][-]{section.2.1}{2.1 Code of Conduct}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.2}{2.2 Good Practices}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.3}{2.3 Ethical Considerations}{chapter.2}% 13
-\BOOKMARK [0][-]{chapter.3}{3 Background}{}% 14
-\BOOKMARK [1][-]{section.3.1}{3.1 Word Embeddings}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Historic Methods}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 GloVe - Global Vectors for Word Representation}{section.3.1}% 17
-\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 CoVeR - Covariate-Specific Word Embeddings}{section.3.1}% 18
-\BOOKMARK [1][-]{section.3.2}{3.2 Language Models}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Count Based Models}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Neural Language Models}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Text Classification}{section.3.2}% 22
-\BOOKMARK [0][-]{chapter.4}{4 Requirements Analysis}{}% 23
-\BOOKMARK [1][-]{section.4.1}{4.1 Existing Solutions}{chapter.4}% 24
-\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 MasterWriter}{section.4.1}% 25
-\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Rhymer's Block}{section.4.1}% 26
-\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 Evaluation of existing solutions}{section.4.1}% 27
-\BOOKMARK [1][-]{section.4.2}{4.2 Requirements}{chapter.4}% 28
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Functional}{section.4.2}% 29
-\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Non-Functional}{section.4.2}% 30
-\BOOKMARK [0][-]{chapter.5}{5 Methodology}{}% 31
-\BOOKMARK [1][-]{section.5.1}{5.1 Collecting Data}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.2}{5.2 Data Analysis and Restructuring}{chapter.5}% 33
-\BOOKMARK [1][-]{section.5.3}{5.3 Data Pre-processing}{chapter.5}% 34
-\BOOKMARK [1][-]{section.5.4}{5.4 Hyperparameters}{chapter.5}% 35
-\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 Context Windows}{section.5.4}% 36
-\BOOKMARK [2][-]{subsection.5.4.2}{5.4.2 Embedding Size}{section.5.4}% 37
-\BOOKMARK [2][-]{subsection.5.4.3}{5.4.3 Optimisation Methods}{section.5.4}% 38
-\BOOKMARK [2][-]{subsection.5.4.4}{5.4.4 title}{section.5.4}% 39
-\BOOKMARK [2][-]{subsection.5.4.5}{5.4.5 Dropout}{section.5.4}% 40
-\BOOKMARK [2][-]{subsection.5.4.6}{5.4.6 Embedding Layer}{section.5.4}% 41
-\BOOKMARK [0][-]{chapter.6}{6 Implementation}{}% 42
-\BOOKMARK [1][-]{section.6.1}{6.1 Hardware Specification}{chapter.6}% 43
-\BOOKMARK [1][-]{section.6.2}{6.2 Calculating Co-occurrence Statistics}{chapter.6}% 44
-\BOOKMARK [1][-]{section.6.3}{6.3 CoVeR Implementation}{chapter.6}% 45
-\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1 Initialisation of Learnable Parameters}{section.6.3}% 46
-\BOOKMARK [2][-]{subsection.6.3.2}{6.3.2 Hyperparameters}{section.6.3}% 47
-\BOOKMARK [1][-]{section.6.4}{6.4 Model Implementation}{chapter.6}% 48
-\BOOKMARK [2][-]{subsection.6.4.1}{6.4.1 Language Model}{section.6.4}% 49
-\BOOKMARK [2][-]{subsection.6.4.2}{6.4.2 Text Classifier}{section.6.4}% 50
-\BOOKMARK [1][-]{section.6.5}{6.5 SONGIFAI}{chapter.6}% 51
-\BOOKMARK [2][-]{subsection.6.5.1}{6.5.1 Architecture}{section.6.5}% 52
-\BOOKMARK [2][-]{subsection.6.5.2}{6.5.2 Class Overview}{section.6.5}% 53
-\BOOKMARK [0][-]{chapter.7}{7 Evaluation}{}% 54
-\BOOKMARK [1][-]{section.7.1}{7.1 CoVeR Evaluation}{chapter.7}% 55
-\BOOKMARK [2][-]{subsection.7.1.1}{7.1.1 Validating Implementation}{section.7.1}% 56
-\BOOKMARK [1][-]{section.7.2}{7.2 Model Evaluations}{chapter.7}% 57
-\BOOKMARK [2][-]{subsection.7.2.1}{7.2.1 Language Model}{section.7.2}% 58
-\BOOKMARK [2][-]{subsection.7.2.2}{7.2.2 Text Classification}{section.7.2}% 59
-\BOOKMARK [1][-]{section.7.3}{7.3 SONGIFAI}{chapter.7}% 60
-\BOOKMARK [2][-]{subsection.7.3.1}{7.3.1 Requirements Evaluation}{section.7.3}% 61
-\BOOKMARK [2][-]{subsection.7.3.2}{7.3.2 Expert User Testing}{section.7.3}% 62
-\BOOKMARK [0][-]{chapter.8}{8 Conclusion}{}% 63
-\BOOKMARK [1][-]{section.8.1}{8.1 What was I right about?}{chapter.8}% 64
-\BOOKMARK [2][-]{subsection.8.1.1}{8.1.1 Previous theories were wrong}{section.8.1}% 65
-\BOOKMARK [2][-]{subsection.8.1.2}{8.1.2 My new idea is right}{section.8.1}% 66
-\BOOKMARK [0][-]{section*.28}{Bibliography}{}% 67
-\BOOKMARK [0][-]{appendix.A}{A Code}{}% 68
+\BOOKMARK [1][-]{section.1.3}{1.3 Aims and Objectives}{chapter.1}% 7
+\BOOKMARK [0][-]{chapter.2}{2 Professional Considerations}{}% 8
+\BOOKMARK [1][-]{section.2.1}{2.1 Code of Conduct}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.2}{2.2 Good Practices}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.3}{2.3 Ethical Considerations}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{3 Background}{}% 12
+\BOOKMARK [1][-]{section.3.1}{3.1 Word Embeddings}{chapter.3}% 13
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Previous Methods}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 GloVe}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 CoVeR - Covariate-Specific Word Embeddings}{section.3.1}% 16
+\BOOKMARK [1][-]{section.3.2}{3.2 Language Models}{chapter.3}% 17
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Count Based Models}{section.3.2}% 18
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Neural Language Models}{section.3.2}% 19
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Text Classification}{section.3.2}% 20
+\BOOKMARK [0][-]{chapter.4}{4 Requirements Analysis}{}% 21
+\BOOKMARK [1][-]{section.4.1}{4.1 Existing Solutions}{chapter.4}% 22
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 MasterWriter}{section.4.1}% 23
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Rhymer's Block}{section.4.1}% 24
+\BOOKMARK [2][-]{subsection.4.1.3}{4.1.3 Evaluation of existing solutions}{section.4.1}% 25
+\BOOKMARK [1][-]{section.4.2}{4.2 Requirements}{chapter.4}% 26
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Functional}{section.4.2}% 27
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Non-Functional}{section.4.2}% 28
+\BOOKMARK [0][-]{chapter.5}{5 Methodology}{}% 29
+\BOOKMARK [1][-]{section.5.1}{5.1 Collecting Data}{chapter.5}% 30
+\BOOKMARK [1][-]{section.5.2}{5.2 Data Analysis and Restructuring}{chapter.5}% 31
+\BOOKMARK [1][-]{section.5.3}{5.3 Data Pre-processing}{chapter.5}% 32
+\BOOKMARK [1][-]{section.5.4}{5.4 Hyperparameters}{chapter.5}% 33
+\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 Context Windows}{section.5.4}% 34
+\BOOKMARK [2][-]{subsection.5.4.2}{5.4.2 Embedding Size}{section.5.4}% 35
+\BOOKMARK [2][-]{subsection.5.4.3}{5.4.3 Optimisation Methods}{section.5.4}% 36
+\BOOKMARK [2][-]{subsection.5.4.4}{5.4.4 title}{section.5.4}% 37
+\BOOKMARK [2][-]{subsection.5.4.5}{5.4.5 Dropout}{section.5.4}% 38
+\BOOKMARK [2][-]{subsection.5.4.6}{5.4.6 Embedding Layer}{section.5.4}% 39
+\BOOKMARK [0][-]{chapter.6}{6 Implementation}{}% 40
+\BOOKMARK [1][-]{section.6.1}{6.1 Hardware Specification}{chapter.6}% 41
+\BOOKMARK [1][-]{section.6.2}{6.2 Calculating Co-occurrence Statistics}{chapter.6}% 42
+\BOOKMARK [1][-]{section.6.3}{6.3 CoVeR Implementation}{chapter.6}% 43
+\BOOKMARK [2][-]{subsection.6.3.1}{6.3.1 Initialisation of Learnable Parameters}{section.6.3}% 44
+\BOOKMARK [2][-]{subsection.6.3.2}{6.3.2 Hyperparameters}{section.6.3}% 45
+\BOOKMARK [1][-]{section.6.4}{6.4 Model Implementation}{chapter.6}% 46
+\BOOKMARK [2][-]{subsection.6.4.1}{6.4.1 Language Model}{section.6.4}% 47
+\BOOKMARK [2][-]{subsection.6.4.2}{6.4.2 Text Classifier}{section.6.4}% 48
+\BOOKMARK [1][-]{section.6.5}{6.5 SONGIFAI}{chapter.6}% 49
+\BOOKMARK [2][-]{subsection.6.5.1}{6.5.1 Architecture}{section.6.5}% 50
+\BOOKMARK [2][-]{subsection.6.5.2}{6.5.2 Class Overview}{section.6.5}% 51
+\BOOKMARK [0][-]{chapter.7}{7 Evaluation}{}% 52
+\BOOKMARK [1][-]{section.7.1}{7.1 CoVeR Evaluation}{chapter.7}% 53
+\BOOKMARK [2][-]{subsection.7.1.1}{7.1.1 Validating Implementation}{section.7.1}% 54
+\BOOKMARK [1][-]{section.7.2}{7.2 Model Evaluations}{chapter.7}% 55
+\BOOKMARK [2][-]{subsection.7.2.1}{7.2.1 Language Model}{section.7.2}% 56
+\BOOKMARK [2][-]{subsection.7.2.2}{7.2.2 Text Classification}{section.7.2}% 57
+\BOOKMARK [1][-]{section.7.3}{7.3 SONGIFAI}{chapter.7}% 58
+\BOOKMARK [2][-]{subsection.7.3.1}{7.3.1 Requirements Evaluation}{section.7.3}% 59
+\BOOKMARK [2][-]{subsection.7.3.2}{7.3.2 Expert User Testing}{section.7.3}% 60
+\BOOKMARK [0][-]{chapter.8}{8 Conclusion}{}% 61
+\BOOKMARK [1][-]{section.8.1}{8.1 What was I right about?}{chapter.8}% 62
+\BOOKMARK [2][-]{subsection.8.1.1}{8.1.1 Previous theories were wrong}{section.8.1}% 63
+\BOOKMARK [2][-]{subsection.8.1.2}{8.1.2 My new idea is right}{section.8.1}% 64
+\BOOKMARK [0][-]{section*.28}{Bibliography}{}% 65
+\BOOKMARK [0][-]{appendix.A}{A Code}{}% 66

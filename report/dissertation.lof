@@ -1,17 +1,17 @@
 \babel@toc {british}{}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Average number of Billboard 100 songs during artist activity, compared to unique word count across an artists first 35,000 words.}}{2}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces High level architecture for the project}}{3}{figure.1.2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces High level system architecture for the prototype which takes the form of a full software system}}{4}{figure.1.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Example neural network, three input nodes, four hidden and two outputs}}{9}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{10}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{11}{figure.3.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example neural network, three input nodes, four hidden and two outputs}}{10}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{11}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{12}{figure.3.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{16}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{17}{figure.5.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{19}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{20}{figure.6.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

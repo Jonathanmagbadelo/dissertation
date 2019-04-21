@@ -1,3 +1,78 @@
 \begin{thebibliography}{}
 
+\bibitem[Bengio et~al., 2003]{Bengio2003}
+Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003).
+\newblock A neural probabilistic language model.
+\newblock {\em J. Mach. Learn. Res.}, 3:1137--1155.
+
+\bibitem[Bojanowski et~al., 2017]{Bojanowski2017}
+Bojanowski, P., Grave, E., Joulin, A., and Mikolov, T. (2017).
+\newblock Enriching word vectors with subword information.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  5:135--146.
+
+\bibitem[Harris, 1954]{Harris1954}
+Harris, Z.~S. (1954).
+\newblock Distributional structure.
+\newblock {\em Word}, 10(2-3):146--162.
+
+\bibitem[Hochreiter and Schmidhuber, 1997]{Hochreiter1997}
+Hochreiter, S. and Schmidhuber, J. (1997).
+\newblock Long short-term memory.
+\newblock {\em Neural computation}, 9(8):1735--1780.
+
+\bibitem[Hornik et~al., 1989]{Hornik1989}
+Hornik, K., Stinchcombe, M., and White, H. (1989).
+\newblock Multilayer feedforward networks are universal approximators.
+\newblock {\em Neural Netw.}, 2(5):359--366.
+
+\bibitem[McCrum, 2011]{McCrum2011}
+McCrum, R. (2011).
+\newblock {\em The Story of English}.
+\newblock BBC books. Faber \& Faber.
+
+\bibitem[Mikolov et~al., 2013a]{Mikolov2013}
+Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013a).
+\newblock Efficient estimation of word representations in vector space.
+\newblock {\em arXiv preprint arXiv:1301.3781}.
+
+\bibitem[Mikolov et~al., 2010]{Mikolov2010}
+Mikolov, T., Karafi{\'a}t, M., Burget, L., {\v{C}}ernock{\`y}, J., and
+  Khudanpur, S. (2010).
+\newblock Recurrent neural network based language model.
+\newblock In {\em Eleventh annual conference of the international speech
+  communication association}.
+
+\bibitem[Mikolov et~al., 2013b]{Mikolov2013a}
+Mikolov, T., Sutskever, I., Chen, K., Corrado, G.~S., and Dean, J. (2013b).
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock In {\em Advances in neural information processing systems}, pages
+  3111--3119.
+
+\bibitem[Pennington et~al., 2014]{Pennington2014}
+Pennington, J., Socher, R., and Manning, C. (2014).
+\newblock Glove: Global vectors for word representation.
+\newblock In {\em Proceedings of the 2014 conference on empirical methods in
+  natural language processing (EMNLP)}, pages 1532--1543.
+
+\bibitem[Rumelhart et~al., 1988]{Rumelhart1988}
+Rumelhart, D.~E., Hinton, G.~E., Williams, R.~J., et~al. (1988).
+\newblock Learning representations by back-propagating errors.
+\newblock {\em Cognitive modeling}, 5(3):1.
+
+\bibitem[Socher et~al., 2013]{Socher2013}
+Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C.~D., Ng, A., and
+  Potts, C. (2013).
+\newblock Recursive deep models for semantic compositionality over a sentiment
+  treebank.
+\newblock In {\em Proceedings of the 2013 conference on empirical methods in
+  natural language processing}, pages 1631--1642.
+
+\bibitem[Tian et~al., 2018]{Tian2018}
+Tian, K., Zhang, T., and Zou, J. (2018).
+\newblock Cover: Learning covariate-specific vector representations with tensor
+  decompositions.
+\newblock {\em arXiv preprint arXiv:1802.07839}.
+
 \end{thebibliography}

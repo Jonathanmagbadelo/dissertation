@@ -5,7 +5,7 @@
 This chapter details the methodology used to collect, analyse and process the dataset used to derive the CoVeR word embeddings.
 \label{chap:data_methodology}
 \section{Collecting Data}
-As previously mentioned, there exists no central repository from which song lyrics can be obtained. Though lyric hosting websites such as Genius(FOOTNOTE) exist, selective collection of song lyrics is only achievable through the process of web scraping. Web scraping is the process of exhaustively downloading web pages, from either a predefined list of URLs or through link extraction. Large scale scraping is usually achieved through parallelised methods due to restrictions such as Robots.txt and download latency. Taking into account the project objectives and goals, web scraping was avoided.
+As previously mentioned, there exists no central repository from which song lyrics can be obtained. Though lyric hosting websites such as Genius\footnote{https://genius.com/} exist, selective collection of song lyrics is only achievable through the process of web scraping. Web scraping is the process of exhaustively downloading web pages, from either a predefined list of URLs or through link extraction. Large scale scraping is usually achieved through parallelised methods due to restrictions such as Robots.txt and download latency. Taking into account the project objectives and goals, web scraping was avoided.
 
 \noindent
 \newline
@@ -47,7 +47,7 @@ Tokenisation is the process of separating textual inputs into meaningful chunks 
  
 \noindent
 \newline
-Typically found within text corpora are high frequency stop words such as 'the', 'a', and 'in' which provide less information than rarely occurring words(REF-DISTRIBUTED REP OF WORDS). For example... This concept can also be applied to word embeddings; where the word embeddings of frequent words does not change significantly after training on several examples. Similar to (REF), subsampling was used at the covariate level using the following adapted formula from the original word2vec implementation.
+Typically found within text corpora are high frequency stop words such as 'the', 'a', and 'in' which provide less information than rarely occurring words (\cite{Mikolov2013a}). For example... This concept can also be applied to word embeddings; where the word embeddings of frequent words does not change significantly after training on several examples. Taking inspiration from word2vec, subsampling was used at the covariate level using the following adapted formula from the original word2vec implementation.
 
 \begin{equation}
 P(w_{ik}) = \sqrt{\dfrac{z(w_{ik})}{t}} + 1 \cdot \dfrac{t}{z(w_{ik})}
