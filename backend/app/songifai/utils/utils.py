@@ -4,25 +4,32 @@ from gensim.models import KeyedVectors
 from gensim.test.utils import datapath, get_tmpfile
 from gensim.scripts.glove2word2vec import glove2word2vec
 import random
-import os
 
 WORD_LIST = ["this", "is", "test", "yo", "fuck", "this", "shit", "nigga", "pussy", "bitch", "twerk", "ass", "dick", "hoes", "niggas"]
 
 TEST_WORD_LIST = ["This", "is", "a", "test", "to", "see", "how", "stuff", "changes"]
 
-print(os.getcwd())
-glove_file = "app/songifai/data/cover_embeddings.txt"
-tmp_file = get_tmpfile("test_word2vec.txt")
-_ = glove2word2vec(glove_file, tmp_file)
+
+def load_embeddings(co_variate="base"):
+    glove_file = "app/songifai/data/cover_{}_embeddings.txt".format(co_variate)
+    tmp_file = get_tmpfile("test_word2vec.txt")
+    _ = glove2word2vec(glove_file, tmp_file)
+    return tmp_file
 
 
-# possibly use bigrams/trigrams
+def load_prediction_model():
+    return None
+
+
+tmp_file = load_embeddings()
+
+
 def predict_words(clean, rhyme, context_word):
     words = TEST_WORD_LIST
     words = filter_suggested_words(words) if clean else words
     words = filter_rhyme_words(context_word, words) if rhyme else words
     random.shuffle(words)
-    return words
+    return words[:8]
 
 
 def suggest_words(word):

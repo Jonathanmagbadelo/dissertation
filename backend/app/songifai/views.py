@@ -40,3 +40,9 @@ class SuggestWordView(View):
 class PredictWordView(View):
     def get(self, request, *args, **kwargs):
         return JsonResponse({'data': utils.predict_words(False, False, "TODO")})
+
+
+class ChangeEmbeddingView(View):
+    def get(self, request, *args, **kwargs):
+        embedding = self.request.GET.get('embedding', '')
+        return JsonResponse({'data': utils.load_embeddings(embedding)})

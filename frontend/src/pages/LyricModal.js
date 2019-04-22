@@ -155,12 +155,20 @@ export default class NewPage extends React.Component {
 				</Form.Group>
 
 				<Form.Group align="center">
-					<ButtonGroup aria-label="Basic example">{this.showPredictions()}</ButtonGroup>
-				</Form.Group>
-
-				<Form.Group align="center">
-					<Button variant="info" size="lg" onClick={this.save_lyric}
-							style={{background: '#4fb3bf', color: 'black', border: '3px solid #005662'}}>Save</Button>
+					<Container>
+						<Row>
+							<Col align="left">
+								<ButtonGroup aria-label="Basic example">{this.showPredictions()}</ButtonGroup>
+							</Col>
+						</Row>
+						<Row>
+							<Col sm={8} align="right">
+								<Button variant="info" size="lg" onClick={this.save_lyric}
+										style={{background: '#4fb3bf', color: 'black', border: '3px solid #005662'}}>Save</Button>
+							</Col>
+							<Col></Col>
+						</Row>
+					</Container>
 				</Form.Group>
 
 				<h4 align="right">Updated At: {new Date().toLocaleDateString('en-GB')}</h4>
