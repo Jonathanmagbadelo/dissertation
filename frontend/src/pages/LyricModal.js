@@ -71,13 +71,13 @@ export default class NewPage extends React.Component {
 
 	get_predictions = (event) => {
 		if (event.which === 32 && this.state.assist) {
-			axios.get('api/assistant/predict/').then(result => this.setState({predictions: result.data}));
+			axios.get('api/songifai/predict/').then(result => this.setState({predictions: result.data}));
 		}
 	};
 
 	get_suggestions = () => {
 		const word = document.getElementById("suggest_word").value;
-		axios.get(`api/assistant/suggest/?word=${word}`).then(result => this.setState({suggestions: result.data}));
+		axios.get(`api/songifai/suggest/?word=${word}`).then(result => this.setState({suggestions: result.data}));
 	};
 
 	showPredictions = () => {

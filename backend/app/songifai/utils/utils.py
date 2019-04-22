@@ -11,7 +11,7 @@ WORD_LIST = ["this", "is", "test", "yo", "fuck", "this", "shit", "nigga", "pussy
 TEST_WORD_LIST = ["This", "is", "a", "test", "to", "see", "how", "stuff", "changes"]
 
 print(os.getcwd())
-glove_file = "app/assistant/data/cover_embeddings.txt"
+glove_file = "app/songifai/data/cover_embeddings.txt"
 tmp_file = get_tmpfile("test_word2vec.txt")
 _ = glove2word2vec(glove_file, tmp_file)
 
@@ -31,6 +31,10 @@ def suggest_words(word):
     random.shuffle(result)
     return result
     #eturn filter_suggested_words(result) if clean else words
+
+
+def classify_lyrics(lyrics):
+    return "POP"
 
 
 def filter_suggested_words(words):

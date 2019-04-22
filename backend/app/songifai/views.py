@@ -1,9 +1,9 @@
-from app.assistant.models import Lyric
-from app.assistant.serializers import LyricSerializer
+from app.songifai.models import Lyric
+from app.songifai.serializers import LyricSerializer
 from rest_framework import generics
 from django.views import View
 from django.http import JsonResponse
-from app.assistant.utils import utils
+from app.songifai.utils import utils
 
 
 class LyricsListView(generics.ListCreateAPIView):

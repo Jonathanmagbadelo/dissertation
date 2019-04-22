@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from app.assistant.models import Lyric
+from app.songifai.models import Lyric
 
 
 class LyricSerializer(serializers.ModelSerializer):
