@@ -33,9 +33,10 @@ class CreateLyricView(generics.CreateAPIView):
 
 class SuggestWordView(View):
     def get(self, request, *args, **kwargs):
-        return JsonResponse({'data': utils.suggest_words("king")})
+        word = self.request.GET.get('word', '')
+        return JsonResponse({'data': utils.suggest_words(word)})
 
 
 class PredictWordView(View):
     def get(self, request, *args, **kwargs):
-        return JsonResponse({'data': utils.suggest_words("TODO")})
+        return JsonResponse({'data': utils.predict_words(False, False, "TODO")})

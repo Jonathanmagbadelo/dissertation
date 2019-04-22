@@ -20,7 +20,8 @@ export default class NewPage extends React.Component {
 		super(props);
 		this.state = {
 			lyric: (props.location.state === undefined) ? this.new_lyric : props.location.state.lyric,
-			suggested_words: [],
+			predictions: [],
+			suggestions: ["Suggestions will show here!"],
 			edit: (props.location.state !== undefined),
 			assist: false,
 			rhyme: false,
@@ -68,14 +69,19 @@ export default class NewPage extends React.Component {
 		return this.state.edit ? this.update_lyric() : this.post_lyric()
 	};
 
-	get_suggestions = (event) => {
+	get_predictions = (event) => {
 		if (event.which === 32 && this.state.assist) {
-			axios.get('api/assistant/suggest/').then(result => this.setState({suggested_words: result.data}));
+			axios.get('api/assistant/predict/').then(result => this.setState({predictions: result.data}));
 		}
 	};
 
-	show_suggestions = () => {
-		const words = Object.values(this.state.suggested_words).flat(1);
+	get_suggestions = () => {
+		const word = document.getElementById("suggest_word").value;
+		axios.get(`api/assistant/suggest/?word=${word}`).then(result => this.setState({suggestions: result.data}));
+	};
+
+	showPredictions = () => {
+		const words = Object.values(this.state.predictions).flat(1);
 		return words.flatMap(word => <Button variant="secondary" size="lg"
 											 style={{border: '1px solid #4fb3bf'}}>{word}</Button>)
 	};
@@ -84,14 +90,13 @@ export default class NewPage extends React.Component {
 		const target = event.target.value;
 		this.setState({[target]: !this.state[target]});
 		if (!this.state.assist){
-			this.setState({suggested_words: []});
-			this.show_suggestions();
+			this.setState({predictions: []});
+			this.showPredictions();
 		}
 	};
 
 	renderSuggestions(){
-		const suggestions = ["akin", "is", "a", "boss", "allie", "fam"];
-		console.log(suggestions);
+		const suggestions = Object.values(this.state.suggestions).flat(1);
 		return suggestions.map(
 			suggestion => <ListGroup.Item variant="secondary">{suggestion}</ListGroup.Item>
 		);
@@ -124,7 +129,7 @@ export default class NewPage extends React.Component {
 						<Row>
 							<Col sm={8}>
 								<Form.Control id="content" as="textarea" rows="15" placeholder="Enter Lyrics..."
-											  onChange={this.updateValue} onKeyPress={this.get_suggestions}
+											  onChange={this.updateValue} onKeyPress={this.get_predictions}
 											  style={{border: '3px solid #005662'}} value={this.state.lyric.content}/>
 							</Col>
 							<Col>
@@ -133,9 +138,10 @@ export default class NewPage extends React.Component {
 										<InputGroup className="mb-3">
 											<FormControl
 												placeholder="Suggest Word..."
+												id="suggest_word"
 											/>
 											<InputGroup.Append>
-												<Button variant="outline-success">Search</Button>
+												<Button onClick={this.get_suggestions} variant="outline-success">Search</Button>
 											</InputGroup.Append>
 										</InputGroup>
 										<ListGroup variant="flush">
@@ -149,7 +155,7 @@ export default class NewPage extends React.Component {
 				</Form.Group>
 
 				<Form.Group align="center">
-					<ButtonGroup aria-label="Basic example">{this.show_suggestions()}</ButtonGroup>
+					<ButtonGroup aria-label="Basic example">{this.showPredictions()}</ButtonGroup>
 				</Form.Group>
 
 				<Form.Group align="center">
@@ -157,7 +163,7 @@ export default class NewPage extends React.Component {
 							style={{background: '#4fb3bf', color: 'black', border: '3px solid #005662'}}>Save</Button>
 				</Form.Group>
 
-				<h4 align="right">Created At: {new Date().toLocaleDateString('en-GB')}</h4>
+				<h4 align="right">Updated At: {new Date().toLocaleDateString('en-GB')}</h4>
 			</Form>
 		);
 	}

@@ -22,13 +22,12 @@ def predict_words(clean, rhyme, context_word):
     words = filter_suggested_words(words) if clean else words
     words = filter_rhyme_words(context_word, words) if rhyme else words
     random.shuffle(words)
-    #suggest_words("king", False)
     return words
 
 
 def suggest_words(word):
     model = KeyedVectors.load_word2vec_format(tmp_file)
-    result = [word[0] for word in model.similar_by_word(word)]
+    result = [word[0] for word in model.similar_by_word(word, topn=6)]
     random.shuffle(result)
     return result
     #eturn filter_suggested_words(result) if clean else words
