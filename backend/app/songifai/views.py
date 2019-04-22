@@ -46,3 +46,13 @@ class ChangeEmbeddingView(View):
     def get(self, request, *args, **kwargs):
         embedding = self.request.GET.get('embedding', '')
         return JsonResponse({'data': utils.load_embeddings(embedding)})
+
+
+class ClassificationView(generics.RetrieveUpdateDestroyAPIView):
+
+    def post(self, request, *args, **kwargs):
+        lyrics = self.request.data['lyric']
+        print(lyrics)
+        return JsonResponse({'classification': utils.classify_lyrics(lyrics)})
+
+

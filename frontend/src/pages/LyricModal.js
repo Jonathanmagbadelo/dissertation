@@ -102,6 +102,25 @@ export default class NewPage extends React.Component {
 		);
 	}
 
+	classifyLyric = () => {
+		const y = this.state.lyric.content;
+		axios('api/songifai/classify/', {
+			method: 'POST',
+			data: {
+				'lyric': y
+			},
+			withCredentials: true,
+		})
+			.then(response => {
+				if (response.status === 200) {
+					alert(response.data['classification'])
+				}
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	};
+
 	render() {
 		return (
 			<Form>
@@ -116,12 +135,13 @@ export default class NewPage extends React.Component {
 					<Form.Label><h2>Lyrics</h2></Form.Label>
 					<Container>
 						<Row>
-							<Col>
+							<Col sm={8}>
 								<ButtonToolbar>
 									<ToggleButtonGroup type="checkbox" defaultValue={[]}>
 										<ToggleButton value="assist" onChange={this.handle_toggle} style={{border: '3px solid #005662'}} >ASSIST</ToggleButton>
 										<ToggleButton value="rhyme" onChange={this.handle_toggle} style={{border: '3px solid #005662'}} >RHYME</ToggleButton>
 										<ToggleButton value="filter" onChange={this.handle_toggle} style={{border: '3px solid #005662'}} >FILTER</ToggleButton>
+										<Button onClick={this.classifyLyric} style={{border: '3px solid #005662'}} >CLASSIFY</Button>
 									</ToggleButtonGroup>
 								</ButtonToolbar>
 							</Col>

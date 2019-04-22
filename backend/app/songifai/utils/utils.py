@@ -34,7 +34,7 @@ def predict_words(clean, rhyme, context_word):
 
 def suggest_words(word):
     model = KeyedVectors.load_word2vec_format(tmp_file)
-    result = [word[0] for word in model.similar_by_word(word, topn=6)]
+    result = [word[0] for word in model.similar_by_word(word.lower(), topn=6)]
     random.shuffle(result)
     return result
     #eturn filter_suggested_words(result) if clean else words
