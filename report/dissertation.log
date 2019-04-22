@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  21 APR 2019 03:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  21 APR 2019 14:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -600,11 +600,11 @@ File: ./figures/fig3.png Graphic file (type png)
 Package pdftex.def Info: ./figures/fig3.png  used on input line 139.
 (pdftex.def)             Requested size: 284.53127pt x 170.71721pt.
  [11 <./figures/fig3.png>]
-<./figures/fig4.png, id=553, 485.815pt x 368.37625pt>
+<./figures/fig4.png, id=553, 484.81125pt x 367.3725pt>
 File: ./figures/fig4.png Graphic file (type png)
 <use ./figures/fig4.png>
 Package pdftex.def Info: ./figures/fig4.png  used on input line 158.
-(pdftex.def)             Requested size: 284.52309pt x 227.62083pt.
+(pdftex.def)             Requested size: 284.54184pt x 227.62843pt.
  [12 <./figures/fig4.png>])
 (./chapters/dissertation_requirements_analysis.tex [13]
 Chapter 4.
@@ -695,7 +695,7 @@ f/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri
 12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fon
 ts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb
 >
-Output written on dissertation.pdf (34 pages, 551309 bytes).
+Output written on dissertation.pdf (34 pages, 550521 bytes).
 PDF statistics:
  753 PDF objects out of 1000 (max. 8388607)
  678 compressed objects within 7 object streams
