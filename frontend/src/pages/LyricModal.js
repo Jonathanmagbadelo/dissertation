@@ -69,9 +69,16 @@ export default class NewPage extends React.Component {
 		return this.state.edit ? this.update_lyric() : this.post_lyric()
 	};
 
-	get_predictions = (event) => {
+	getPredictions = (event) => {
 		if (event.which === 32 && this.state.assist) {
-			axios.get('api/songifai/predict/').then(result => this.setState({predictions: result.data}));
+			const lyric = this.state.lyric.content;
+			axios('api/songifai/predict/', {
+				method: 'POST',
+				data: {
+					'lyric': lyric
+				},
+				withCredentials: true,
+			}).then(result => this.setState({predictions: result.data}));
 		}
 	};
 
@@ -103,11 +110,11 @@ export default class NewPage extends React.Component {
 	}
 
 	classifyLyric = () => {
-		const y = this.state.lyric.content;
+		const lyric = this.state.lyric.content;
 		axios('api/songifai/classify/', {
 			method: 'POST',
 			data: {
-				'lyric': y
+				'lyric': lyric
 			},
 			withCredentials: true,
 		})
@@ -149,7 +156,7 @@ export default class NewPage extends React.Component {
 						<Row>
 							<Col sm={8}>
 								<Form.Control id="content" as="textarea" rows="15" placeholder="Enter Lyrics..."
-											  onChange={this.updateValue} onKeyPress={this.get_predictions}
+											  onChange={this.updateValue} onKeyPress={this.getPredictions}
 											  style={{border: '3px solid #005662'}} value={this.state.lyric.content}/>
 							</Col>
 							<Col>

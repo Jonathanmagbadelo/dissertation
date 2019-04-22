@@ -37,9 +37,10 @@ class SuggestWordView(View):
         return JsonResponse({'data': utils.suggest_words(word)})
 
 
-class PredictWordView(View):
-    def get(self, request, *args, **kwargs):
-        return JsonResponse({'data': utils.predict_words(False, False, "TODO")})
+class PredictWordView(generics.RetrieveUpdateDestroyAPIView):
+    def post(self, request, *args, **kwargs):
+        lyrics = self.request.data['lyric']
+        return JsonResponse({'data': utils.predict_words(False, False, lyrics)})
 
 
 class ChangeEmbeddingView(View):
@@ -49,7 +50,6 @@ class ChangeEmbeddingView(View):
 
 
 class ClassificationView(generics.RetrieveUpdateDestroyAPIView):
-
     def post(self, request, *args, **kwargs):
         lyrics = self.request.data['lyric']
         print(lyrics)
