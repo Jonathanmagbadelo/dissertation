@@ -8,10 +8,12 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{11}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{12}{figure.3.3}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces MasterWriter}}{14}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Rhymer's Block}}{15}{figure.4.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{17}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{19}{figure.5.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{20}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{22}{figure.6.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

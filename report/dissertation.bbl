@@ -5,11 +5,13 @@ Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003).
 \newblock A neural probabilistic language model.
 \newblock {\em J. Mach. Learn. Res.}, 3:1137--1155.
 
-\bibitem[Bojanowski et~al., 2017]{Bojanowski2017}
-Bojanowski, P., Grave, E., Joulin, A., and Mikolov, T. (2017).
-\newblock Enriching word vectors with subword information.
-\newblock {\em Transactions of the Association for Computational Linguistics},
-  5:135--146.
+\bibitem[Corinna~Cortes, 1995]{Cortes1995}
+Corinna~Cortes, V.~V. (1995).
+\newblock Support-vector networks.
+
+\bibitem[Dai and Le, 2015]{Dai2015a}
+Dai, A.~M. and Le, Q.~V. (2015).
+\newblock Semi-supervised sequence learning.
 
 \bibitem[Harris, 1954]{Harris1954}
 Harris, Z.~S. (1954).
@@ -21,15 +23,16 @@ Hochreiter, S. and Schmidhuber, J. (1997).
 \newblock Long short-term memory.
 \newblock {\em Neural computation}, 9(8):1735--1780.
 
-\bibitem[Hornik et~al., 1989]{Hornik1989}
-Hornik, K., Stinchcombe, M., and White, H. (1989).
-\newblock Multilayer feedforward networks are universal approximators.
-\newblock {\em Neural Netw.}, 2(5):359--366.
+\bibitem[Joachims, 1998]{Joachims1998}
+Joachims, T. (1998).
+\newblock Text categorization with support vector machines: Learning with many
+  relevant features.
+\newblock In {\em European conference on machine learning}, pages 137--142.
+  Springer.
 
-\bibitem[McCrum, 2011]{McCrum2011}
-McCrum, R. (2011).
-\newblock {\em The Story of English}.
-\newblock BBC books. Faber \& Faber.
+\bibitem[Lewis et~al., 2004]{Lewis2004}
+Lewis, D.~D., Yang, Y., Rose, T.~G., and Li, F. (2004).
+\newblock Rcv1: A new benchmark collection for text categorization research.
 
 \bibitem[Mikolov et~al., 2013a]{Mikolov2013}
 Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013a).
@@ -68,6 +71,12 @@ Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C.~D., Ng, A., and
   treebank.
 \newblock In {\em Proceedings of the 2013 conference on empirical methods in
   natural language processing}, pages 1631--1642.
+
+\bibitem[Srivastava et~al., 2014]{Srivastava2014}
+Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov,
+  R. (2014).
+\newblock Dropout: A simple way to prevent neural networks from overfitting.
+\newblock {\em Journal of Machine Learning Research}, 15:1929--1958.
 
 \bibitem[Tian et~al., 2018]{Tian2018}
 Tian, K., Zhang, T., and Zou, J. (2018).

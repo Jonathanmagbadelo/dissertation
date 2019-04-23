@@ -162,24 +162,29 @@ The core component of the LSTM is the cell state which is able to propagate \tex
 \end{figure}
 
 \subsection{Text Classification}
-Text classification is a supervised NLP task which involves assigning pre-defined labels to text according to its content. Automated classification of text can be achieved through rule based and machine learning based systems. Rule based methods tackle classification through the use of handcrafted linguistic rules, which assign patterns in text to predefined categories. For example, given two word lists which  Rule based systems don't come without drawbacks, firstly to create such a system requires deep domain knowledge. Moreover, unlike the previous example, creating, maintaining and scaling such rules is challenging and time consuming. 
-\subsubsection{Traditional Methods}
-Before a classifier can be trained, textual inputs must be transformed into numerical representations in a process known as feature extraction. A common method for feature extraction is the bag of words approach which given a vocabulary set \(V\), creates an input vector which represents word counts for each word of the vocabulary. For example, if we define the vocabulary \(V\) ..
+Text classification is the task of assigning pre-defined labels to text according to it's contents. Machine learning methods for text classification are preferred to rule based systems due to their ability to model regardless of domain. Text classification can be approached using supervised learning, where a model is trained with labelled training data, and unsupervised learning, where training data are clustered together to see if any natural grouping exists.
 
 \noindent
 \newline
-Two common classifiers, namely Naive Bayes classifiers and support vector machines are outlined below
+Before a classifier can be trained, textual inputs must be transformed into numerical representations. A common method for creating such representations is the bag of words approach which given a vocabulary, creates an input vector which represents word counts for each word of the vocabulary. For example, if we define the vocabulary \(V\) as being the set of words \{\("I", "like", "food", "had", "today"\) \} and a sentence \(S\) as being \textit{"I had food"}, the resulting vector for word \(S\) would be [1, 0, 1, 1, 0]. Two popular machine learning methods for text classification include the naive Bayes classifier and the Support Vector Machine.
 
-\paragraph{Naive Bayes}
+\subsubsection{Naive Bayes}
+\noindent
+\newline
+Naive Bayes classifiers have been successfully used for text classification tasks such as spam filtering (REF) and provide a way to model data without the need of vast amounts of training data. They are a class of generative classifiers which rely on Bayes theorem to learn a model of the joint probability, \(P(x, y)\), of the inputs \(x\) and target classes \(y\) to calculate the conditional probability\(P(y|y)\) Concretely, given a set of features \(x_{0},...,x_{n}\) naive Bayes classifiers assume conditional independence between features and use prior class probabilities along with ... to assign a class label to a new set of features. The general formula for naive Bayes classifiers is presented below.
+
+\begin{equation}
+y = argmax_{y} P(y) \prod_{i=1}^{n}P(x_{i} | y)
+\end{equation}
+
+\subsubsection{Support Vector Machines}
 \noindent
 \newline 
-Naive Bayes Classification is a generative approach which uses bayes theorom to learn a join probability distribution .... Naive bayes classification is a robust method for training a text classifier which can achieve accurate results without large amounts of training data.
+Support Vector Machines (SVM) (\cite{Cortes1995}) have also been applied successfully to text classification problems (\cite{Joachims1998}). Unlike naive Bayes classifiers, SVM's are discriminative classifiers which aim to find a hyperplane in N-dimensional space which maximises the margin between data points of different classes. This is achieved through the use of random data points, namely \textit{"support vectors"}, which are data points closest to the hyperplane which help maximises the margin distance between classes. Maximising marginal distance between classes provides confidence to the classification of future data points.
 
-Naive bayes is a classification techinque based on bayes theroem with an assumpoion of inde[endence among preictors. A naives bayes c;assifier assumes that the precence of a particular fgeature in a class is unrelsted tp the [recence of any other fetaure.
-
-\paragraph{Support Vector Machines}
 \noindent
 \newline 
-A Support Vector Machines (SVM) (Vapnik et al 1995) is a discriminative classifier that aims to find a linear classification boundary or \textit{hyperplane} to discriminate between classes in high dimensional space. SVM's achieve this through support vectors, random training data points, which are used to maximise the margin between ... Similar to naive bayes classifiers, SVM's do not require large amounts of training data to achieve accurate results. SVM's were introduced to the problem of text classification by Joachims(REF)
+IMAGE OF SVM
 
 \subsubsection{Deep Learning Methods}
+Until recently, state of the art methods for text classification had long used linear predictors such as the SVM (with a linear kernel) and multinomial naive Bayes classifiers using feature representation techniques such as bag-of-words (\cite{Joachims1998} \cite{Lewis2004}). However, non-linear methods that are able to leverage dependencies between words ,such as recurrent neural networks, have provided better predictions (\cite{Dai2015a}) than previous bag-of-word approaches where features are assumed to be conditionally independent and unordered.

@@ -15,7 +15,6 @@ All implementation was completed on a personal machine. The hardware specificati
 		CPU & Intel Core i7-8750H CPU @ 2.20GHz x 12 \\ 
 		GPU & NVIDIA GeForce GTX 1050 Ti 4GB \\
 		RAM & 16GB \\
-		4 & 545 \\ [1ex] 
 		\hline
 	\end{tabular}
 	\caption{Hardware specification for machine used throughout development}
@@ -57,13 +56,11 @@ At time of writing, no publicly available implementation of CoVeR is available. 
 \subsection{Initialisation of Learnable Parameters} 
 \subsection{Hyperparameters}
 
-\section{Model Implementation}
+\section{LSTM Implementations}
 Implementation of both the language model and the text classifier was done using Keras. Keras is a high level machine learning library written in Python, which runs on top of either Tensorflow or Theano. The motivation behind using Keras comes from its ease of use to quickly develop deep learning networks. In this project Keras is deployed using Tensorflow as a backend, specifically for its GPU capabilities.
 \subsection{Language Model}
 The structure for the language model can be seen in Figure X.X. The model consisted of an input layer, an embedding layer, a bidirectional LSTM, a dropout layer and finally a dense layer.
-\subsubsection{Hyperparameter Tuning}
 \subsection{Text Classifier}
-\subsubsection{Hyperparameter Tuning}
 \section{SONGIFAI}
 \subsection{Architecture}
 \subsubsection{Client Side}

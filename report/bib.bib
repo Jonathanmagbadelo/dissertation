@@ -1,4 +1,19 @@
 % Encoding: UTF-8
+% I fetched this from the NASA ADS
+% They gave it the catchy name on the following line; I changed it to Einstein1905, but I could have called it anything: E05, SpecRel, bob...
+%1905AnP...323..639E,
+@ARTICLE{Einstein1905,
+	author	= {{Einstein}, Albert},
+	title		= "{Ist die Tr{\"a}gheit eines K{\"o}rpers von seinem Energieinhalt abh{\"a}ngig?}",
+	journal	= {Annalen der Physik},
+	year		= 1905,
+	volume	= 323,
+	pages	= {639-641},
+	doi		= {10.1002/andp.19053231314},
+	adsurl	= {http://ukads.nottingham.ac.uk/cgi-bin/nph-bib_query?bibcode=1905AnP...323..639E&db_key=AST},
+	adsnote	= {Provided by the Smithsonian/NASA Astrophysics Data System}
+}
+
 @InProceedings{Pennington2014,
   author    = {Pennington, Jeffrey and Socher, Richard and Manning, Christopher},
   title     = {Glove: Global vectors for word representation},
@@ -83,65 +98,72 @@
 }
 
 @Article{Hochreiter1997,
-  author        = {Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
-  title         = {Long short-term memory},
-  journal       = {Neural computation},
-  year          = {1997},
-  volume        = {9},
-  number        = {8},
-  pages         = {1735--1780},
-  __markedentry = {[akin:]},
-  publisher     = {MIT Press},
+  author    = {Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
+  title     = {Long short-term memory},
+  journal   = {Neural computation},
+  year      = {1997},
+  volume    = {9},
+  number    = {8},
+  pages     = {1735--1780},
+  publisher = {MIT Press},
 }
 
 @InProceedings{Mikolov2013a,
-  author        = {Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
-  title         = {Distributed representations of words and phrases and their compositionality},
-  booktitle     = {Advances in neural information processing systems},
-  year          = {2013},
-  pages         = {3111--3119},
-  __markedentry = {[akin:6]},
+  author    = {Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
+  title     = {Distributed representations of words and phrases and their compositionality},
+  booktitle = {Advances in neural information processing systems},
+  year      = {2013},
+  pages     = {3111--3119},
 }
 
-@book{McCrum2011,
-	title={The Story of English},
-	author={McCrum, R.},
-	isbn={9780571275083},
-	series={BBC books},
-	url={https://books.google.co.uk/books?id=PWtWewAACAAJ},
-	year={2011},
-	publisher={Faber \& Faber}
+@InProceedings{Joachims1998,
+  author       = {Joachims, Thorsten},
+  title        = {Text categorization with support vector machines: Learning with many relevant features},
+  booktitle    = {European conference on machine learning},
+  year         = {1998},
+  pages        = {137--142},
+  organization = {Springer},
 }
 
-@article{Bojanowski2017,
-	title={Enriching Word Vectors with Subword Information},
-	author={Bojanowski, Piotr and Grave, Edouard and Joulin, Armand and Mikolov, Tomas},
-	journal={Transactions of the Association for Computational Linguistics},
-	volume={5},
-	year={2017},
-	issn={2307-387X},
-	pages={135--146}
+@Misc{Hastie2009,
+  author    = {Hastie, Trevor and Tibshirani, Robert and Friedman, Jerome},
+  title     = {The elements of statistical learning: data mining, inference, and prediction, Springer Series in Statistics},
+  year      = {2009},
+  publisher = {Springer New York},
 }
 
-@article{Hornik1989,
-	author = {Hornik, K. and Stinchcombe, M. and White, H.},
-	title = {Multilayer Feedforward Networks Are Universal Approximators},
-	journal = {Neural Netw.},
-	issue_date = {1989},
-	volume = {2},
-	number = {5},
-	month = jul,
-	year = {1989},
-	issn = {0893-6080},
-	pages = {359--366},
-	numpages = {8},
-	url = {http://dx.doi.org/10.1016/0893-6080(89)90020-8},
-	doi = {10.1016/0893-6080(89)90020-8},
-	acmid = {70408},
-	publisher = {Elsevier Science Ltd.},
-	address = {Oxford, UK, UK},
-} 
+@Misc{Cortes1995,
+  author   = {Corinna Cortes, Vladimir Vapnik},
+  title    = {Support-Vector Networks},
+  year     = {1995},
+  abstract = {The support-vector network is a new learning machine for two-group classification problems. The machine conceptually implements the following idea: input vectors are non-linearly mapped to a very high-dimension feature space. In this feature space a linear decision surface is constructed. Special properties of the decision surface ensures high generalization ability of the learning machine. The idea behind the supportvector network was previously implemented for the restricted case where the training data can be separated without errors. We here extend this result to non-separable training data.},
+}
 
+@Misc{Lewis2004,
+  author        = {Lewis, David D. and Yang, Yiming and Rose, Tony G. and Li, Fan},
+  title         = {RCV1: A new benchmark collection for text categorization research},
+  year          = {2004},
+  __markedentry = {[akin:]},
+  abstract      = {Reuters Corpus Volume I (RCV1) is an archive of over 800,000 manually categorized newswire stories recently made available by Reuters, Ltd. for research purposes. Use of this data for research on text categorization requires a detailed understanding of the real world constraints under which the data was produced. Drawing on interviews with Reuters personnel and access to Reuters documentation, we describe the coding policy and quality control procedures used in producing the RCV1 data, the intended semantics of the hierarchical category taxonomies, and the corrections necessary to remove errorful data. We refer to the original data as RCV1-v1, and the corrected data as RCV1-v2. We benchmark several widely used supervised learning methods on RCV1-v2, illustrating the collection’s properties, suggesting new directions for research, and providing baseline results for future studies. We make available detailed, per-category experimental results, as well as},
+}
+
+@Article{Dai2015a,
+	author        = {Andrew M. Dai and Quoc V. Le},
+	title         = {Semi-supervised Sequence Learning},
+	__markedentry = {[akin:6]},
+	abstract      = {We present two approaches that use unlabeled data to improve sequence learning with recurrent networks. The first approach is to predict what comes next in a sequence, which is a conventional language model in natural language processing. The second approach is to use a sequence autoencoder, which reads the input sequence into a vector and predicts the input sequence again. These two algorithms can be used as a "pretraining" step for a later supervised sequence learning algorithm. In other words, the parameters obtained from the unsupervised step can be used as a starting point for other supervised training models. In our experiments, we find that long short term memory recurrent networks after being pretrained with the two approaches are more stable and generalize better. With pretraining, we are able to train long short term memory recurrent networks up to a few hundred timesteps, thereby achieving strong performance in many text classification tasks, such as IMDB, DBpedia and 20 Newsgroups.},
+	year          = {2015},
+}
+
+@article{Srivastava2014,
+	author  = {Nitish Srivastava and Geoffrey Hinton and Alex Krizhevsky and Ilya Sutskever and Ruslan Salakhutdinov},
+	title   = {Dropout: A Simple Way to Prevent Neural Networks from Overfitting},
+	journal = {Journal of Machine Learning Research},
+	year    = {2014},
+	volume  = {15},
+	pages   = {1929-1958},
+	url     = {http://jmlr.org/papers/v15/srivastava14a.html}
+}
 
 @Comment{jabref-meta: databaseType:bibtex;}
 
