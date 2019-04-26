@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  23 APR 2019 06:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  26 APR 2019 04:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -469,7 +469,7 @@ LaTeX Info: Redefining \nameref on input line 78.
 \@outlinefile=\write3
 \openout3 = `dissertation.out'.
 
-<uslogo.pdf, id=253, 160.6pt x 98.3675pt>
+<uslogo.pdf, id=257, 160.6pt x 98.3675pt>
 File: uslogo.pdf Graphic file (type pdf)
 <use uslogo.pdf>
 Package pdftex.def Info: uslogo.pdf  used on input line 97.
@@ -548,78 +548,115 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]) (./chapters/dissertation_introduction.tex
 Chapter 1.
-
-Underfull \vbox (badness 2103) has occurred while \output is active []
-
- [1
+[1
 
 
 ]
-
-Package natbib Warning: Citation `McCrum2011' on page 2 undefined on input line
- 26.
-
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 26.
+(Font)              <9> on input line 41.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 26.
-<./figures/fig1.png, id=427, 1084.05pt x 1084.05pt>
+(Font)              <5> on input line 41.
+<./figures/fig1.png, id=444, 1084.05pt x 1084.05pt>
 File: ./figures/fig1.png Graphic file (type png)
 <use ./figures/fig1.png>
-Package pdftex.def Info: ./figures/fig1.png  used on input line 32.
+Package pdftex.def Info: ./figures/fig1.png  used on input line 47.
 (pdftex.def)             Requested size: 284.52603pt x 284.52603pt.
-[2 <./figures/fig1.png>]
-<./figures/fig7.png, id=445, 776.9025pt x 785.93625pt>
-File: ./figures/fig7.png Graphic file (type png)
-<use ./figures/fig7.png>
-Package pdftex.def Info: ./figures/fig7.png  used on input line 66.
-(pdftex.def)             Requested size: 369.8979pt x 398.35175pt.
-)
-(./chapters/dissertation_professional_considerations.tex
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] [4 <./figures/fig7.png>]
+[2]
+<./figures/fig11.png, id=464, 1231.60126pt x 398.48875pt>
+File: ./figures/fig11.png Graphic file (type png)
+<use ./figures/fig11.png>
+Package pdftex.def Info: ./figures/fig11.png  used on input line 69.
+(pdftex.def)             Requested size: 398.33002pt x 142.26407pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3 <./figures/fig1.png>]
+<./figures/fig7.png, id=474, 776.9025pt x 785.93625pt>
+File: ./figures/fig7.png Graphic file (type png)
+<use ./figures/fig7.png>
+Package pdftex.def Info: ./figures/fig7.png  used on input line 98.
+(pdftex.def)             Requested size: 426.79979pt x 455.2557pt.
+) (./chapters/dissertation_professional_considerations.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./figures/fig11.png>] [5 <./figures/fig7.png>]
 Chapter 2.
-[5
+[6
 
-]) (./chapters/dissertation_background.tex [6]
+]) (./chapters/dissertation_related_work.tex [7]
 Chapter 3.
+) (./chapters/dissertation_background.tex [8
 
-Package natbib Warning: Citation `Bojanowski2017' on page 7 undefined on input 
+]
+Chapter 4.
+
+Package natbib Warning: Citation `Bojanowski2017' on page 9 undefined on input 
 line 9.
 
-[7
+<./figures/fig12.png, id=534, 524.96124pt x 262.9825pt>
+File: ./figures/fig12.png Graphic file (type png)
+<use ./figures/fig12.png>
+Package pdftex.def Info: ./figures/fig12.png  used on input line 17.
+(pdftex.def)             Requested size: 256.07977pt x 128.03992pt.
+[9
 
-] [8] [9]
+ <./figures/fig12.png>]
+<./figures/fig13.png, id=542, 814.04124pt x 502.87875pt>
+File: ./figures/fig13.png Graphic file (type png)
+<use ./figures/fig13.png>
+Package pdftex.def Info: ./figures/fig13.png  used on input line 28.
+(pdftex.def)             Requested size: 227.61946pt x 142.26302pt.
 
-Package natbib Warning: Citation `Hornik1989' on page 10 undefined on input lin
-e 99.
+Overfull \hbox (44.66638pt too wide) in paragraph at lines 40--41
+\OT1/lmr/m/n/10.95 occurring have the po-ten-tial to en-code mean-ing which is 
+en-coded as vec-tor dif-fer-ences.(REFACTOR) 
+ []
 
-<./figures/fig2.png, id=510, 292.09125pt x 272.01625pt>
+[10 <./figures/fig13.png>] [11] [12]
+
+Package natbib Warning: Citation `Hornik1989' on page 13 undefined on input lin
+e 125.
+
+
+Package natbib Warning: Citation `Rumelhart1988' on page 13 undefined on input 
+line 125.
+
+<./figures/fig2.png, id=576, 292.09125pt x 272.01625pt>
 File: ./figures/fig2.png Graphic file (type png)
 <use ./figures/fig2.png>
-Package pdftex.def Info: ./figures/fig2.png  used on input line 102.
+Package pdftex.def Info: ./figures/fig2.png  used on input line 128.
 (pdftex.def)             Requested size: 227.62967pt x 227.6329pt.
-
-Underfull \vbox (badness 1502) has occurred while \output is active []
-
- [10 <./figures/fig2.png>]
-<./figures/fig3.png, id=522, 530.98375pt x 323.2075pt>
+[13 <./figures/fig2.png>]
+<./figures/fig3.png, id=586, 530.98375pt x 323.2075pt>
 File: ./figures/fig3.png Graphic file (type png)
 <use ./figures/fig3.png>
-Package pdftex.def Info: ./figures/fig3.png  used on input line 139.
+Package pdftex.def Info: ./figures/fig3.png  used on input line 165.
 (pdftex.def)             Requested size: 284.53127pt x 170.71721pt.
- [11 <./figures/fig3.png>]
-<./figures/fig4.png, id=533, 484.81125pt x 367.3725pt>
+<./figures/fig4.png, id=589, 484.81125pt x 367.3725pt>
 File: ./figures/fig4.png Graphic file (type png)
 <use ./figures/fig4.png>
-Package pdftex.def Info: ./figures/fig4.png  used on input line 158.
+Package pdftex.def Info: ./figures/fig4.png  used on input line 184.
 (pdftex.def)             Requested size: 284.54184pt x 227.62843pt.
- [12 <./figures/fig4.png>])
-(./chapters/dissertation_requirements_analysis.tex [13]
-Chapter 4.
-<./figures/fig9.png, id=563, 513.92pt x 288.57813pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 1168) has occurred while \output is active []
+
+ [14 <./figures/fig3.png>] [15 <./figures/fig4.png>])
+(./chapters/dissertation_requirements_analysis.tex [16]
+Chapter 5.
+<./figures/fig9.png, id=627, 513.92pt x 288.57813pt>
 File: ./figures/fig9.png Graphic file (type png)
 <use ./figures/fig9.png>
 Package pdftex.def Info: ./figures/fig9.png  used on input line 10.
@@ -629,63 +666,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
-<./figures/fig10.png, id=564, 1284.8pt x 1140.26pt>
+<./figures/fig10.png, id=628, 1284.8pt x 1140.26pt>
 File: ./figures/fig10.png Graphic file (type png)
 <use ./figures/fig10.png>
 Package pdftex.def Info: ./figures/fig10.png  used on input line 48.
 (pdftex.def)             Requested size: 284.5193pt x 256.06026pt.
-[14
+[17
 
  <./figures/fig9.png>]
 Overfull \hbox (23.84177pt too wide) in paragraph at lines 60--71
  [][] 
  []
 
-[15 <./figures/fig10.png>]) (./chapters/dissertation_methodology.tex [16]
-[17]
-Chapter 5.
-<./figures/fig6.png, id=588, 722.7pt x 722.7pt>
+[18 <./figures/fig10.png>]) (./chapters/dissertation_methodology.tex [19]
+[20]
+Chapter 6.
+<./figures/fig6.png, id=650, 722.7pt x 722.7pt>
 File: ./figures/fig6.png Graphic file (type png)
 <use ./figures/fig6.png>
-Package pdftex.def Info: ./figures/fig6.png  used on input line 21.
+Package pdftex.def Info: ./figures/fig6.png  used on input line 25.
 (pdftex.def)             Requested size: 227.61862pt x 227.61862pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18
-
-] [19 <./figures/fig6.png>]) (./chapters/dissertation_implementation.tex
-[20]
-Chapter 6.
 [21
 
+] [22 <./figures/fig6.png>]
+Underfull \vbox (badness 1337) has occurred while \output is active []
+
+ [23])
+(./chapters/dissertation_implementation.tex [24]
+Chapter 7.
+[25
+
 ]
-<./figures/fig5.png, id=625, 598.235pt x 287.0725pt>
+<./figures/fig5.png, id=695, 598.235pt x 287.0725pt>
 File: ./figures/fig5.png Graphic file (type png)
 <use ./figures/fig5.png>
 Package pdftex.def Info: ./figures/fig5.png  used on input line 39.
 (pdftex.def)             Requested size: 341.43565pt x 170.72046pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [22 <./figures/fig5.png>]) (./chapters/dissertation_evaluation.tex [23]
-Chapter 7.
-) (./chapters/dissertation_conclusion.tex [24
+ [26 <./figures/fig5.png>]) (./chapters/dissertation_evaluation.tex
+[27]
+Chapter 8.
+) (./chapters/dissertation_conclusion.tex [28
 
 ]
-Chapter 8.
-) [25
+Chapter 9.
+) [29
 
 ] (./dissertation.bbl (./dissertation.brf)
 \tf@brf=\write7
 \openout7 = `dissertation.brf'.
 
-) [26
+ [30
 
 
-]
+]) [31]
 Appendix A.
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 248
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 250
 .
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -693,42 +731,41 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 255.
-[27
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
+[32
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 255.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
  (./dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 255.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 255.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
+Package rerunfilecheck Info: File `dissertation.out' has not changed.
+(rerunfilecheck)             Checksum: 915352EDC3C0C304EA923FDE14077627;4285.
 
 
-Package rerunfilecheck Warning: File `dissertation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+Package rerunfilecheck Warning: File `dissertation.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
 
-Package rerunfilecheck Info: Checksums for `dissertation.out':
-(rerunfilecheck)             Before: 89F539EB3036DDFA32424AFF8FFE8BFD;4294
-(rerunfilecheck)             After:  4F9E3FC7777D907F71C458C859234704;4294.
-Package rerunfilecheck Info: File `dissertation.brf' has not changed.
-(rerunfilecheck)             Checksum: 908C4AB9E8C1B66FFD571BE6CBA68BFC;837.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 255.
+Package rerunfilecheck Info: Checksums for `dissertation.brf':
+(rerunfilecheck)             Before: D2314D9BCCF8E81D7F9A1CA0780A266D;1213
+(rerunfilecheck)             After:  30DFB9721E1E0DAAD8583FFFC44F4C7B;1213.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
  ) 
 Here is how much of TeX's memory you used:
- 7869 strings out of 494923
- 114942 string characters out of 6180742
- 214152 words of memory out of 5000000
- 10808 multiletter control sequences out of 15000+600000
+ 7955 strings out of 494923
+ 116296 string characters out of 6180742
+ 214536 words of memory out of 5000000
+ 10868 multiletter control sequences out of 15000+600000
  79424 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,51p,1014b,460s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.34} has been referenced but does not exi
+ 42i,12n,51p,1125b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exi
 st, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/
+ips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/s
+hare/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/l
+m/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf/
 fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/font
 s/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pf
@@ -740,10 +777,10 @@ mf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/font
 s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on dissertation.pdf (36 pages, 975172 bytes).
+Output written on dissertation.pdf (41 pages, 1520923 bytes).
 PDF statistics:
- 778 PDF objects out of 1000 (max. 8388607)
- 696 compressed objects within 7 object streams
- 183 named destinations out of 1000 (max. 500000)
- 547 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 770 compressed objects within 8 object streams
+ 203 named destinations out of 1000 (max. 500000)
+ 570 words of extra memory for PDF output out of 10000 (max. 10000000)
 

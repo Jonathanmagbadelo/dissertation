@@ -1,19 +1,23 @@
 \babel@toc {british}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Average number of Billboard 100 songs during artist activity, compared to unique word count across an artists first 35,000 words.}}{2}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces High level system architecture for the prototype which takes the form of a full software system}}{4}{figure.1.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Average Number of Billboard 100 songs vs Unique Word Count}}{3}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Distribution of Music Genres throughout History}}{4}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces SONGIFAI: High Level Architecture}}{5}{figure.1.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Example neural network, three input nodes, four hidden and two outputs}}{10}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{11}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{12}{figure.3.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces MasterWriter}}{14}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Rhymer's Block}}{15}{figure.4.2}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Matrix factorization}}{9}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Skip-gram and CBOW models}}{10}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Example neural network, three input nodes, four hidden and two outputs}}{13}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{14}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{15}{figure.4.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{19}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces MasterWriter}}{17}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Rhymer's Block}}{18}{figure.5.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{22}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{22}{figure.6.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{26}{figure.7.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

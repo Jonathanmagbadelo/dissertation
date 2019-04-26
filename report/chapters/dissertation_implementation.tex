@@ -21,7 +21,7 @@ All implementation was completed on a personal machine. The hardware specificati
 	\label{table:1}
 \end{table}
 \section{Calculating Co-occurrence Statistics}
-Many unsupervised natural language processing methods compute co-occurrence statistics before learning takes place. Typical co-occurrence statistics, such as GloVe's word-word co-occurrence matrix are very sparse in nature, and computing them can often be a computationally more expensive task than the learning itself. Examining GloVe, where a corpus has vocabulary size \(N\), a word-word co-occurrence matrix \(X\) is computed with \(X_{ij}\) being a measure of the number of times words \(i\) and \(j\) co-occur within a given context window. 
+Many unsupervised natural language processing methods compute co-occurrence statistics before learning takes place. Typical co-occurrence statistics, such as GloVe's word-word co-occurrence matrix contain sparse data, and computing them can often be a computationally more expensive task than the learning itself. 
 
 \noindent
 \newline
@@ -45,22 +45,25 @@ Apache Spark is an open-source framework, written in Scala, for distributed comp
 \noindent
 \newline
 PySpark, a Python API for the Spark framework was initially used to both pre-process data and calculate co-occurrence statistics for the corpora. 
-Unfortunately, the overhead of collecting completed executor tasks to the driver as well as the  cross language communication between Python and Scala made PySpark an unfavourable option for collecting co-occurrence statistics. A similar parallelised approach which avoided cross language communication involved the use of Python's multiprocessing module. This  approach suffered from the restrictions of Pythons Global Interpreter Lock (GIL) which prevents shared access of Python objects across multiple threads. 
+Unfortunately, the overhead of collecting completed executor tasks to the driver as well as the cross language communication between Python and Scala made PySpark an unfavourable option for collecting co-occurrence statistics. A similar parallelised approach which avoided cross language communication involved the use of Python's multiprocessing module. This approach suffered from the restrictions of Pythons Global Interpreter Lock (GIL) which prevents shared access of Python objects across multiple threads. 
 
 \noindent
 \newline
-Cython is a superset of the Python programming language which aims to provide C like performance whilst maintaining the ability to write Python like code. Native Python programs can experience major speed improvements using Cython because of its ability to compile Python to C code. 
+Cython is a superset of the Python programming language which aims to provide C like performance whilst maintaining the ability to write Python like code. Native Python programs can experience major speed improvements using Cython because of its ability to compile Python to C code. Ultimately, calculating the co-occurrence statistics for CoVeR was achieved using Cython which provided major speed ups compared to the parallelised approaches outlined before. A comparison of the speed gain for computing co-occurrences can be seen in the figure below.
+
+\noindent
+\newline
+(CYTHON SPEED IMPROVEMENTS DIAGRAM)  
 
 \section{CoVeR Implementation}
-At time of writing, no publicly available implementation of CoVeR is available. As a result and to meet the needs of this project, CoVeR was implemented from scratch using the PyTorch library. PyTorch is a Python library based on Torch, which supports Numpy like operations which can be accelerated through the GPU. All supporting code for the implementation can be found here: (LINK TO CODE)
-\subsection{Initialisation of Learnable Parameters} 
-\subsection{Hyperparameters}
+At time of writing, no public implementation of CoVeR is available. As a result and to meet the needs of this project, CoVeR was implemented from scratch using the PyTorch library. PyTorch is a Python library based on Torch, which supports Numpy like operations which can be accelerated through the GPU. All supporting code for the implementation can be found here: (LINK TO CODE)
 
 \section{LSTM Implementations}
-Implementation of both the language model and the text classifier was done using Keras. Keras is a high level machine learning library written in Python, which runs on top of either Tensorflow or Theano. The motivation behind using Keras comes from its ease of use to quickly develop deep learning networks. In this project Keras is deployed using Tensorflow as a backend, specifically for its GPU capabilities.
+Implementation of both the neural language model and text classifier was done using Keras. Keras is a high level machine learning library written in Python, which runs on top of either Tensorflow or Theano. The motivation behind using Keras comes from its ease of use to quickly develop deep learning networks. In this project Keras is deployed using Tensorflow as a backend, specifically for its GPU capabilities.
 \subsection{Language Model}
 The structure for the language model can be seen in Figure X.X. The model consisted of an input layer, an embedding layer, a bidirectional LSTM, a dropout layer and finally a dense layer.
 \subsection{Text Classifier}
+The structure for the text classifier can be seen in Figure X.X. The model consisted of an input layer, an embedding layer, a bidirectional LSTM, a dropout layer and finally a dense layer.
 \section{SONGIFAI}
 \subsection{Architecture}
 \subsubsection{Client Side}

@@ -6,14 +6,40 @@
 This chapter provides an introduction to the theory and previous work within the areas of word embeddings, neural language models and text classification. 
 
 \section{Word Embeddings}
-Word embeddings are vectors of predefined size which aim to encode a distributional numerical representation of word features. Recent aforementioned methods of learning these representations include the GloVe, word2Vec and fastText (\cite{Bojanowski2017}) algorithms. The utilization of word embeddings has been highly successful in many natural language processing tasks such as sentiment analysis (\cite{Socher2013}) and syntactic parsing (\cite{Socher2013}). Previous techniques for creating such representations can be categorised into two categories: matrix factorization methods and shallow window-based methods.
+Word embeddings are vectors of predefined size which aim to encode a distributional numerical representation of word features. Recent aforementioned methods of learning these representations include the GloVe, word2Vec and fastText (\cite{Bojanowski2017}) algorithms. The utilization of word embeddings has been highly successful in many NLP tasks such as sentiment analysis (\cite{Socher2013}) and syntactic parsing (\cite{Socher2013}). Previous techniques for creating such representations can be categorised into two categories: matrix factorization methods and shallow window-based methods.
 \subsection{Previous Methods}
 \subsubsection{Global Matrix Factorization Methods}
 Global matrix factorization methods such as Latent Semantic Analysis (LSA) use low rank approximations to decompose large matrices containing corpus statistics. Typically these matrices take the form of a term-document matrix, which captures the frequencies of terms across a collection of documents, or a term-term matrix, which store co-occurrence counts of terms. Matrix factorisation methods such as LSA allow for fast training and perform well on word similarity tasks by leveraging word occurrence statistics however they suffer from the disproportionate importance given to large word counts.
+
+\noindent
+\newline
+\begin{figure}[h]
+	\includegraphics[width=9cm, height=4.5cm]{./figures/fig12}
+	\centering
+	\caption{Matrix factorization}
+	\label{fig:fig12}
+\end{figure}
 \subsubsection{Shallow Window-Based Methods}
 Shallow window-based methods provide an alternative approach to learning word representations by sliding a fixed window over the contents of a corpus and learning to predict either the surroundings of a given word (skip-gram model) or predict a word given its surroundings (continuous bag of words). In the case of shallow window-based methods, they are good at capturing more complex patterns and do well in the word analogy task, however they fail to leverage global statistical information such as those used in global matrix factorization methods.
+
+\noindent
+\newline
+\begin{figure}[h]
+	\includegraphics[width=8cm, height=5cm]{./figures/fig13}
+	\centering
+	\caption{Skip-gram and CBOW models}
+	\label{fig:fig13}
+\end{figure}
 \subsection{GloVe}
-Global Vectors for Word Representation (GloVe), is an unsupervised word embedding algorithm, introduced by Pennington et al, which marries the benefits of both global matrix factorisation and shallow window-based methods. Presented as a log-bilinear regression model, GloVe makes use of a global word co-occurrence statistics from a corpus. As detailed in the paper, GloVe outperformed previous methods such as word2vec in word analogy, word similarity and named entity recognition tasks. Conceptually, GloVe is based on the idea that ratios of probabilities of words co-occurring have the potential to encode meaning which is encoded as vector differences. This concept is formalised in the following equation, where the dot product of focal and context word vectors, \(w\) and \(\tilde{w}\), is equal to the logarithm of the probability of the words co-occurring, \(\log{X_{ij}}\).
+Global Vectors for Word Representation (GloVe), is an unsupervised word embedding algorithm, introduced by \cite{Pennington2014}, which marries the benefits of both global matrix factorisation and shallow window-based methods. Presented as a log-bilinear regression model, GloVe makes use of global word co-occurrence statistics from a corpus. Specifically, given a  corpus has vocabulary size \(N\), a word-word co-occurrence matrix \(X\) is computed with \(X_{ij}\) being a measure of the number of times words \(i\) and \(j\) co-occur within a given context window, which in GloVe is a inverse distance function, giving closer words higher counts.
+
+\noindent 
+\newline
+As detailed in the paper, GloVe outperformed previous methods such as word2vec in word analogy, word similarity and named entity recognition tasks. 
+
+Conceptually, GloVe is based on the idea that ratios of probabilities of words co-occurring have the potential to encode meaning which is encoded as vector differences.(REFACTOR)
+
+This concept is formalised in the following equation, where the dot product of focal and context word vectors, \(w\) and \(\tilde{w}\), is equal to the logarithm of the number of times the words co-occurred, \(\log{X_{ij}}\).
 
 \begin{equation}
 w_{i}^{T} \tilde{w_{j}} + b_{i} + \tilde{b}_{j} = \log{X_{ij}}^{2}
@@ -21,24 +47,24 @@ w_{i}^{T} \tilde{w_{j}} + b_{i} + \tilde{b}_{j} = \log{X_{ij}}^{2}
 
 \noindent
 \newline
-A weighting function \(f(X_{ij})\) is used to decrease noise caused by very frequent word co-occurrences. The following weighting function is used in the GloVe model.
+GloVe also utilises a weighting function \(f(X_{ij})\) to decrease noise caused by high frequency word co-occurrences. The following weighting function is used in the GloVe model.
 
 \begin{equation}
 	f(x) =
 	\begin{cases}
-	(x/x_{max}), & \text{if  \(x <\) } x_{max} \\
+	(x/x_{max})^{\alpha}, & \text{if  \(x <\) } x_{max} \\
 	1, & \text{otherwise}
 	\end{cases}
 \end{equation}
 
 \noindent
 \newline
-Combining equations 3.1 and 3.2, the GloVe model is defined as a weighted least squares regression problem.
+Where \( \alpha \) is 0.75 and \(x_{max}\) is 100. Combining equations 3.1 and 3.2, the GloVe model is defined as a weighted least squares regression problem.
 \begin{equation}
 	J = \sum_{i, j=1}^{N} f(X_{ij}) (w_{i}^{T} \tilde{w_{j}} + b_{i} + \tilde{b}_{j} - \log{X_{ij}})^{2}
 \end{equation}
-\subsection{CoVeR - Covariate-Specific Word Embeddings}
-Covariates such as author demographics, time and location often accompany documents within a corpus. A trivial approach to obtaining covariate specific word embeddings involves applying GloVe to each subset of corpus documents mapping to a particular covariate. Unfortunately, utilising GloVe this way has certain drawbacks. Firstly, GloVe must be applied individually to sub corpora relating to a specific covariate, which, depending on the number of covariates, is time consuming. As a direct result of this, global co-occurrence statistics are now split into covariate specific co-occurrence statistics and these are not shared between embeddings, which may cause sub-optimal word representations, especially when sub corpora contain a small amount of co-occurrences for GloVe to leverage. 
+\subsection{CoVeR}
+Covariates such as author demographics, time and location often accompany documents within a corpus. A trivial approach to obtaining covariate specific word embeddings involves applying GloVe to each subset of corpus documents relating to a particular covariate. Unfortunately, utilising GloVe this way has certain drawbacks. Firstly, GloVe must be applied and optimised to each sub corpus, which, depending on the number of covariates, is computational expensive. Also as a direct result of dividing the original corpus, global co-occurrence statistics are now split across covariate specific co-occurrence statistics. Consequently, global statistics are now not shared between embeddings, which may cause sub-optimal word representations, especially when sub corpus contains small amounts of co-occurrences for GloVe to train on. 
 
 \noindent
 \newline

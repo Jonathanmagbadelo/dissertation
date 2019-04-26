@@ -3,49 +3,67 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation.aux
 The style file: apalike.bst
 Database file #1: bib.bib
-Warning--I didn't find a database entry for "McCrum2011"
+Warning--entry type for "Hulzebosch2017" isn't style-file defined
+--line 192 of file bib.bib
+Warning--entry type for "Pui2018" isn't style-file defined
+--line 215 of file bib.bib
 Warning--I didn't find a database entry for "Bojanowski2017"
 Warning--I didn't find a database entry for "Hornik1989"
+Warning--I didn't find a database entry for "Rumelhart1988"
+Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
+while executing---line 1098 of file apalike.bst
 Warning--empty journal in Dai2015a
-You've used 15 entries,
+Warning--empty booktitle in Irvin2016
+Warning--empty booktitle in Potash2015
+You've used 22 entries,
             1935 wiz_defined-function locations,
-            579 strings with 6519 characters,
-and the built_in function-call counts, 6602 in all, are:
-= -- 647
-> -- 297
-< -- 9
-+ -- 105
-- -- 102
-* -- 537
-:= -- 1119
-add.period$ -- 43
-call.type$ -- 15
-change.case$ -- 125
-chr.to.int$ -- 14
-cite$ -- 16
-duplicate$ -- 261
-empty$ -- 445
-format.name$ -- 121
-if$ -- 1316
+            617 strings with 7480 characters,
+and the built_in function-call counts, 9097 in all, are:
+= -- 895
+> -- 380
+< -- 16
++ -- 133
+- -- 128
+* -- 703
+:= -- 1540
+add.period$ -- 62
+call.type$ -- 22
+change.case$ -- 171
+chr.to.int$ -- 21
+cite$ -- 25
+duplicate$ -- 380
+empty$ -- 629
+format.name$ -- 158
+if$ -- 1828
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 13
-newline$ -- 75
-num.names$ -- 45
-pop$ -- 130
+missing$ -- 20
+newline$ -- 107
+num.names$ -- 66
+pop$ -- 192
 preamble$ -- 1
-purify$ -- 125
+purify$ -- 173
 quote$ -- 0
-skip$ -- 203
+skip$ -- 296
 stack$ -- 0
-substring$ -- 451
-swap$ -- 54
-text.length$ -- 4
+substring$ -- 602
+swap$ -- 77
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
-warning$ -- 1
-while$ -- 50
+type$ -- 128
+warning$ -- 3
+while$ -- 68
 width$ -- 0
-write$ -- 186
-(There were 4 warnings)
+write$ -- 265
+(There were 6 error messages)

@@ -5,6 +5,11 @@ Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003).
 \newblock A neural probabilistic language model.
 \newblock {\em J. Mach. Learn. Res.}, 3:1137--1155.
 
+\bibitem[Chun Pui~Tang, 2018]{Pui2018}
+Chun Pui~Tang, Ka Long~Chui, Y. K. Y. Z. Z. K. H.~W. (2018).
+\newblock Music genre classification using a hierarchical long short term
+  memory (lstm) model.
+
 \bibitem[Corinna~Cortes, 1995]{Cortes1995}
 Corinna~Cortes, V.~V. (1995).
 \newblock Support-vector networks.
@@ -12,6 +17,11 @@ Corinna~Cortes, V.~V. (1995).
 \bibitem[Dai and Le, 2015]{Dai2015a}
 Dai, A.~M. and Le, Q.~V. (2015).
 \newblock Semi-supervised sequence learning.
+
+\bibitem[Edwards and Rap, 2009]{Edwards2009}
+Edwards, P. and Rap, K. (2009).
+\newblock {\em How to Rap}.
+\newblock Chicago Review Press, Incorporated.
 
 \bibitem[Harris, 1954]{Harris1954}
 Harris, Z.~S. (1954).
@@ -23,6 +33,15 @@ Hochreiter, S. and Schmidhuber, J. (1997).
 \newblock Long short-term memory.
 \newblock {\em Neural computation}, 9(8):1735--1780.
 
+\bibitem[Hulzebosch, 2017]{Hulzebosch2017}
+Hulzebosch (2017).
+\newblock Deeplyricist: Automatic generation of rap lyrics using
+  sequence-to-sequence learning.
+
+\bibitem[Irvin et~al., 2016]{Irvin2016}
+Irvin, J., Chartock, E., and Hollander, N. (2016).
+\newblock Recurrent neural networks with attention for genre classification.
+
 \bibitem[Joachims, 1998]{Joachims1998}
 Joachims, T. (1998).
 \newblock Text categorization with support vector machines: Learning with many
@@ -33,6 +52,11 @@ Joachims, T. (1998).
 \bibitem[Lewis et~al., 2004]{Lewis2004}
 Lewis, D.~D., Yang, Y., Rose, T.~G., and Li, F. (2004).
 \newblock Rcv1: A new benchmark collection for text categorization research.
+
+\bibitem[McCrum, 2011]{McCrum2011}
+McCrum, R. (2011).
+\newblock {\em The Story of English}.
+\newblock BBC books. Faber \& Faber.
 
 \bibitem[Mikolov et~al., 2013a]{Mikolov2013}
 Mikolov, T., Chen, K., Corrado, G., and Dean, J. (2013a).
@@ -59,10 +83,15 @@ Pennington, J., Socher, R., and Manning, C. (2014).
 \newblock In {\em Proceedings of the 2014 conference on empirical methods in
   natural language processing (EMNLP)}, pages 1532--1543.
 
-\bibitem[Rumelhart et~al., 1988]{Rumelhart1988}
-Rumelhart, D.~E., Hinton, G.~E., Williams, R.~J., et~al. (1988).
+\bibitem[Potash et~al., 2015]{Potash2015}
+Potash, P., Romanov, A., and Rumshisky, A. (2015).
+\newblock Ghostwriter: Using an lstm for automatic rap lyric generation.
+\newblock pages 1919--1924.
+
+\bibitem[Rumelhart et~al., 1986]{Hinton1986}
+Rumelhart, D.~E., Hinton, G.~E., Williams, R.~J., et~al. (1986).
 \newblock Learning representations by back-propagating errors.
-\newblock {\em Cognitive modeling}, 5(3):1.
+\newblock {\em Cognitive modeling}.
 
 \bibitem[Socher et~al., 2013]{Socher2013}
 Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C.~D., Ng, A., and
@@ -83,5 +112,11 @@ Tian, K., Zhang, T., and Zou, J. (2018).
 \newblock Cover: Learning covariate-specific vector representations with tensor
   decompositions.
 \newblock {\em arXiv preprint arXiv:1802.07839}.
+
+\bibitem[Zhang and Lapata, 2014]{Zhang2014}
+Zhang, X. and Lapata, M. (2014).
+\newblock Chinese poetry generation with recurrent neural networks.
+\newblock In {\em Proceedings of the 2014 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 670--680.
 
 \end{thebibliography}

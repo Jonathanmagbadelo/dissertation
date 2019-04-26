@@ -1,0 +1,25 @@
+%-----------------------------------------------------
+% Chapter: Related Work
+%-----------------------------------------------------
+\chapter{Related Work}
+\label{chap:related_work}
+This chapter briefly outlines previous work relating to the tasks of language modelling and text classification using song lyrics.
+
+\section{Lyric Language Modelling}
+A general approach to modelling language used in lyrics includes the usage of Markov processes. Naturally, as only the present or past is considered, these types of models are unable to capture longer dependencies which can occur in lyrics. Recent attempts to model creative writing have utilised neural methods, such as \cite{Zhang2014}, who uses RNN's for Chinese poetry generation and \cite{Potash2015}, who uses an LSTM, to ghostwrite\footnote{write in the style of X without giving credit} rap lyrics. Specific to rap lyrics \cite{Hulzebosch2017} extends previous works by restructuring the problem as a sequence to sequence model which is aware of generated sequences whilst ... As stated in the paper, a drawback of this  approach is the large amounts of training data required to produce good results.
+\section{Lyric Genre Classification}
+Previous attempts at genre classification predominately use audio features rather than lyrics. Apart from audio features, the genre of a song is closely related to the lyrics as songs of varying genres use language differently. This can be seen in the Hip Hop, where the use of slang, which are twisted existing words or self-made words (\cite{Edwards2009}) is prevalent. Examples of such words can be seen in \autoref{Tab:Slang}
+\begin{table}[ht]
+	\caption{Example slang words found in the dataset used in the project}
+	\centering
+	\begin{tabular}{ | p{5cm} | p{5cm} |}
+		\hline
+		\textbf{Slang Word} & \textbf{Meaning}\\ \hline
+		grill & teeth\\ \hline
+		lit & fun\\ \hline
+		bread & money \\ \hline
+	\end{tabular}
+	\label{Tab:Slang}
+\end{table}
+\newline
+Similar to the previous section, genre classification has also been tackled using neural methods. Using audio based features, (\cite{Irvin2016}) and (\cite{Pui2018}), utilise LSTM's for classification. 
