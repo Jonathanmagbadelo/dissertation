@@ -3,14 +3,52 @@
 %-----------------------------------------------------
 \chapter{Related Work}
 \label{chap:related_work}
-This chapter briefly outlines previous work relating to the tasks of language modelling and text classification using song lyrics.
+This chapter briefly outlines previous work relating to the tasks of language modelling and text classification in the area of music lyrics.
 
 \section{Lyric Language Modelling}
-A general approach to modelling language used in lyrics includes the usage of Markov processes. Naturally, as only the present or past is considered, these types of models are unable to capture longer dependencies which can occur in lyrics. Recent attempts to model creative writing have utilised neural methods, such as \cite{Zhang2014}, who uses RNN's for Chinese poetry generation and \cite{Potash2015}, who uses an LSTM, to ghostwrite\footnote{write in the style of X without giving credit} rap lyrics. Specific to rap lyrics \cite{Hulzebosch2017} extends previous works by restructuring the problem as a sequence to sequence model which is aware of generated sequences whilst ... As stated in the paper, a drawback of this  approach is the large amounts of training data required to produce good results.
+Generally, hobbyist approaches to modelling the language used in lyrics have utilized Markov processes, which have the special property that the future is independent of the past given the present. Naturally, as only the present or recent past (in the case of higher order Markov chains) is considered, these types of models are unable to capture longer dependencies and complex structures, such as alliteration and complex rhyme schemes; examples of which are given below:
+
+\begin{figure}[ht]
+	\begin{center}
+		"Tired of \textbf{injustice}
+		\par
+		Tired of the \textbf{schemes}
+		\par
+		Your lies are \textbf{disgusting}
+		\par
+		What does it \textbf{mean}
+		\par
+		Kicking me \textbf{down}
+		\par
+		I gotta get \textbf{up}
+		\par
+		As jacked as it \textbf{sounds}
+		\par
+		The whole system \textbf{sucks}"
+	\end{center}
+	\caption[Example of complex rhyme in Michael Jackson - Scream]{Example of complex rhyme in Michael Jackson - Scream. In this example alternate slant rhymes are used following the \textit{ababcdcd} rhyme scheme.}
+\end{figure}
+
+\begin{figure}[ht]
+	\begin{center}
+		"Hear Her Voice
+		\par
+		Shake My Window
+		\par
+		\textbf{S}weet \textbf{S}educing \textbf{S}ighs"
+	\end{center}
+	\caption[Example of alliteration in Michael Jackson - Human Nature]{Example of alliteration in Michael Jackson - Human Nature. In this example alliteration of the letter S is used in the last line.}
+\end{figure}
+
+
+
+\noindent
+\newline
+Recent attempts to model creative writing have utilised neural methods, such as \cite{Zhang2014}, who uses RNN's for Chinese poetry generation and \cite{Potash2015}, who uses an LSTM, to \textit{'ghostwrite'}\footnote{write in the style of X without giving credit} rap lyrics. 
+
 \section{Lyric Genre Classification}
-Previous attempts at genre classification predominately use audio features rather than lyrics. Apart from audio features, the genre of a song is closely related to the lyrics as songs of varying genres use language differently. This can be seen in the Hip Hop, where the use of slang, which are twisted existing words or self-made words (\cite{Edwards2009}) is prevalent. Examples of such words can be seen in \autoref{Tab:Slang}
+Previous attempts at genre classification predominately use audio features as opposed to lyrics, (in part due to lyric availability). Apart from audio features, the genre of a song is also connected to its lyrics as songs of varying genres use language differently. This can be seen in the Hip Hop, where the use of slang, which are twisted existing words or self-made words (\cite{Edwards2009}) is prevalent. Examples of such words can be seen in \autoref{Tab:Slang}
 \begin{table}[ht]
-	\caption{Example slang words found in the dataset used in the project}
 	\centering
 	\begin{tabular}{ | p{5cm} | p{5cm} |}
 		\hline
@@ -19,7 +57,8 @@ Previous attempts at genre classification predominately use audio features rathe
 		lit & fun\\ \hline
 		bread & money \\ \hline
 	\end{tabular}
+	\caption{Example slang words found in the dataset used in the project}
 	\label{Tab:Slang}
 \end{table}
 \newline
-Similar to the previous section, genre classification has also been tackled using neural methods. Using audio based features, (\cite{Irvin2016}) and (\cite{Pui2018}), utilise LSTM's for classification. 
+Similar to the previous section, genre classification has also been tackled using neural methods. Using audio based features, (\cite{Irvin2016}) and (\cite{Pui2018}), utilise LSTM's for classification. In relation to song lyrics \cite{Tsaptsinos2017} utilises lyrics to train a Hierarchical Attention Network (\cite{Yang2016}), which provide state of the art results for document classification due to their ability to encode its knowledge about the composites of a document in a hierarchical way. In the same paper, a baseline LSTM is implemented for comparative reasons. 

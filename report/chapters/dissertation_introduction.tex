@@ -19,7 +19,11 @@ and assuming that each word's index represents the dimension of the word, the wo
 
 \noindent
 \newline
-The discrete word representations obtained from these types of methods are sparse and suffer from the curse of dimensionality due to the dimensionality of the word vector growing linearly with the size of the vocabulary. Moreover, these representations fail to capture any syntactic and semantic relationships contained within textual data. Recent word representation methods rely on the intuition that word meaning can be inferred from context. Specifically, these methods are based on the distributional hypothesis (\cite{Harris1954}) that states that words which appear in a similar context have similar meanings. Algorithms such as GloVe (\cite{Pennington2014}) and word2vec (\cite{Mikolov2013}) exploit this concept to produce dense continuous word representations which are able to encode syntactic and semantic regularities. These types of distributed representations, first proposed by \cite{Hinton1986},  are also known as \textit{\textbf{word embeddings}} due to the \textit{"embedding"} of words into often low dimensional space.
+The discrete word representations obtained from these types of methods are sparse and suffer from the curse of dimensionality due to the dimensionality of the word vector growing linearly with the size of the vocabulary. Moreover, these representations fail to capture any syntactic and semantic relationships contained within textual data.
+ 
+\noindent
+\newline
+Recent word representation methods rely on the intuition that word meaning can be inferred from context. Specifically, these methods are based on the distributional hypothesis (\cite{Harris1954}) that states that words which appear in a similar context have similar meanings. Algorithms such as GloVe (\cite{Pennington2014}) and word2vec (\cite{Mikolov2013}) exploit this concept to produce dense continuous word representations which are able to encode syntactic and semantic regularities. These types of distributed representations, first proposed by \cite{Hinton1986},  are also known as \textit{\textbf{word embeddings}} due to the \textit{"embedding"} of words into often low dimensional space.
 
 \noindent
 \newline
@@ -31,7 +35,7 @@ CoVeR (\cite{Tian2018}), a novel tensor decomposition method for learning covari
 
 \noindent
 \newline
-The motivation behind using CoVeR is two-fold. Firstly, its efficient use of data is beneficial when data isn't readily available, which, in the case of song lyrics, is true (discussed more in \autoref{chap:prof_con}) and its increased interpretability compared to traditional methods which allows for greater analysis. The next section briefly contextualises the project, highlighting common issues songwriters face during the writing process.
+The motivation behind using CoVeR is two-fold. Firstly, its efficient use of data is beneficial when data isn't readily available, which, in the case of this project and song lyrics, is true (discussed more in \autoref{chap:prof_con}) and its increased interpretability compared to traditional methods which allows for greater analysis. The next section briefly contextualises the project, highlighting common issues songwriters face during the writing process.
 
 \section{The Songwriters Dilemma}
 Songwriting is an integral part of the song making process which often draws upon past events and experiences. Structure and content both contribute heavily towards the success of a song; with the latter being a key factor on the extent to which a song resonates with a listener. A problem commonly faced by songwriters is that of word choice, through which they can express their ideas clearly and concisely.
@@ -42,17 +46,17 @@ Skilled writers are commonly attributed with having vast vocabulary ranges. For 
  
 \noindent
 \newline
-As shown in a study examining vocabulary range within Hip Hop\footnote{https://pudding.cool/projects/vocabulary/index.html}, which recently surpassed Rock as the most popular genre in America\footnote{https://www.nielsen.com/us/en/insights/reports/2018/2017-music-us-year-end-report.html}, more is not always better. The study examines the unique word count of 150 famous Hip Hop artists across their first 35,000 lyrics. Aesop Rock, ranked 1st on the list, recorded a count of 7,392 unique words across his first 35,000 lyrics. In contrast, rappers Drake and Future, who ranked 130th and 131st respectively, had an average unique word count of 3,334 words used across their first 35,000 lyrics; a 55\% decrease from Aesop Rocks count. 
+As shown in a study examining vocabulary range within Hip Hop\footnote{https://pudding.cool/projects/vocabulary/index.html}, which recently surpassed Rock as the most popular genre in the United States\footnote{https://www.nielsen.com/us/en/insights/reports/2018/2017-music-us-year-end-report.html}, more is not always better. The study examines the unique word count of 150 famous Hip Hop artists across their first 35,000 words used in lyrics. Aesop Rock, ranked 1st on the list, recorded a count of 7,392 unique words across his first 35,000 words. In contrast, rappers Drake and Future, who ranked 130th and 131st respectively, had an average unique word count of 3,334 words used across their first 35,000 words; a 55\% decrease from Aesop Rocks count. 
 \begin{figure}[h]	
 	\includegraphics[width=10cm, height=10cm]{./figures/fig1}
 	\centering
-	\caption[Average Number of Billboard 100 songs vs Unique Word Count]{Average number of Billboard 100 songs during artist activity, compared to unique word count across an artists first 35,000 words.}
+	\caption[Average Number of Billboard Hot 100 songs vs Unique Word Count]{Average number of Billboard Hot 100 songs during artist activity, compared to unique word count across an artists first 35,000 words.}
 	\label{fig:fig1}
 \end{figure}
 
 \noindent
 \newline
-To validate the earlier claim that vocabulary range is not indicative of a songwriters ability to write impactful lyrics, the unique word count per artist was compared against the average number of Billboard 100\footnote{https://www.billboard.com/charts/hot-100} songs an artist had obtained across their career (seen in \autoref{fig:fig1}). Pearson's Correlation Coefficient, which is used to measure the linear relationship between two variables, was applied to both unique word count and average number of Billboard 100 songs. This resulted in a correlation coefficient of - 0.42, indicating a weak inverse correlation between the pairs of data. This value supports the earlier claim that vocabulary range is not indicative of a songwriters ability.
+To validate the earlier claim that vocabulary range is not indicative of a songwriters ability to write impactful lyrics, the unique word count per artist was compared against the average number of Billboard 100\footnote{https://www.billboard.com/charts/hot-100} \footnote{The Billboard Hot 100 is a ranking chart of the 100 most played songs in the United States based on sales, radio play and online streaming.} songs an artist had obtained across their career (seen in \autoref{fig:fig1}). Pearson's Correlation Coefficient, which is used to measure the linear relationship between two variables, was applied to both unique word count and average number of Billboard 100 songs. This resulted in a correlation coefficient of - 0.42, indicating a weak inverse correlation between the pairs of data. This value supports the earlier claim that vocabulary range is not indicative of a songwriters ability.
 
 \noindent
 \newline
@@ -60,15 +64,12 @@ Common methods used to improve songwriting competency include group writing and 
 
 \noindent
 \newline
-After the completion of song lyrics, another task in the song making process, if not already done, is song production. For experienced songwriters, the choice of production style might be straightforward due to them already having an established production style. On the other hand, for newer songwriters or songwriter's wishing to be heard over a new sound, this choice may not be a trivial one, especially with the constant increase in sub genres, and their relevant production styles, within music. As shown in \autoref{fig:fig11}, the distribution of music genres listened to has spread over time, even more so, the increase of distinctive sub genres within these genres.
+After the completion of song lyrics, another task in the song making process, if not already completed, is song production. For experienced songwriters, production choice might be a routine decision due to them having an established production style. On the other hand, for newer songwriters or songwriter's wishing to experiment with a new sound, this choice may not be a trivial one, especially with the constant increase in the popularity and existence of genres and subgenres, which come with their respective production styles. As shown in \autoref{fig:fig11}, the distribution of music genres listened to has spread over time, even more so, the increase of distinctive sub genres within these genres.
 
-\noindent
-\newline
-(QUANTIFY SUBGENRE TALK)
 \begin{figure}[h]	
 	\includegraphics[width=14cm, height=5cm]{./figures/fig11}
 	\centering
-	\caption[Distribution of Music Genres throughout History]{Distribution of music genres listened to throughout history based on the music library of Google Play Users}
+	\caption[Distribution of music genres listened to from 1950]{Distribution of music genres listened from 1950, based on the music library of Google Play Users.}
 	\footnote{hello}
 	\label{fig:fig11}
 \end{figure}
@@ -85,18 +86,18 @@ As previously stated, the goal of this project is to explore effectiveness of Co
 
 \noindent
 \newline
-The tasks of choosing the next word in a song lyric and lyric classification can viewed as abstracted forms of two common NLP tasks: \textit{Language Modelling} and \textit{Text Classification}, which are two active research areas in NLP that have benefited greatly from word embeddings. The usage of these word embeddings has helped improve accuracy in tasks such as Document Classification and Machine Translation. State of the art results in both areas have utilised recurrent neural networks, (discussed in \autopageref{chap:background}) which utilise word embeddings within the input layer to the network.
+The tasks of predicting the next word in a song and lyric classification can viewed as abstracted forms of two common NLP tasks: \textit{Language Modelling} and \textit{Text Classification}, which are two active research areas in NLP that have benefited greatly from word embeddings. The usage of these word embeddings has helped improve accuracy in tasks such as Machine Translation (\cite{Qi2018}) and Document Classification (\cite{Manning2008}). State of the art results in both areas have also utilised recurrent neural networks (RNN), (discussed in \autoref{chap:background}) which employ word embeddings within the input layer to the network.
 
 \noindent
 \newline
-With this in mind, a prototype solution, SONGIFAI is proposed. SONGIFAI provides two main features namely lyric assistance through predictive text and a word suggestion feature, as well as genre classification for a given lyric. The covariates explored in this project are the following music genres: \textit{Pop}, \textit{Rock} and \textit{Hip Hop}. 
+With this in mind, a prototype solution, SONGIFAI is proposed. SONGIFAI provides two main features namely lyric assistance through predictive text and a word suggestion feature, as well as genre classification for a given song lyrics. The covariates explored in this project are the following music genres: \textit{Pop}, \textit{Rock} and \textit{Hip Hop}. 
 
 \noindent
 \newline
-As stated before, recurrent neural networks have been used successfully in both language modelling and text classification tasks. The specific variant of the recurrent neural network which has been successfully utilised in these tasks is the Long Short-Term Memory network. This network architecture is used for both the language model and text classifier which are utilised for the word prediction and lyric classification features respectively. The word suggestion feature utilises the covariate specific embeddings themselves. A high level system architecture of the prototype can be seen in \autoref{fig:fig7}5
+As stated before, RNN's have been used successfully in both language modelling and text classification tasks. The specific variant of the recurrent neural network which has been successfully utilised in these tasks is the Long Short-Term Memory (LSTM) (discussed in \autoref{chap:background}) network. This network architecture is used for both the language model and text classifier which are applied to the word prediction and lyric classification features respectively. The word suggestion feature utilises the covariate specific embeddings themselves. A high level system architecture of the prototype can be seen in \autoref{fig:fig7}5
 \begin{figure}[h]	
 	\includegraphics[width=15cm, height=16cm]{./figures/fig7}
 	\centering
-	\caption[SONGIFAI: High Level Architecture]{From a high level, the system can be split into three sections: \textbf{Training}, \textbf{Server Side} and \textbf{Client Side}}
+	\caption[SONGIFAI: High Level Architecture]{From a high level, the system can be split into three sections: \textbf{Training}, where models are created \textbf{Server Side}, a Python based API used to access the models and \textbf{Client Side}} a user interface built using the React framework.
 	\label{fig:fig7}
 \end{figure}

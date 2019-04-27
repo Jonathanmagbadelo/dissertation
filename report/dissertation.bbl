@@ -5,6 +5,12 @@ Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003).
 \newblock A neural probabilistic language model.
 \newblock {\em J. Mach. Learn. Res.}, 3:1137--1155.
 
+\bibitem[Bojanowski et~al., 2017]{Bojanowski2017}
+Bojanowski, P., Grave, E., Joulin, A., and Mikolov, T. (2017).
+\newblock Enriching word vectors with subword information.
+\newblock {\em Transactions of the Association for Computational Linguistics},
+  5:135--146.
+
 \bibitem[Chun Pui~Tang, 2018]{Pui2018}
 Chun Pui~Tang, Ka Long~Chui, Y. K. Y. Z. Z. K. H.~W. (2018).
 \newblock Music genre classification using a hierarchical long short term
@@ -33,11 +39,6 @@ Hochreiter, S. and Schmidhuber, J. (1997).
 \newblock Long short-term memory.
 \newblock {\em Neural computation}, 9(8):1735--1780.
 
-\bibitem[Hulzebosch, 2017]{Hulzebosch2017}
-Hulzebosch (2017).
-\newblock Deeplyricist: Automatic generation of rap lyrics using
-  sequence-to-sequence learning.
-
 \bibitem[Irvin et~al., 2016]{Irvin2016}
 Irvin, J., Chartock, E., and Hollander, N. (2016).
 \newblock Recurrent neural networks with attention for genre classification.
@@ -52,6 +53,11 @@ Joachims, T. (1998).
 \bibitem[Lewis et~al., 2004]{Lewis2004}
 Lewis, D.~D., Yang, Y., Rose, T.~G., and Li, F. (2004).
 \newblock Rcv1: A new benchmark collection for text categorization research.
+
+\bibitem[Manning et~al., 2008]{Manning2008}
+Manning, C.~D., Raghavan, P., and Sch\"{u}tze, H. (2008).
+\newblock {\em Introduction to Information Retrieval}.
+\newblock Cambridge University Press, New York, NY, USA.
 
 \bibitem[McCrum, 2011]{McCrum2011}
 McCrum, R. (2011).
@@ -88,14 +94,26 @@ Potash, P., Romanov, A., and Rumshisky, A. (2015).
 \newblock Ghostwriter: Using an lstm for automatic rap lyric generation.
 \newblock pages 1919--1924.
 
+\bibitem[Qi et~al., 2018]{Qi2018}
+Qi, Y., Singh~Sachan, D., Felix, M., Janani~Padmanabhan, S., and Neubig, G.
+  (2018).
+\newblock When and why are pre-trainedword embeddings useful for neural machine
+  translation?
+
 \bibitem[Rumelhart et~al., 1986]{Hinton1986}
 Rumelhart, D.~E., Hinton, G.~E., Williams, R.~J., et~al. (1986).
 \newblock Learning representations by back-propagating errors.
 \newblock {\em Cognitive modeling}.
 
-\bibitem[Socher et~al., 2013]{Socher2013}
+\bibitem[Socher et~al., 2013a]{Socher2013a}
+Socher, R., Bauer, J., Manning, C.~D., et~al. (2013a).
+\newblock Parsing with compositional vector grammars.
+\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, volume~1, pages 455--465.
+
+\bibitem[Socher et~al., 2013b]{Socher2013}
 Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C.~D., Ng, A., and
-  Potts, C. (2013).
+  Potts, C. (2013b).
 \newblock Recursive deep models for semantic compositionality over a sentiment
   treebank.
 \newblock In {\em Proceedings of the 2013 conference on empirical methods in
@@ -112,6 +130,18 @@ Tian, K., Zhang, T., and Zou, J. (2018).
 \newblock Cover: Learning covariate-specific vector representations with tensor
   decompositions.
 \newblock {\em arXiv preprint arXiv:1802.07839}.
+
+\bibitem[Tsaptsinos, 2017]{Tsaptsinos2017}
+Tsaptsinos, A. (2017).
+\newblock Music genre classification by lyrics using a hierarchical attention
+  network.
+
+\bibitem[Yang et~al., 2016]{Yang2016}
+Yang, Z., Yang, D., Dyer, C., He, X., Smola, A., and Hovy, E. (2016).
+\newblock Hierarchical attention networks for document classification.
+\newblock In {\em Proceedings of the 2016 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 1480--1489.
 
 \bibitem[Zhang and Lapata, 2014]{Zhang2014}
 Zhang, X. and Lapata, M. (2014).

@@ -9,15 +9,14 @@ As the project involves the development of a prototype software system, it is im
 \begin{figure}[h]
 	\includegraphics[width=10cm, height=6cm]{./figures/fig9}
 	\centering
-	\caption{MasterWriter}
+	\caption[MasterWriter User Interface]{MasterWriter user interface}
 	\label{fig:fig9}
 \end{figure}
 \noindent
 Self-described as \textbf{\textit{"The most powerful suite of writing tools ever assembled in one program."}}, MasterWriter is a software application aimed towards songwriters, poets and creative
-writers. Available as a multi-platform product, it consolidates a number of writing aids into one application. Some of the core features of MasterWriter are highlighted in the table below.
+writers. Available as a multi-platform product, it consolidates a number of writing aids into one application. Some of the core features of MasterWriter are highlighted in \autoref{Tab:MasterWriter} below.
 
 \begin{table}[ht]
-	\caption{MasterWriter Features}
 	\centering
 	\begin{tabular}{ | l | p{10cm} |}
 		\hline
@@ -38,6 +37,7 @@ writers. Available as a multi-platform product, it consolidates a number of writ
 		synonyms\\ \hline
 	\end{tabular}
 	\label{Tab:MasterWriter}
+	\caption{MasterWriter Features}
 \end{table}
 
 \noindent
@@ -52,10 +52,9 @@ writers. Available as a multi-platform product, it consolidates a number of writ
 \end{figure}
 \noindent
 \newline
-Rhymer's block is a mobile application intended to help songwriters specifically with rhymes. Providing real time rhyme suggestions, the application allows users to quickly write song lyrics and provides a social platform through which users can share their own song lyrics, as well as review the song lyrics of other users. An overview of Rhymer's Block core features can be seen in the table below.
+Rhymer's block is a mobile application intended to help songwriters specifically with rhymes. Providing real time rhyme suggestions, the application allows users to quickly write song lyrics and provides a social platform through which users can share their own song lyrics, as well as review the song lyrics of other users. An overview of Rhymer's Block core features can be seen in \autoref{Tab:RhymersBlock} below.
 
 \begin{table}[ht]
-	\caption{Rhymer's Block}
 	\centering
 	\begin{tabular}{ | l | p{10cm} |}
 		\hline
@@ -68,14 +67,15 @@ Rhymer's block is a mobile application intended to help songwriters specifically
 		Word Analysis & Provides rhyme suggestions for words most commonly used by other users \\ \hline
 	\end{tabular}
 	\label{Tab:RhymersBlock}
+	\caption{Rhymer's Block}
 \end{table}
 
 \subsection{Requirements analysis}
-Both MasterWriter and Rhymers Block provide functionality for users to write, edit and save their lyrics. Similarly, both applications offer word search functionality to help writers with word choice, a primary issue highlighted before, through features such as rhyme suggestions, word dictionaries and thesauruses. Taking inspiration from both applications and as a basis for SONGIFAI, a lyric editor and word suggestion feature are mandatory for implementation. As previously stated, software applications like MasterWriter are static in nature, and fail to capture the dynamic nature of language. Examining Rhymer's Block, a particular feature deviates away from this, namely its real-time rhyme suggestion feature which, leverages word usage within the applications online community. The implementation of a social platform is not in the scope of this project, however Rhmyer's Block leverage of its users language is comparable to ... 
+Both MasterWriter and Rhymer's Block provide functionality for users to write, edit and save their lyrics. Similarly, both applications offer word search functionality to help writers with word choice, a primary issue highlighted before, through features such as rhyme suggestions, word dictionaries and thesauruses. Taking inspiration from both applications and as a basis for SONGIFAI, a lyric editor and word suggestion feature are mandatory for implementation. As previously stated, software applications like MasterWriter are static in nature, and fail to capture the dynamic nature of language. Examining Rhymer's Block, a particular feature deviates away from this, namely its real-time rhyme suggestions which leverages word usage within the application's online community. The implementation of a social platform is not in the scope of this project, however Rhmyer's Block usage of its users language is comparable to a goal of this project which is to help songwriters with their own lyrics, leveraging genre specific word embeddings.
 
 \noindent
 \newline
-Neither MasterWriter or Rhymer's block address the secondary issue raised in \autoref{chap:intro}; namely helping songwriters with classifying their lyrics to help infer instrumental style. Whilst this project only considers three music genres, the potential application of such a feature becomes more apparent when considering sub-genres within music. (EXPLAIN MORE HERE) Though sub genres are out of scope for this project, a basic genre classification feature will be implemented for SONGIFAI which will classify a user's submitted song lyric as either Pop, Rock or Hip Hop.
+Neither MasterWriter or Rhymer's block address the secondary issue raised in \autoref{chap:intro}; namely helping songwriters with classifying their lyrics to help infer instrumental style. Whilst this project only considers three music genres, the potential application of such a feature becomes more apparent when considering sub-genres within music, which as explained in \autoref{chap:intro} is ever increasing. Though sub genres are out of scope for this project, a basic genre classification feature will be implemented for SONGIFAI which will classify a user's submitted song lyric as either Pop, Rock or Hip Hop.
 
 \noindent
 \newline
@@ -83,14 +83,20 @@ Comparing MasterWriter and Rhymer's block, software availability and accessibili
 
 \noindent
 \newline
-As a whole, the project is both research based and practical in nature. Often times the methodologies of research and practice collide, as whilst research tends to focus more on ..., 
-
+As a whole, the project has roots in both research and practice. Often times the interests of both these areas are incompatible. For example, research tends to focus more on advancing the current state of the art without paying too much attention to aspects such as model scalability, actual training time, ease of implementation and quality. On the other hand in practice applications  are for the most part client driven meaning aspects such as delivery time become important, and the performance of a model can be overlooked if it is robust to train and deploy. 
+\newline
+\newline
+\newline
+\newline
 \section{Requirements}
 In this section the requirements for the project will be set out. The functional requirements will specify what the software will do whilst the non-functional requirements will detail how these will be done.
-
+\newline
+\newline
+\newline
+\newline
 \subsection{Functional}
-\begin{table}[ht]
-	\caption{SONGIFAI Functional Requirements}
+Blah nblah blah
+\begin{table}[h]
 	\centering
 	\begin{tabular}{ | l | p{10cm} | l | }
 		\hline
@@ -104,10 +110,11 @@ In this section the requirements for the project will be set out. The functional
 		FR7 & The user should be able to change the underlying covariate specific word embeddings used or the base embeddings if desired& N/A \\ \hline
 	\end{tabular}
 	\label{Tab:Tcru}
+	\caption{SONGIFAI Functional Requirements}
 \end{table}
 \subsection{Non-Functional}
+blah blah
 \begin{table}[ht]
-\caption{SONGIFAI Non-Functional Requirements}
 \centering
 	\begin{tabular}{ | l | p{10cm} | l | }
 		\hline
@@ -117,6 +124,7 @@ In this section the requirements for the project will be set out. The functional
 		NFR3 & The word suggestion feature should return a list of suggested words with minimal latency & N/A \\ \hline
 	\end{tabular}
 	\label{Tab:Tcr}
+	\caption{SONGIFAI Non-Functional Requirements}
 \end{table}
 
 

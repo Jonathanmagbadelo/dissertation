@@ -1,23 +1,26 @@
 \babel@toc {british}{}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Average Number of Billboard 100 songs vs Unique Word Count}}{3}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Distribution of Music Genres throughout History}}{4}{figure.1.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Average Number of Billboard Hot 100 songs vs Unique Word Count}}{3}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Distribution of music genres listened to from 1950}}{4}{figure.1.2}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces SONGIFAI: High Level Architecture}}{5}{figure.1.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of complex rhyme in Michael Jackson - Scream}}{8}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of alliteration in Michael Jackson - Human Nature}}{8}{figure.3.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Matrix factorization}}{9}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Skip-gram and CBOW models}}{10}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Example neural network, three input nodes, four hidden and two outputs}}{13}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{14}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{15}{figure.4.5}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Matrix factorization of word-word co-occurence matrix}}{10}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Skip-gram and CBOW models}}{11}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Example neural network, three input nodes, four hidden and two outputs}}{12}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example fully connected feed-forward neural network}}{15}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{16}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{17}{figure.4.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces MasterWriter}}{17}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Rhymer's Block}}{18}{figure.5.2}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces MasterWriter User Interface}}{19}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Rhymer's Block}}{20}{figure.5.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{22}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{24}{figure.6.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{26}{figure.7.1}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{28}{figure.7.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -3,11 +3,8 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: dissertation.aux
 The style file: apalike.bst
 Database file #1: bib.bib
-Warning--entry type for "Hulzebosch2017" isn't style-file defined
---line 192 of file bib.bib
 Warning--entry type for "Pui2018" isn't style-file defined
---line 215 of file bib.bib
-Warning--I didn't find a database entry for "Bojanowski2017"
+--line 207 of file bib.bib
 Warning--I didn't find a database entry for "Hornik1989"
 Warning--I didn't find a database entry for "Rumelhart1988"
 Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
@@ -25,45 +22,47 @@ while executing---line 1098 of file apalike.bst
 Warning--empty journal in Dai2015a
 Warning--empty booktitle in Irvin2016
 Warning--empty booktitle in Potash2015
-You've used 22 entries,
+Warning--empty journal in Qi2018
+Warning--empty booktitle in Tsaptsinos2017
+You've used 27 entries,
             1935 wiz_defined-function locations,
-            617 strings with 7480 characters,
-and the built_in function-call counts, 9097 in all, are:
-= -- 895
-> -- 380
-< -- 16
-+ -- 133
-- -- 128
-* -- 703
-:= -- 1540
-add.period$ -- 62
-call.type$ -- 22
-change.case$ -- 171
-chr.to.int$ -- 21
-cite$ -- 25
-duplicate$ -- 380
-empty$ -- 629
-format.name$ -- 158
-if$ -- 1828
-int.to.chr$ -- 2
+            645 strings with 8621 characters,
+and the built_in function-call counts, 11604 in all, are:
+= -- 1133
+> -- 505
+< -- 19
++ -- 178
+- -- 172
+* -- 910
+:= -- 1951
+add.period$ -- 76
+call.type$ -- 27
+change.case$ -- 216
+chr.to.int$ -- 25
+cite$ -- 32
+duplicate$ -- 484
+empty$ -- 800
+format.name$ -- 207
+if$ -- 2336
+int.to.chr$ -- 3
 int.to.str$ -- 0
-missing$ -- 20
-newline$ -- 107
-num.names$ -- 66
-pop$ -- 192
+missing$ -- 27
+newline$ -- 131
+num.names$ -- 81
+pop$ -- 254
 preamble$ -- 1
-purify$ -- 173
+purify$ -- 219
 quote$ -- 0
-skip$ -- 296
+skip$ -- 372
 stack$ -- 0
-substring$ -- 602
-swap$ -- 77
-text.length$ -- 6
+substring$ -- 759
+swap$ -- 102
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 128
-warning$ -- 3
-while$ -- 68
+type$ -- 156
+warning$ -- 5
+while$ -- 86
 width$ -- 0
-write$ -- 265
+write$ -- 328
 (There were 6 error messages)
