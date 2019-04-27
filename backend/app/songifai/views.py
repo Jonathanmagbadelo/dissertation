@@ -4,6 +4,7 @@ from rest_framework import generics
 from django.views import View
 from django.http import JsonResponse
 from app.songifai.utils import utils
+import ast
 
 
 class LyricsListView(generics.ListCreateAPIView):
@@ -34,7 +35,8 @@ class CreateLyricView(generics.CreateAPIView):
 class SuggestWordView(View):
     def get(self, request, *args, **kwargs):
         word = self.request.GET.get('word', '')
-        return JsonResponse({'data': utils.suggest_words(word)})
+        filter = ast.literal_eval(self.request.GET.get('filter', '').capitalize())
+        return JsonResponse({'data': utils.suggest_words(filter, word)})
 
 
 class PredictWordView(generics.RetrieveUpdateDestroyAPIView):

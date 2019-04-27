@@ -49,40 +49,39 @@
 \contentsline {subsection}{\numberline {6.4.1}CoVeR Hyperparamters}{25}{subsection.6.4.1}
 \contentsline {subsubsection}{Removing Rare Words}{25}{section*.20}
 \contentsline {subsubsection}{Subsampling}{25}{section*.21}
-\contentsline {subsubsection}{Context Windows}{25}{section*.22}
+\contentsline {subsubsection}{Context Windows}{26}{section*.22}
 \contentsline {subsubsection}{Embedding Size}{26}{section*.23}
 \contentsline {subsubsection}{Optimiser}{26}{section*.24}
-\contentsline {subsubsection}{Tuning}{26}{section*.25}
 \contentsline {subsection}{\numberline {6.4.2}LSTM Hyperparameters}{26}{subsection.6.4.2}
-\contentsline {subsubsection}{Dropout}{26}{section*.26}
-\contentsline {subsubsection}{Embedding Layer}{26}{section*.27}
-\contentsline {subsubsection}{Optimiser}{26}{section*.28}
-\contentsline {chapter}{\numberline {7}Implementation}{27}{chapter.7}
-\contentsline {section}{\numberline {7.1}Hardware Specification}{27}{section.7.1}
-\contentsline {section}{\numberline {7.2}Calculating Co-occurrence Statistics}{27}{section.7.2}
-\contentsline {section}{\numberline {7.3}CoVeR Implementation}{28}{section.7.3}
-\contentsline {section}{\numberline {7.4}LSTM Implementations}{29}{section.7.4}
-\contentsline {subsection}{\numberline {7.4.1}Language Model}{29}{subsection.7.4.1}
-\contentsline {subsection}{\numberline {7.4.2}Text Classifier}{29}{subsection.7.4.2}
-\contentsline {section}{\numberline {7.5}SONGIFAI}{29}{section.7.5}
-\contentsline {subsection}{\numberline {7.5.1}Architecture}{29}{subsection.7.5.1}
-\contentsline {subsubsection}{Client Side}{29}{section*.29}
-\contentsline {subsubsection}{Server Side}{29}{section*.30}
-\contentsline {subsection}{\numberline {7.5.2}Class Overview}{29}{subsection.7.5.2}
-\contentsline {chapter}{\numberline {8}Evaluation}{30}{chapter.8}
-\contentsline {section}{\numberline {8.1}CoVeR Evaluation}{30}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Validating Implementation}{30}{subsection.8.1.1}
-\contentsline {subsubsection}{Base Embeddings}{30}{section*.31}
-\contentsline {subsubsection}{Covariate Specific Embeddings}{30}{section*.32}
-\contentsline {section}{\numberline {8.2}Model Evaluations}{30}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}Language Model}{30}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Text Classification}{30}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}SONGIFAI}{30}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Requirements Evaluation}{30}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Expert User Testing}{30}{subsection.8.3.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{31}{chapter.9}
-\contentsline {section}{\numberline {9.1}What was I right about?}{31}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}Previous theories were wrong}{31}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}My new idea is right}{31}{subsection.9.1.2}
-\contentsline {chapter}{Bibliography}{32}{section*.33}
-\contentsline {chapter}{\numberline {A}Code}{34}{appendix.A}
+\contentsline {subsubsection}{Dropout}{26}{section*.25}
+\contentsline {subsubsection}{Embedding Layer}{27}{section*.26}
+\contentsline {subsubsection}{Optimiser}{27}{section*.27}
+\contentsline {chapter}{\numberline {7}Implementation}{28}{chapter.7}
+\contentsline {section}{\numberline {7.1}Hardware Specification}{28}{section.7.1}
+\contentsline {section}{\numberline {7.2}Calculating Co-occurrence Statistics}{28}{section.7.2}
+\contentsline {section}{\numberline {7.3}CoVeR Implementation}{30}{section.7.3}
+\contentsline {section}{\numberline {7.4}LSTM Implementations}{30}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Language Model}{30}{subsection.7.4.1}
+\contentsline {subsection}{\numberline {7.4.2}Text Classifier}{30}{subsection.7.4.2}
+\contentsline {section}{\numberline {7.5}SONGIFAI}{31}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Architecture}{31}{subsection.7.5.1}
+\contentsline {subsubsection}{Client Side}{31}{section*.28}
+\contentsline {subsubsection}{Server Side}{31}{section*.29}
+\contentsline {subsection}{\numberline {7.5.2}Class Overview}{32}{subsection.7.5.2}
+\contentsline {chapter}{\numberline {8}Evaluation}{33}{chapter.8}
+\contentsline {section}{\numberline {8.1}CoVeR Evaluation}{33}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Validating Implementation}{33}{subsection.8.1.1}
+\contentsline {subsubsection}{Base Embeddings}{33}{section*.30}
+\contentsline {subsubsection}{Covariate Specific Embeddings}{33}{section*.31}
+\contentsline {section}{\numberline {8.2}Model Evaluations}{33}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}Language Model}{33}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}Text Classification}{33}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}SONGIFAI}{33}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Requirements Evaluation}{33}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}Expert User Testing}{33}{subsection.8.3.2}
+\contentsline {chapter}{\numberline {9}Conclusion}{34}{chapter.9}
+\contentsline {section}{\numberline {9.1}What was I right about?}{34}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}Previous theories were wrong}{34}{subsection.9.1.1}
+\contentsline {subsection}{\numberline {9.1.2}My new idea is right}{34}{subsection.9.1.2}
+\contentsline {chapter}{Bibliography}{35}{section*.32}
+\contentsline {chapter}{\numberline {A}Code}{37}{appendix.A}

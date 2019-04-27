@@ -3,6 +3,16 @@
 %-----------------------------------------------------
 \chapter{Implementation}
 \label{chap:implementation}
+Implementation of the project predominately utilised the  Python\footnote{https://www.python.org/} programming language. The motivation for using Python originated from prior familiarity with the language, and it's collection of machine learning and web development libraries which form two key components of the project. Though Python allows for relatively quick development, its known drawback of speed was a cause of concern.
+
+\noindent
+\newline
+As stated in \autoref{chap:requirements_analysis}, in research, model training time is often neglected in favour of high performing models. As this project involves the creation of a prototype software application, it was important that the impact of model training time on overall development was minimal.
+
+\noindent
+\newline
+This chapter describes the development process for implementing the CoVeR algorithm, the language and text classification models as well as the SONGIFAI web application. 
+
 \section{Hardware Specification}
 All implementation was completed on a personal machine. The hardware specifications for the machine are highlighted below
 
@@ -17,23 +27,27 @@ All implementation was completed on a personal machine. The hardware specificati
 		RAM & 16GB \\
 		\hline
 	\end{tabular}
-	\caption{Hardware specification for machine used throughout development}
+	\caption[Hardware Specification]{Hardware specification for machine used throughout development}
 	\label{table:1}
 \end{table}
 \section{Calculating Co-occurrence Statistics}
-Many unsupervised natural language processing methods compute co-occurrence statistics before learning takes place. Typical co-occurrence statistics, such as GloVe's word-word co-occurrence matrix contain sparse data, and computing them can often be a computationally more expensive task than the learning itself. 
+Many unsupervised NLP methods compute co-occurrence statistics before learning takes place. Typically, co-occurrence statistics, such as GloVe's word-word co-occurrence matrix contain sparse data, and computing them can often be a computationally more expensive task than the learning itself. The original GloVe paper describes this process as a \textit{'one-time upfront cost'}, with the assumption that selected corpora are static. Unfortunately, for many NLP pipelines such corpora are more dynamic in nature. For example, social data from online platforms such as Twitter\footnote{https://twitter.com/} are in constant flux and relying on pre-computed co-occurrence statistics to represent Twitter based word embeddings is sub-optimal. Compared to GloVe, computing the co-occurrence statistics for CoVeR has added complexity due to the transition from a co-occurrence matrix to a co-occurrence tensor.
 
 \noindent
 \newline
-The original GloVe paper describes this process as a \textit{'one-time upfront cost'}, with the assumption that selected corpora are static. Unfortunately, for many natural language processing pipelines such corpora are more dynamic in nature. For example, social data from online platforms such as Twitter are in constant flux and relying on pre-computed co-occurrence statistics is sub-optimal. Compared to GloVe, computing the co-occurrence statistics for CoVeR has added complexity due to the transition from a co-occurrence matrix to a co-occurrence tensor. 
+Methods for efficient computation of co-occurrence statistics include the usage of distributed computing techniques such as \textit{MapReduce}. MapReduce is a model for distributed computing which at its crux involves two functional processes: namely the mapper and the reducer. During the \textit{map} process, data is taken in as key/value pairs and transformed to intermediary key/value pairs as output. These are then passed to the \textit{reduce} process which aggregates data which share the same key. An example MapReduce process is walked through in \autoref{fig:fig14} below 
+
+\begin{figure}[h]
+	\includegraphics[width=14cm, height=6cm]{./figures/fig14}
+	\centering
+	\caption[MapReduce Word Count Example]{MapReduce word count example: }
+	\label{fig:fig14}
+\end{figure}
 
 \noindent
 \newline
-Methods for efficient computation of co-occurrence statistics include the usage of distributed computing techniques such as \textit{MapReduce}. MapReduce is a model for distributed computing which involves two functional processes namely map and reduce. During the \textit{map} process, data is taken in as key/value pairs and transformed to intermediary key/value pairs as output. These are then passed to the \textit{reduce} process which aggregates data which share the same key.
-
-\noindent
 \newline
-Apache Spark is an open-source framework, written in Scala, for distributed computing and has recently emerged as the preferred option for big data processing over Apache Hadoop. Like Hadoop, Spark also supports the MapReduce programming paradigm but boasts features such as enhanced speed, a distributed data structure, as well as API's written in multiple programming languages. Spark uses a master/slave architecture to achieve distributed computing. The \textit{driver} acts as the master node and distributes tasks to many different worker nodes, also known as \textit{executors}, which each run their own JVM processes to execute tasks.
+Apache Spark is an open-source framework, written in Scala, for distributed computing and has recently emerged as the de-facto choice for big data processing over Apache Hadoop. Like Hadoop, Spark also supports the MapReduce programming paradigm but boasts features such as enhanced speed, a distributed data structure, as well as API's written in multiple programming languages. Spark uses a master/slave architecture to achieve distributed computing. The \textit{driver} acts as the master node and distributes tasks to many different worker nodes, also known as \textit{executors}, which each run their own JVM processes to execute tasks.
 
 \begin{figure}[h]
 	\includegraphics[width=12cm, height=6cm]{./figures/fig5}
@@ -44,17 +58,22 @@ Apache Spark is an open-source framework, written in Scala, for distributed comp
 
 \noindent
 \newline
-PySpark, a Python API for the Spark framework was initially used to both pre-process data and calculate co-occurrence statistics for the corpora. 
+PySpark, a Python API for the Spark framework was initially used to both pre-process and calculate co-occurrence statistics for the dataset. 
 Unfortunately, the overhead of collecting completed executor tasks to the driver as well as the cross language communication between Python and Scala made PySpark an unfavourable option for collecting co-occurrence statistics. A similar parallelised approach which avoided cross language communication involved the use of Python's multiprocessing module. This approach suffered from the restrictions of Pythons Global Interpreter Lock (GIL) which prevents shared access of Python objects across multiple threads. 
 
 \noindent
 \newline
 Cython is a superset of the Python programming language which aims to provide C like performance whilst maintaining the ability to write Python like code. Native Python programs can experience major speed improvements using Cython because of its ability to compile Python to C code. Ultimately, calculating the co-occurrence statistics for CoVeR was achieved using Cython which provided major speed ups compared to the parallelised approaches outlined before. A comparison of the speed gain for computing co-occurrences can be seen in the figure below.
 
+\begin{figure}[ht]
+	\includegraphics[width=13cm, height=13cm]{./figures/fig15}
+	\centering
+	\caption[Co-occurrence benchmarks]{Benchmarks}
+	\label{fig:fig15}
+\end{figure}
+
 \noindent
 \newline
-(CYTHON SPEED IMPROVEMENTS DIAGRAM)  
-
 \section{CoVeR Implementation}
 At time of writing, no public implementation of CoVeR is available. As a result and to meet the needs of this project, CoVeR was implemented from scratch using the PyTorch library. PyTorch is a Python library based on Torch, which supports Numpy like operations which can be accelerated through the GPU. All supporting code for the implementation can be found here: (LINK TO CODE)
 

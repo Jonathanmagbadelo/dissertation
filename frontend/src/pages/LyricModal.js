@@ -84,7 +84,9 @@ export default class NewPage extends React.Component {
 
 	get_suggestions = () => {
 		const word = document.getElementById("suggest_word").value;
-		axios.get(`api/songifai/suggest/?word=${word}`).then(result => this.setState({suggestions: result.data}));
+		const filter = this.state.filter;
+		const rhyme = this.state.rhyme;
+		axios.get(`api/songifai/suggest/?word=${word}&filter=${filter}&rhyme=${rhyme}`).then(result => this.setState({suggestions: result.data}));
 	};
 
 	showPredictions = () => {

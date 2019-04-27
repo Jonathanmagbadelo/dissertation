@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  27 APR 2019 05:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  27 APR 2019 22:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -560,35 +560,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 45.
-<./figures/fig1.png, id=450, 1084.05pt x 1084.05pt>
+<./figures/fig1.png, id=456, 1084.05pt x 1084.05pt>
 File: ./figures/fig1.png Graphic file (type png)
 <use ./figures/fig1.png>
 Package pdftex.def Info: ./figures/fig1.png  used on input line 51.
-(pdftex.def)             Requested size: 284.52603pt x 284.52603pt.
+(pdftex.def)             Requested size: 369.87889pt x 369.87889pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2]
-<./figures/fig11.png, id=472, 1231.60126pt x 398.48875pt>
+[2] [3 <./figures/fig1.png>]
+<./figures/fig11.png, id=484, 1231.60126pt x 398.48875pt>
 File: ./figures/fig11.png Graphic file (type png)
 <use ./figures/fig11.png>
 Package pdftex.def Info: ./figures/fig11.png  used on input line 70.
 (pdftex.def)             Requested size: 398.33002pt x 142.26407pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3 <./figures/fig1.png>]
-<./figures/fig7.png, id=487, 776.9025pt x 785.93625pt>
+<./figures/fig7.png, id=493, 776.9025pt x 785.93625pt>
 File: ./figures/fig7.png Graphic file (type png)
 <use ./figures/fig7.png>
 Package pdftex.def Info: ./figures/fig7.png  used on input line 99.
 (pdftex.def)             Requested size: 426.79979pt x 455.2557pt.
-) (./chapters/dissertation_professional_considerations.tex
+)
+(./chapters/dissertation_professional_considerations.tex
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -602,7 +595,7 @@ Chapter 3.
 
 ] [9]
 Chapter 4.
-<./figures/fig12.png, id=553, 524.96124pt x 262.9825pt>
+<./figures/fig12.png, id=559, 524.96124pt x 262.9825pt>
 File: ./figures/fig12.png Graphic file (type png)
 <use ./figures/fig12.png>
 Package pdftex.def Info: ./figures/fig12.png  used on input line 15.
@@ -610,7 +603,7 @@ Package pdftex.def Info: ./figures/fig12.png  used on input line 15.
 [10
 
  <./figures/fig12.png>]
-<./figures/fig13.png, id=562, 814.04124pt x 502.87875pt>
+<./figures/fig13.png, id=568, 814.04124pt x 502.87875pt>
 File: ./figures/fig13.png Graphic file (type png)
 <use ./figures/fig13.png>
 Package pdftex.def Info: ./figures/fig13.png  used on input line 26.
@@ -621,7 +614,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
  []
 
 [11 <./figures/fig13.png>]
-<./figures/fig2.png, id=572, 292.09125pt x 272.01625pt>
+<./figures/fig2.png, id=578, 292.09125pt x 272.01625pt>
 File: ./figures/fig2.png Graphic file (type png)
 <use ./figures/fig2.png>
 Package pdftex.def Info: ./figures/fig2.png  used on input line 53.
@@ -646,12 +639,12 @@ File: ./figures/fig2.png Graphic file (type png)
 Package pdftex.def Info: ./figures/fig2.png  used on input line 159.
 (pdftex.def)             Requested size: 227.62967pt x 227.6329pt.
 [15]
-<./figures/fig3.png, id=611, 530.98375pt x 323.2075pt>
+<./figures/fig3.png, id=617, 530.98375pt x 323.2075pt>
 File: ./figures/fig3.png Graphic file (type png)
 <use ./figures/fig3.png>
 Package pdftex.def Info: ./figures/fig3.png  used on input line 196.
 (pdftex.def)             Requested size: 284.53127pt x 170.71721pt.
-<./figures/fig4.png, id=615, 484.81125pt x 367.3725pt>
+<./figures/fig4.png, id=621, 484.81125pt x 367.3725pt>
 File: ./figures/fig4.png Graphic file (type png)
 <use ./figures/fig4.png>
 Package pdftex.def Info: ./figures/fig4.png  used on input line 213.
@@ -659,7 +652,7 @@ Package pdftex.def Info: ./figures/fig4.png  used on input line 213.
  [16 <./figures/fig3.png>] [17 <./figures/fig4.png>])
 (./chapters/dissertation_requirements_analysis.tex [18]
 Chapter 5.
-<./figures/fig9.png, id=655, 513.92pt x 288.57813pt>
+<./figures/fig9.png, id=661, 513.92pt x 288.57813pt>
 File: ./figures/fig9.png Graphic file (type png)
 <use ./figures/fig9.png>
 Package pdftex.def Info: ./figures/fig9.png  used on input line 10.
@@ -669,7 +662,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
-<./figures/fig10.png, id=657, 1284.8pt x 1140.26pt>
+<./figures/fig10.png, id=663, 1284.8pt x 1140.26pt>
 File: ./figures/fig10.png Graphic file (type png)
 <use ./figures/fig10.png>
 Package pdftex.def Info: ./figures/fig10.png  used on input line 48.
@@ -723,7 +716,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--97
 
 [21]) (./chapters/dissertation_methodology.tex [22]
 Chapter 6.
-<./figures/fig6.png, id=682, 722.7pt x 722.7pt>
+<./figures/fig6.png, id=688, 722.7pt x 722.7pt>
 File: ./figures/fig6.png Graphic file (type png)
 <use ./figures/fig6.png>
 Package pdftex.def Info: ./figures/fig6.png  used on input line 25.
@@ -733,34 +726,62 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [23
 
-] [24 <./figures/fig6.png>] [25])
-(./chapters/dissertation_implementation.tex [26]
+] [24 <./figures/fig6.png>] [25]
+Overfull \hbox (5.40077pt too wide) in paragraph at lines 97--107
+ [] 
+ []
+
+[26]) (./chapters/dissertation_implementation.tex [27]
 Chapter 7.
-[27
+[28
 
 ]
-<./figures/fig5.png, id=727, 598.235pt x 287.0725pt>
+<./figures/fig14.png, id=742, 684.5575pt x 283.0575pt>
+File: ./figures/fig14.png Graphic file (type png)
+<use ./figures/fig14.png>
+Package pdftex.def Info: ./figures/fig14.png  used on input line 41.
+(pdftex.def)             Requested size: 398.3493pt x 170.7212pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 47--51
+
+ []
+
+<./figures/fig5.png, id=743, 598.235pt x 287.0725pt>
 File: ./figures/fig5.png Graphic file (type png)
 <use ./figures/fig5.png>
-Package pdftex.def Info: ./figures/fig5.png  used on input line 39.
+Package pdftex.def Info: ./figures/fig5.png  used on input line 53.
 (pdftex.def)             Requested size: 341.43565pt x 170.72046pt.
- [28 <./figures/fig5.png>]) (./chapters/dissertation_evaluation.tex
-[29]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[29 <./figures/fig14.png>]
+<./figures/fig15.png, id=750, 1084.05pt x 1084.05pt>
+File: ./figures/fig15.png Graphic file (type png)
+<use ./figures/fig15.png>
+Package pdftex.def Info: ./figures/fig15.png  used on input line 69.
+(pdftex.def)             Requested size: 369.87889pt x 369.87889pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+[30 <./figures/fig5.png>] [31 <./figures/fig15.png>])
+(./chapters/dissertation_evaluation.tex [32]
 Chapter 8.
-) (./chapters/dissertation_conclusion.tex [30
+) (./chapters/dissertation_conclusion.tex [33
 
 ]
 Chapter 9.
-) [31
+) [34
 
 ] (./dissertation.bbl (./dissertation.brf)
 \tf@brf=\write7
 \openout7 = `dissertation.brf'.
 
- [32
+ [35
 
 
-]) [33]
+]) [36]
 Appendix A.
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 250
 .
@@ -771,7 +792,7 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
-[34
+[37
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
@@ -779,9 +800,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 328721221230F27383F631C85073A286;4285.
+(rerunfilecheck)             Checksum: 915352EDC3C0C304EA923FDE14077627;4285.
 Package rerunfilecheck Info: File `dissertation.brf' has not changed.
-(rerunfilecheck)             Checksum: 8D9D4920A7ADFAF33254A7F03DAABAA2;1290.
+(rerunfilecheck)             Checksum: 6D89849761717FCEA648D32709E58DF3;1290.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -789,10 +810,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
  ) 
 Here is how much of TeX's memory you used:
- 7997 strings out of 494923
- 116920 string characters out of 6180742
- 211750 words of memory out of 5000000
- 10896 multiletter control sequences out of 15000+600000
+ 8017 strings out of 494923
+ 117233 string characters out of 6180742
+ 212860 words of memory out of 5000000
+ 10907 multiletter control sequences out of 15000+600000
  79424 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  42i,12n,51p,1118b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -814,10 +835,10 @@ mf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/font
 s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on dissertation.pdf (43 pages, 1530648 bytes).
+Output written on dissertation.pdf (46 pages, 1624858 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 811 compressed objects within 9 object streams
- 217 named destinations out of 1000 (max. 500000)
- 570 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 936 PDF objects out of 1000 (max. 8388607)
+ 832 compressed objects within 9 object streams
+ 224 named destinations out of 1000 (max. 500000)
+ 580 words of extra memory for PDF output out of 10000 (max. 10000000)
 

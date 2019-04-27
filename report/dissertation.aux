@@ -170,61 +170,66 @@
 \newlabel{fig:fig6}{{6.1}{24}{Average word count per lyric per genre in the dataset}{figure.6.1}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {6.3}Data Pre-processing}{24}{section.6.3}}
 \citation{Mikolov2013a}
-\citation{Srivastava2014}
 \@writefile{toc}{\contentsline {section}{\numberline {6.4}Hyperparameters}{25}{section.6.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}CoVeR Hyperparamters}{25}{subsection.6.4.1}}
 \@writefile{toc}{\contentsline {subsubsection}{Removing Rare Words}{25}{section*.20}}
 \@writefile{toc}{\contentsline {subsubsection}{Subsampling}{25}{section*.21}}
 \@writefile{brf}{\backcite{Mikolov2013a}{{25}{6.4.1}{section*.21}}}
-\@writefile{toc}{\contentsline {subsubsection}{Context Windows}{25}{section*.22}}
+\citation{Srivastava2014}
+\@writefile{toc}{\contentsline {subsubsection}{Context Windows}{26}{section*.22}}
 \@writefile{toc}{\contentsline {subsubsection}{Embedding Size}{26}{section*.23}}
+\newlabel{Tab:testembeddings}{{6.4.1}{26}{Embedding Size}{section*.23}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Default Table}}{26}{table.6.1}}
 \@writefile{toc}{\contentsline {subsubsection}{Optimiser}{26}{section*.24}}
-\@writefile{toc}{\contentsline {subsubsection}{Tuning}{26}{section*.25}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}LSTM Hyperparameters}{26}{subsection.6.4.2}}
-\@writefile{toc}{\contentsline {subsubsection}{Dropout}{26}{section*.26}}
-\@writefile{brf}{\backcite{Srivastava2014}{{26}{6.4.2}{section*.26}}}
-\@writefile{toc}{\contentsline {subsubsection}{Embedding Layer}{26}{section*.27}}
-\@writefile{toc}{\contentsline {subsubsection}{Optimiser}{26}{section*.28}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Implementation}{27}{chapter.7}}
+\@writefile{toc}{\contentsline {subsubsection}{Dropout}{26}{section*.25}}
+\@writefile{brf}{\backcite{Srivastava2014}{{26}{6.4.2}{section*.25}}}
+\@writefile{toc}{\contentsline {subsubsection}{Embedding Layer}{27}{section*.26}}
+\@writefile{toc}{\contentsline {subsubsection}{Optimiser}{27}{section*.27}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Implementation}{28}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:implementation}{{7}{27}{Implementation}{chapter.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Hardware Specification}{27}{section.7.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Hardware specification for machine used throughout development}}{27}{table.7.1}}
-\newlabel{table:1}{{7.1}{27}{Hardware specification for machine used throughout development}{table.7.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Calculating Co-occurrence Statistics}{27}{section.7.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{28}{figure.7.1}}
-\newlabel{fig:fig5}{{7.1}{28}{High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors}{figure.7.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}CoVeR Implementation}{28}{section.7.3}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.4}LSTM Implementations}{29}{section.7.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.1}Language Model}{29}{subsection.7.4.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.2}Text Classifier}{29}{subsection.7.4.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.5}SONGIFAI}{29}{section.7.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.1}Architecture}{29}{subsection.7.5.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Client Side}{29}{section*.29}}
-\@writefile{toc}{\contentsline {subsubsection}{Server Side}{29}{section*.30}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.2}Class Overview}{29}{subsection.7.5.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Evaluation}{30}{chapter.8}}
+\newlabel{chap:implementation}{{7}{28}{Implementation}{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Hardware Specification}{28}{section.7.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {7.1}{\ignorespaces Hardware Specification}}{28}{table.7.1}}
+\newlabel{table:1}{{7.1}{28}{Hardware Specification}{table.7.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Calculating Co-occurrence Statistics}{28}{section.7.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces MapReduce Word Count Example}}{29}{figure.7.1}}
+\newlabel{fig:fig14}{{7.1}{29}{MapReduce Word Count Example}{figure.7.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{30}{figure.7.2}}
+\newlabel{fig:fig5}{{7.2}{30}{High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors}{figure.7.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}CoVeR Implementation}{30}{section.7.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}LSTM Implementations}{30}{section.7.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.1}Language Model}{30}{subsection.7.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4.2}Text Classifier}{30}{subsection.7.4.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.3}{\ignorespaces Co-occurrence benchmarks}}{31}{figure.7.3}}
+\newlabel{fig:fig15}{{7.3}{31}{Co-occurrence benchmarks}{figure.7.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}SONGIFAI}{31}{section.7.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.1}Architecture}{31}{subsection.7.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{Client Side}{31}{section*.28}}
+\@writefile{toc}{\contentsline {subsubsection}{Server Side}{31}{section*.29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5.2}Class Overview}{32}{subsection.7.5.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Evaluation}{33}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:evaluation}{{8}{30}{Evaluation}{chapter.8}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.1}CoVeR Evaluation}{30}{section.8.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Validating Implementation}{30}{subsection.8.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Base Embeddings}{30}{section*.31}}
-\@writefile{toc}{\contentsline {subsubsection}{Covariate Specific Embeddings}{30}{section*.32}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.2}Model Evaluations}{30}{section.8.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Language Model}{30}{subsection.8.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Text Classification}{30}{subsection.8.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {8.3}SONGIFAI}{30}{section.8.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3.1}Requirements Evaluation}{30}{subsection.8.3.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3.2}Expert User Testing}{30}{subsection.8.3.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusion}{31}{chapter.9}}
+\newlabel{chap:evaluation}{{8}{33}{Evaluation}{chapter.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.1}CoVeR Evaluation}{33}{section.8.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1.1}Validating Implementation}{33}{subsection.8.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{Base Embeddings}{33}{section*.30}}
+\@writefile{toc}{\contentsline {subsubsection}{Covariate Specific Embeddings}{33}{section*.31}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.2}Model Evaluations}{33}{section.8.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.1}Language Model}{33}{subsection.8.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2.2}Text Classification}{33}{subsection.8.2.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {8.3}SONGIFAI}{33}{section.8.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3.1}Requirements Evaluation}{33}{subsection.8.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3.2}Expert User Testing}{33}{subsection.8.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {9}Conclusion}{34}{chapter.9}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:conc}{{9}{31}{Conclusion}{chapter.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9.1}What was I right about?}{31}{section.9.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1.1}Previous theories were wrong}{31}{subsection.9.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1.2}My new idea is right}{31}{subsection.9.1.2}}
+\newlabel{chap:conc}{{9}{34}{Conclusion}{chapter.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9.1}What was I right about?}{34}{section.9.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1.1}Previous theories were wrong}{34}{subsection.9.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1.2}My new idea is right}{34}{subsection.9.1.2}}
 \bibdata{bib}
 \bibcite{Bengio2003}{{1}{2003}{{Bengio et~al.}}{{}}}
 \bibcite{Bojanowski2017}{{2}{2017}{{Bojanowski et~al.}}{{}}}
@@ -243,7 +248,7 @@
 \bibcite{Mikolov2010}{{15}{2010}{{Mikolov et~al.}}{{}}}
 \bibcite{Mikolov2013a}{{16}{2013b}{{Mikolov et~al.}}{{}}}
 \bibcite{Pennington2014}{{17}{2014}{{Pennington et~al.}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{32}{section*.33}}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{35}{section*.32}}
 \bibcite{Potash2015}{{18}{2015}{{Potash et~al.}}{{}}}
 \bibcite{Qi2018}{{19}{2018}{{Qi et~al.}}{{}}}
 \bibcite{Hinton1986}{{20}{1986}{{Rumelhart et~al.}}{{}}}
@@ -254,7 +259,7 @@
 \bibcite{Tsaptsinos2017}{{25}{2017}{{Tsaptsinos}}{{}}}
 \bibcite{Yang2016}{{26}{2016}{{Yang et~al.}}{{}}}
 \bibcite{Zhang2014}{{27}{2014}{{Zhang and Lapata}}{{}}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Code}{34}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Code}{37}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{app:code}{{A}{34}{Code}{appendix.A}{}}
+\newlabel{app:code}{{A}{37}{Code}{appendix.A}{}}
