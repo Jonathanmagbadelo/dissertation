@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Nav, DropdownButton, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
 class LyricNavbar extends React.Component {
 	render() {

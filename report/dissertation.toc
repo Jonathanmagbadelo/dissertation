@@ -75,13 +75,12 @@
 \contentsline {subsubsection}{Covariate Specific Embeddings}{33}{section*.31}
 \contentsline {section}{\numberline {8.2}Model Evaluations}{33}{section.8.2}
 \contentsline {subsection}{\numberline {8.2.1}Language Model}{33}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}Text Classification}{33}{subsection.8.2.2}
-\contentsline {section}{\numberline {8.3}SONGIFAI}{33}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}Requirements Evaluation}{33}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}Expert User Testing}{33}{subsection.8.3.2}
-\contentsline {chapter}{\numberline {9}Conclusion}{34}{chapter.9}
-\contentsline {section}{\numberline {9.1}What was I right about?}{34}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}Previous theories were wrong}{34}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}My new idea is right}{34}{subsection.9.1.2}
-\contentsline {chapter}{Bibliography}{35}{section*.32}
-\contentsline {chapter}{\numberline {A}Code}{37}{appendix.A}
+\contentsline {subsubsection}{Intrinsic Evaluation}{34}{section*.32}
+\contentsline {subsection}{\numberline {8.2.2}Text Classification}{34}{subsection.8.2.2}
+\contentsline {section}{\numberline {8.3}SONGIFAI}{35}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}Requirements Evaluation}{35}{subsection.8.3.1}
+\contentsline {chapter}{\numberline {9}Conclusion}{37}{chapter.9}
+\contentsline {section}{\numberline {9.1}Limitations}{37}{section.9.1}
+\contentsline {section}{\numberline {9.2}Future Work}{37}{section.9.2}
+\contentsline {chapter}{Bibliography}{38}{section*.33}
+\contentsline {chapter}{\numberline {A}Code}{40}{appendix.A}

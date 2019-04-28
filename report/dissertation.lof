@@ -24,5 +24,11 @@
 \contentsline {figure}{\numberline {7.2}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{30}{figure.7.2}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Co-occurrence benchmarks}}{31}{figure.7.3}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces poploss}}{34}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces popper}}{34}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces rockloss.}}{35}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces rockper.}}{35}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces hiphoploss}}{36}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces hiphopper}}{36}{figure.8.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
