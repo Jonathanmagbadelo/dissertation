@@ -12,23 +12,24 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Skip-gram and CBOW models}}{11}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Word Embedding Visualisation}}{12}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Example fully connected feed-forward neural network}}{15}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces An \textit {unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}}{16}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces LSTM memory cell, with forget, input and output gates}}{17}{figure.4.6}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Unrolled Recurrent Neural Network}}{16}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces LSTM Memory Cell}}{17}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Support Vector Machine}}{18}{figure.4.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces MasterWriter User Interface}}{19}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Rhymer's Block}}{20}{figure.5.2}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces MasterWriter}}{20}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Rhymer's Block}}{21}{figure.5.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Average word count per lyric per genre in the dataset}}{24}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Average Song Word Count by Genre}}{25}{figure.6.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces MapReduce Word Count Example}}{29}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{30}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Co-occurrence benchmarks}}{31}{figure.7.3}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces MapReduce Word Count Example}}{30}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{31}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Co-occurrence benchmarks}}{32}{figure.7.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces poploss}}{35}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces popper}}{35}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces rockloss.}}{35}{figure.8.3}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces rockper.}}{36}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces hiphoploss}}{36}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces hiphopper}}{36}{figure.8.6}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces poploss}}{36}{figure.8.1}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces popper}}{36}{figure.8.2}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces rockloss.}}{36}{figure.8.3}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces rockper.}}{37}{figure.8.4}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces hiphoploss}}{37}{figure.8.5}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces hiphopper}}{37}{figure.8.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

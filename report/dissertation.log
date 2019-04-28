@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  28 APR 2019 07:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  28 APR 2019 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -383,6 +383,9 @@ File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
 )
 (./dissertation.aux
 
+LaTeX Warning: Label `Tab:Tcr' multiply defined.
+
+
 LaTeX Warning: Label `fig:poploss' multiply defined.
 
 
@@ -482,7 +485,7 @@ LaTeX Info: Redefining \nameref on input line 78.
 \@outlinefile=\write3
 \openout3 = `dissertation.out'.
 
-<uslogo.pdf, id=249, 160.6pt x 98.3675pt>
+<uslogo.pdf, id=253, 160.6pt x 98.3675pt>
 File: uslogo.pdf Graphic file (type pdf)
 <use uslogo.pdf>
 Package pdftex.def Info: uslogo.pdf  used on input line 97.
@@ -569,7 +572,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 45.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 45.
-<./figures/fig1.png, id=464, 1084.05pt x 1084.05pt>
+<./figures/fig1.png, id=472, 1084.05pt x 1084.05pt>
 File: ./figures/fig1.png Graphic file (type png)
 <use ./figures/fig1.png>
 Package pdftex.def Info: ./figures/fig1.png  used on input line 51.
@@ -579,12 +582,12 @@ Package pdftex.def Info: ./figures/fig1.png  used on input line 51.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2] [3 <./figures/fig1.png>]
-<./figures/fig11.png, id=493, 1231.60126pt x 398.48875pt>
+<./figures/fig11.png, id=501, 1231.60126pt x 398.48875pt>
 File: ./figures/fig11.png Graphic file (type png)
 <use ./figures/fig11.png>
 Package pdftex.def Info: ./figures/fig11.png  used on input line 70.
 (pdftex.def)             Requested size: 398.33002pt x 142.26407pt.
-<./figures/fig7.png, id=502, 776.9025pt x 785.93625pt>
+<./figures/fig7.png, id=510, 776.9025pt x 785.93625pt>
 File: ./figures/fig7.png Graphic file (type png)
 <use ./figures/fig7.png>
 Package pdftex.def Info: ./figures/fig7.png  used on input line 99.
@@ -604,7 +607,7 @@ Chapter 3.
 
 ] [9]
 Chapter 4.
-<./figures/fig12.png, id=568, 524.96124pt x 262.9825pt>
+<./figures/fig12.png, id=576, 524.96124pt x 262.9825pt>
 File: ./figures/fig12.png Graphic file (type png)
 <use ./figures/fig12.png>
 Package pdftex.def Info: ./figures/fig12.png  used on input line 15.
@@ -612,7 +615,7 @@ Package pdftex.def Info: ./figures/fig12.png  used on input line 15.
 [10
 
  <./figures/fig12.png>]
-<./figures/fig13.png, id=577, 814.04124pt x 502.87875pt>
+<./figures/fig13.png, id=585, 814.04124pt x 502.87875pt>
 File: ./figures/fig13.png Graphic file (type png)
 <use ./figures/fig13.png>
 Package pdftex.def Info: ./figures/fig13.png  used on input line 26.
@@ -623,7 +626,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
  []
 
 [11 <./figures/fig13.png>]
-<./figures/fig16.png, id=588, 394.47375pt x 314.17375pt>
+<./figures/fig16.png, id=596, 394.47375pt x 314.17375pt>
 File: ./figures/fig16.png Graphic file (type png)
 <use ./figures/fig16.png>
 Package pdftex.def Info: ./figures/fig16.png  used on input line 53.
@@ -649,30 +652,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--152
  []
 
 [14]
-
-Package natbib Warning: Citation `Rumelhart1988' on page 15 undefined on input 
-line 161.
-
-<./figures/fig2.png, id=628, 292.09125pt x 272.01625pt>
+<./figures/fig2.png, id=638, 292.09125pt x 272.01625pt>
 File: ./figures/fig2.png Graphic file (type png)
 <use ./figures/fig2.png>
 Package pdftex.def Info: ./figures/fig2.png  used on input line 164.
 (pdftex.def)             Requested size: 227.62967pt x 227.6329pt.
-[15 <./figures/fig2.png>]
-<./figures/fig3.png, id=638, 530.98375pt x 323.2075pt>
+ [15 <./figures/fig2.png>]
+<./figures/fig3.png, id=649, 530.98375pt x 323.2075pt>
 File: ./figures/fig3.png Graphic file (type png)
 <use ./figures/fig3.png>
 Package pdftex.def Info: ./figures/fig3.png  used on input line 201.
 (pdftex.def)             Requested size: 284.53127pt x 170.71721pt.
-<./figures/fig4.png, id=642, 484.81125pt x 367.3725pt>
+<./figures/fig4.png, id=655, 484.81125pt x 367.3725pt>
 File: ./figures/fig4.png Graphic file (type png)
 <use ./figures/fig4.png>
 Package pdftex.def Info: ./figures/fig4.png  used on input line 218.
 (pdftex.def)             Requested size: 284.54184pt x 227.62843pt.
- [16 <./figures/fig3.png>] [17 <./figures/fig4.png>])
-(./chapters/dissertation_requirements_analysis.tex [18]
+ [16 <./figures/fig3.png>] [17 <./figures/fig4.png>]
+<./figures/fig17.png, id=678, 701.62125pt x 332.24126pt>
+File: ./figures/fig17.png Graphic file (type png)
+<use ./figures/fig17.png>
+Package pdftex.def Info: ./figures/fig17.png  used on input line 282.
+(pdftex.def)             Requested size: 341.44212pt x 156.48799pt.
+) (./chapters/dissertation_requirements_analysis.tex [18 <./figures/fig17.png>]
+ [19]
 Chapter 5.
-<./figures/fig9.png, id=682, 513.92pt x 288.57813pt>
+<./figures/fig9.png, id=705, 513.92pt x 288.57813pt>
 File: ./figures/fig9.png Graphic file (type png)
 <use ./figures/fig9.png>
 Package pdftex.def Info: ./figures/fig9.png  used on input line 10.
@@ -682,81 +687,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
-<./figures/fig10.png, id=684, 1284.8pt x 1140.26pt>
+<./figures/fig10.png, id=707, 1284.8pt x 1140.26pt>
 File: ./figures/fig10.png Graphic file (type png)
 <use ./figures/fig10.png>
 Package pdftex.def Info: ./figures/fig10.png  used on input line 48.
 (pdftex.def)             Requested size: 284.5193pt x 256.06026pt.
-[19
+[20
 
  <./figures/fig9.png>]
 Overfull \hbox (23.84177pt too wide) in paragraph at lines 59--70
  [][] 
  []
 
-[20 <./figures/fig10.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 84--91
+[21 <./figures/fig10.png>]
+Underfull \vbox (badness 1983) has occurred while \output is active []
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--97
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--97
-
- []
-
-[21]) (./chapters/dissertation_methodology.tex [22]
+ [22])
+(./chapters/dissertation_methodology.tex [23]
 Chapter 6.
-<./figures/fig6.png, id=709, 722.7pt x 722.7pt>
+<./figures/fig6.png, id=733, 722.7pt x 722.7pt>
 File: ./figures/fig6.png Graphic file (type png)
 <use ./figures/fig6.png>
-Package pdftex.def Info: ./figures/fig6.png  used on input line 25.
+Package pdftex.def Info: ./figures/fig6.png  used on input line 21.
 (pdftex.def)             Requested size: 227.61862pt x 227.61862pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23
+[24
 
-] [24 <./figures/fig6.png>] [25]
-Overfull \hbox (5.40077pt too wide) in paragraph at lines 97--107
+] [25 <./figures/fig6.png>] [26]
+Overfull \hbox (5.40077pt too wide) in paragraph at lines 93--103
  [] 
  []
 
-[26]) (./chapters/dissertation_implementation.tex [27]
+[27]) (./chapters/dissertation_implementation.tex [28]
 Chapter 7.
-[28
+[29
 
 ]
-<./figures/fig14.png, id=763, 684.5575pt x 283.0575pt>
+<./figures/fig14.png, id=794, 684.5575pt x 283.0575pt>
 File: ./figures/fig14.png Graphic file (type png)
 <use ./figures/fig14.png>
 Package pdftex.def Info: ./figures/fig14.png  used on input line 41.
@@ -766,7 +735,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
 
  []
 
-<./figures/fig5.png, id=764, 598.235pt x 287.0725pt>
+<./figures/fig5.png, id=795, 598.235pt x 287.0725pt>
 File: ./figures/fig5.png Graphic file (type png)
 <use ./figures/fig5.png>
 Package pdftex.def Info: ./figures/fig5.png  used on input line 53.
@@ -774,8 +743,8 @@ Package pdftex.def Info: ./figures/fig5.png  used on input line 53.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29 <./figures/fig14.png>]
-<./figures/fig15.png, id=771, 1084.05pt x 1084.05pt>
+[30 <./figures/fig14.png>]
+<./figures/fig15.png, id=802, 1084.05pt x 1084.05pt>
 File: ./figures/fig15.png Graphic file (type png)
 <use ./figures/fig15.png>
 Package pdftex.def Info: ./figures/fig15.png  used on input line 69.
@@ -785,23 +754,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
-[30 <./figures/fig5.png>] [31 <./figures/fig15.png>])
-(./chapters/dissertation_evaluation.tex [32]
+[31 <./figures/fig5.png>] [32 <./figures/fig15.png>])
+(./chapters/dissertation_evaluation.tex [33]
 Chapter 8.
-[33
+[34
 
 ]
-<./figures/poploss.png, id=795, 536.2434pt x 328.8285pt>
+<./figures/poploss.png, id=828, 536.2434pt x 328.8285pt>
 File: ./figures/poploss.png Graphic file (type png)
 <use ./figures/poploss.png>
 Package pdftex.def Info: ./figures/poploss.png  used on input line 35.
 (pdftex.def)             Requested size: 312.99335pt x 213.40483pt.
-<./figures/popper.png, id=796, 573.8238pt x 328.8285pt>
+<./figures/popper.png, id=829, 573.8238pt x 328.8285pt>
 File: ./figures/popper.png Graphic file (type png)
 <use ./figures/popper.png>
 Package pdftex.def Info: ./figures/popper.png  used on input line 40.
 (pdftex.def)             Requested size: 312.97731pt x 213.40483pt.
-<./figures/rockloss.png, id=797, 536.2434pt x 328.8285pt>
+<./figures/rockloss.png, id=830, 536.2434pt x 328.8285pt>
 File: ./figures/rockloss.png Graphic file (type png)
 <use ./figures/rockloss.png>
 Package pdftex.def Info: ./figures/rockloss.png  used on input line 44.
@@ -810,17 +779,17 @@ Package pdftex.def Info: ./figures/rockloss.png  used on input line 44.
 
 LaTeX Warning: Float too large for page by 16.61884pt on input line 47.
 
-<./figures/rockper.png, id=798, 573.8238pt x 328.8285pt>
+<./figures/rockper.png, id=831, 573.8238pt x 328.8285pt>
 File: ./figures/rockper.png Graphic file (type png)
 <use ./figures/rockper.png>
 Package pdftex.def Info: ./figures/rockper.png  used on input line 51.
 (pdftex.def)             Requested size: 312.97731pt x 213.40483pt.
-<./figures/hiphoploss.png, id=799, 536.2434pt x 328.8285pt>
+<./figures/hiphoploss.png, id=832, 536.2434pt x 328.8285pt>
 File: ./figures/hiphoploss.png Graphic file (type png)
 <use ./figures/hiphoploss.png>
 Package pdftex.def Info: ./figures/hiphoploss.png  used on input line 55.
 (pdftex.def)             Requested size: 312.99335pt x 213.40483pt.
-<./figures/hiphopper.png, id=800, 573.8238pt x 328.8285pt>
+<./figures/hiphopper.png, id=833, 573.8238pt x 328.8285pt>
 File: ./figures/hiphopper.png Graphic file (type png)
 <use ./figures/hiphopper.png>
 Package pdftex.def Info: ./figures/hiphopper.png  used on input line 59.
@@ -893,31 +862,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []\OT1/lmr/bx/n/10.95 Validation
  []
 
-) (./chapters/dissertation_conclusion.tex [34] [35 <./figures/poploss.png> <./f
-igures/popper.png> <./figures/rockloss.png>] [36 <./figures/rockper.png> <./fig
+) (./chapters/dissertation_conclusion.tex [35] [36 <./figures/poploss.png> <./f
+igures/popper.png> <./figures/rockloss.png>] [37 <./figures/rockper.png> <./fig
 ures/hiphoploss.png> <./figures/hiphopper.png>]
 Chapter 9.
-) [37
+) [38
 
 ] (./dissertation.bbl (./dissertation.brf)
 \tf@brf=\write7
 \openout7 = `dissertation.brf'.
 
- [38
+ [39
 
 
-]) [39]
+]) [40]
 Appendix A.
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 250
 .
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
-[40
+ [41
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
@@ -925,28 +891,23 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: B8CB12E67922B6C5D79C94808BB998D2;4088.
+(rerunfilecheck)             Checksum: B621134BE8CECAADE6AB9F424CC1C701;4158.
+Package rerunfilecheck Info: File `dissertation.brf' has not changed.
+(rerunfilecheck)             Checksum: EED43F6B5222097CBD5ED5F3ACF7D863;1690.
 
-
-Package rerunfilecheck Warning: File `dissertation.brf' has changed.
-(rerunfilecheck)                Rerun to get bibliographical references right.
-
-Package rerunfilecheck Info: Checksums for `dissertation.brf':
-(rerunfilecheck)             Before: 9AD2BB6BF601B09F93AA28B2681B2A2A;1386
-(rerunfilecheck)             After:  E1CDA66F23E65B12F68725748D6C5537;1436.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
  ) 
 Here is how much of TeX's memory you used:
- 8068 strings out of 494923
- 118128 string characters out of 6180742
- 215077 words of memory out of 5000000
- 10939 multiletter control sequences out of 15000+600000
+ 8106 strings out of 494923
+ 118755 string characters out of 6180742
+ 215111 words of memory out of 5000000
+ 10968 multiletter control sequences out of 15000+600000
  79424 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,51p,1118b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,51p,1356b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -965,10 +926,10 @@ mf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/font
 s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on dissertation.pdf (49 pages, 1788213 bytes).
+Output written on dissertation.pdf (50 pages, 1807995 bytes).
 PDF statistics:
- 985 PDF objects out of 1000 (max. 8388607)
- 864 compressed objects within 9 object streams
- 236 named destinations out of 1000 (max. 500000)
- 599 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1023 PDF objects out of 1200 (max. 8388607)
+ 899 compressed objects within 9 object streams
+ 244 named destinations out of 1000 (max. 500000)
+ 612 words of extra memory for PDF output out of 10000 (max. 10000000)
 

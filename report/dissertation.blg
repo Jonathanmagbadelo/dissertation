@@ -5,7 +5,6 @@ The style file: apalike.bst
 Database file #1: bib.bib
 Warning--entry type for "Pui2018" isn't style-file defined
 --line 207 of file bib.bib
-Warning--I didn't find a database entry for "Rumelhart1988"
 Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
 while executing---line 1023 of file apalike.bst
 Too many commas in name 1 of "Chun Pui Tang,Ka Long Chui,Ying Kin Yu,Zhiliang Zeng,Kin Hong Wong" for entry Pui2018
@@ -22,46 +21,47 @@ Warning--empty journal in Dai2015a
 Warning--empty booktitle in Irvin2016
 Warning--empty booktitle in Potash2015
 Warning--empty journal in Qi2018
+Warning--empty booktitle in Rumelhart1988
 Warning--empty booktitle in Tsaptsinos2017
-You've used 27 entries,
+You've used 31 entries,
             1935 wiz_defined-function locations,
-            643 strings with 8289 characters,
-and the built_in function-call counts, 11021 in all, are:
-= -- 1071
-> -- 464
-< -- 17
-+ -- 163
-- -- 156
-* -- 864
-:= -- 1877
-add.period$ -- 76
-call.type$ -- 27
-change.case$ -- 209
-chr.to.int$ -- 26
-cite$ -- 32
-duplicate$ -- 460
-empty$ -- 774
-format.name$ -- 191
-if$ -- 2202
+            672 strings with 9030 characters,
+and the built_in function-call counts, 12900 in all, are:
+= -- 1261
+> -- 536
+< -- 22
++ -- 189
+- -- 180
+* -- 1018
+:= -- 2181
+add.period$ -- 90
+call.type$ -- 31
+change.case$ -- 241
+chr.to.int$ -- 30
+cite$ -- 37
+duplicate$ -- 539
+empty$ -- 908
+format.name$ -- 221
+if$ -- 2592
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 27
-newline$ -- 131
-num.names$ -- 81
-pop$ -- 242
+missing$ -- 31
+newline$ -- 151
+num.names$ -- 93
+pop$ -- 274
 preamble$ -- 1
-purify$ -- 212
+purify$ -- 244
 quote$ -- 0
-skip$ -- 345
+skip$ -- 407
 stack$ -- 0
-substring$ -- 716
-swap$ -- 81
-text.length$ -- 6
+substring$ -- 846
+swap$ -- 102
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 156
-warning$ -- 5
-while$ -- 81
+type$ -- 180
+warning$ -- 6
+while$ -- 96
 width$ -- 0
-write$ -- 326
+write$ -- 381
 (There were 6 error messages)

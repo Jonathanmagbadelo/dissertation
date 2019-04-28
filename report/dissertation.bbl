@@ -5,6 +5,11 @@ Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003).
 \newblock A neural probabilistic language model.
 \newblock {\em J. Mach. Learn. Res.}, 3:1137--1155.
 
+\bibitem[{Bengio} et~al., 1994]{Bengio1994}
+{Bengio}, Y., {Simard}, P., and {Frasconi}, P. (1994).
+\newblock Learning long-term dependencies with gradient descent is difficult.
+\newblock {\em IEEE Transactions on Neural Networks}, 5(2):157--166.
+
 \bibitem[Chun Pui~Tang, 2018]{Pui2018}
 Chun Pui~Tang, Ka Long~Chui, Y. K. Y. Z. Z. K. H.~W. (2018).
 \newblock Music genre classification using a hierarchical long short term
@@ -57,6 +62,11 @@ Katz, S. (1987).
 \newblock {\em IEEE Transactions on Acoustics, Speech, and Signal Processing},
   35(3):400--401.
 
+\bibitem[Kingma and Ba, 2014]{Kingma2014}
+Kingma, D.~P. and Ba, J. (2014).
+\newblock Adam: A method for stochastic optimization.
+\newblock {\em CoRR}, abs/1412.6980.
+
 \bibitem[Lewis et~al., 2004]{Lewis2004}
 Lewis, D.~D., Yang, Y., Rose, T.~G., and Li, F. (2004).
 \newblock Rcv1: A new benchmark collection for text categorization research.
@@ -107,6 +117,12 @@ Qi, Y., Singh~Sachan, D., Felix, M., Janani~Padmanabhan, S., and Neubig, G.
 \newblock When and why are pre-trainedword embeddings useful for neural machine
   translation?
 
+\bibitem[Rumelhart et~al., 1988]{Rumelhart1988}
+Rumelhart, D.~E., Hinton, G.~E., and Williams, R.~J. (1988).
+\newblock Neurocomputing: Foundations of research.
+\newblock chapter Learning Representations by Back-propagating Errors, pages
+  696--699. MIT Press, Cambridge, MA, USA.
+
 \bibitem[Rumelhart et~al., 1986]{Hinton1986}
 Rumelhart, D.~E., Hinton, G.~E., Williams, R.~J., et~al. (1986).
 \newblock Learning representations by back-propagating errors.
@@ -116,6 +132,12 @@ Rumelhart, D.~E., Hinton, G.~E., Williams, R.~J., et~al. (1986).
 Rush, A.~M., Chopra, S., and Weston, J. (2015).
 \newblock A neural attention model for abstractive sentence summarization.
 \newblock In {\em EMNLP}.
+
+\bibitem[Sahami et~al., 1998]{Sahami1998}
+Sahami, M., Dumais, S., Heckerman, D., and Horvitz, E. (1998).
+\newblock A bayesian approach to filtering junk e-mail.
+\newblock In {\em Learning for Text Categorization: Papers from the 1998
+  workshop}, volume~62, pages 98--105. Madison, Wisconsin.
 
 \bibitem[Srivastava et~al., 2014]{Srivastava2014}
 Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov,

@@ -3,13 +3,13 @@
 %-----------------------------------------------------
 \chapter{Requirements Analysis}
 \label{chap:requirements_analysis}
-As the project involves the development of a prototype software system, it is important to consider the project from a software engineering perspective. Moreover, the project involves the integration of a novel machine learning model, with the success of the project relying heavily on factors such as data availability, data quality and processing power. With this and other considerations such as training time and implementation complexity in mind, it is necessary to define software requirements to limit the project scope to one that is achievable. Software requirements should also be inferred from the needs of the end-user and as such it is necessary to understand user needs through existing solutions. This chapter briefly evaluates two existing solutions and outlines the functional and non-functional requirements by which the prototype will be evaluated.
+As the project involves the development of a prototype software solution, it is important to consider the project from a software engineering perspective. Moreover, the project involves the integration of a novel machine learning model, with the success of the project relying heavily on factors such as data availability, data quality and processing power. With this and other considerations such as training time and implementation complexity in mind, it is necessary to define software requirements to limit the project scope to one that is achievable. Software requirements should also be inferred from the needs of the end-user and as such it is necessary to understand user needs through existing solutions. This chapter briefly evaluates two existing solutions and outlines the functional and non-functional requirements by which the prototype will be evaluated.
 \section{Existing Solutions}
 \subsection{MasterWriter}
 \begin{figure}[h]
 	\includegraphics[width=10cm, height=6cm]{./figures/fig9}
 	\centering
-	\caption[MasterWriter User Interface]{MasterWriter user interface}
+	\caption[MasterWriter]{MasterWriter user interface}
 	\label{fig:fig9}
 \end{figure}
 \noindent
@@ -52,7 +52,7 @@ writers. Available as a multi-platform product, it consolidates a number of writ
 \end{figure}
 \noindent
 \newline
-Rhymer's block is a mobile application intended to help songwriters specifically with rhymes. Providing real time rhyme suggestions, the application allows users to quickly write song lyrics and provides a social platform through which users can share their own song lyrics, as well as review the song lyrics of other users. An overview of Rhymer's Block core features can be seen in \autoref{Tab:RhymersBlock} below.
+Rhymer's block is a mobile application intended to help songwriters specifically with rhymes. Providing real time rhyme suggestions, the application allows users to quickly write song lyrics and provides a social platform through which users can share their own song lyrics, as well as review the song lyrics of other users. An overview of Rhymer's Block core features can be seen in \autoref{Tab:RhymersBlock}.
 
 \begin{table}[ht]
 	\centering
@@ -67,7 +67,7 @@ Rhymer's block is a mobile application intended to help songwriters specifically
 		Word Analysis & Provides rhyme suggestions for words most commonly used by other users \\ \hline
 	\end{tabular}
 	\label{Tab:RhymersBlock}
-	\caption{Rhymer's Block}
+	\caption{Rhymer's Block Features}
 \end{table}
 
 \subsection{Requirements analysis}
@@ -83,19 +83,14 @@ Comparing MasterWriter and Rhymer's block, software availability and accessibili
 
 \noindent
 \newline
-As a whole, the project has roots in both research and practice. Often times the interests of both these areas are incompatible. For example, research tends to focus more on advancing the current state of the art without paying too much attention to aspects such as model scalability, actual training time, ease of implementation and quality. On the other hand in practice applications  are for the most part client driven meaning aspects such as delivery time become important, and the performance of a model can be overlooked if it is robust to train and deploy. 
+As a whole, the project has roots in both research and practice. Often times the interests of both these areas are incompatible. For example, research tends to focus more on advancing the current state of the art without paying too much attention to aspects such as model scalability, overall training time, ease of implementation and quality. On the other hand in practice applications  are for the most part client driven meaning aspects such as delivery time become important, and the performance of a model can be suboptimal if it is robust to train and easy to deploy to production. With regards to the project, necessary compromises, from both a research and application stand point have been made in order to achieve the goals of the project. For example a typical software solution would involve an iterative design process from a low fidelity prototype to a high fidelity prototype. As stated before the goals of this project are not client driven and due to further time constraints an iterative design process will not be adhered to. In the same vein, from a research perspective, techniques such as hyperparameter tuning through methods such as grid search will also not be followed; again due to time constraints and the type of models, (RNN's) that take time to train.
+
+\noindent 
 \newline
-\newline
-\newline
-\newline
+Taking into consideration the project goals and what has been discussed above, the project requirements are outlined below.
 \section{Requirements}
-In this section the requirements for the project will be set out. The functional requirements will specify what the software will do whilst the non-functional requirements will detail how these will be done.
-\newline
-\newline
-\newline
-\newline
+In this section the requirements for the project are set out. The functional requirements specify what the software will do whilst the non-functional requirements will detail how these will be done. Possible extensions for the project, if time permits are also outlined.
 \subsection{Functional}
-Blah nblah blah
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ | l | p{10cm} | l | }
@@ -110,10 +105,9 @@ Blah nblah blah
 		FR7 & The user should be able to change the underlying covariate specific word embeddings used or the base embeddings if desired& N/A \\ \hline
 	\end{tabular}
 	\label{Tab:Tcru}
-	\caption{SONGIFAI Functional Requirements}
+	\caption[Functional Requirements]{SONGIFAI Functional Requirements}
 \end{table}
 \subsection{Non-Functional}
-blah blah
 \begin{table}[ht]
 \centering
 	\begin{tabular}{ | l | p{10cm} | l | }
@@ -124,7 +118,19 @@ blah blah
 		NFR3 & The word suggestion feature should return a list of suggested words with minimal latency & N/A \\ \hline
 	\end{tabular}
 	\label{Tab:Tcr}
-	\caption{SONGIFAI Non-Functional Requirements}
+	\caption[Non-Functional Requirements]{SONGIFAI Non-Functional Requirements}
+\end{table}
+\subsection{Extensions}
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{ | l | p{10cm} | l | }
+		\hline
+		\textbf{ID} & \textbf{Description} & \textbf{Dependency} \\ \hline
+		E1 & The system may allow rhyme words to be suggested in the word suggestion feature if time permits& N/A \\ \hline
+		E2 & The system may allow sub genres to be selected for embeddings, if time and data permits& N/A \\ \hline
+	\end{tabular}
+	\label{Tab:Tcr}
+	\caption[Possible Extensions]{SONGIFAI Possible Extensions}
 \end{table}
 
 

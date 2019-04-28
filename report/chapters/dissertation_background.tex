@@ -153,7 +153,7 @@ An overview of generic neural network architectures as well as RNN's and LSTM's 
 In any neural network architecture, the elementary unit of computation is the artificial neuron which takes inspiration from biological neurons. The artificial neuron receives \(N\) inputs which are each weighted by \(N\) weights and summed together with a bias \(b\). The output \(y\) of a neuron is calculated by passing the weighted sum of the inputs into an activation function \(f\). 
 
 \begin{equation}
-	y = \left( \sum_{i=1}^{N} x_{i}w_{i} + b\right)
+	y = f\left( \sum_{i=1}^{N} x_{i}w_{i} + b\right)
 \end{equation}
 
 \noindent
@@ -200,13 +200,13 @@ RNN's are trained using gradient descent and backpropagation through time (BBTT)
 \begin{figure}[h]
 	\includegraphics[width=10cm, height=6cm]{./figures/fig3}
 	\centering
-	\caption{An \textit{unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers}
+	\caption[Unrolled Recurrent Neural Network]{An \textit{unrolled} recurrent neural network can be seen as a feed-forward neural network with many hidden layers.}
 	\label{fig:fig3}
 \end{figure}
 
 \par
 \noindent
-During BBTT, back propagation is performed on an unrolled recurrent architecture, causing gradients to back-propagate through numerous network layers. Unfortunately, this has a few major problems. Firstly, a single forward/backward pass through the network is computationally expensive due to the number of hidden layers of the unrolled network being linear to the number of time steps in a sequence. Secondly, this method suffers from the issue of vanishing or exploding gradients(REF) where gradients can exponentially decay or grow as they propagate over time, which can prevent the network from learning entirely.
+During BBTT, back propagation is performed on an unrolled recurrent architecture, causing gradients to back-propagate through numerous network layers. Unfortunately, this has a few major problems. Firstly, a single forward/backward pass through the network is computationally expensive due to the number of hidden layers of the unrolled network being linear to the number of time steps in a sequence. Secondly, this method suffers from the issue of vanishing or exploding gradients (\cite{Bengio1994}) where gradients can exponentially decay or grow as they propagate over time, which can prevent the network from learning entirely.
 \subsubsection{Long Short-Term Memory}
 Long Short-Term Memory (LSTM) (\cite{Hochreiter1997}) is a variant of the RNN which is capable of capturing longer dependencies between sequences of data without suffering from vanishing or exploding gradients. This is achieved through a feature known as gating; a mechanism which acts as a permissive or restrictive barrier to information flow. 
 
@@ -217,12 +217,12 @@ The core component of the LSTM is the cell state which is able to propagate \tex
 \begin{figure}[ht]
 	\includegraphics[width=10cm, height=8cm]{./figures/fig4}
 	\centering
-	\caption{LSTM memory cell, with forget, input and output gates}
+	\caption[LSTM Memory Cell]{LSTM memory cell, with forget, input and output gates}
 	\label{fig:fig4}
 \end{figure}
 
 \subsection{Text Classification}
-Text classification is the task of assigning pre-defined labels to text according to it's contents. Machine learning methods for text classification are preferred to rule based systems due to their ability to model regardless of domain. Text classification can be approached using supervised learning, where a model is trained with labelled training data, or unsupervised learning, where training data are clustered together to see if any natural grouping exists.
+Text classification is the task of assigning pre-defined labels to text according to it's contents. Machine learning methods for text classification are preferred to rule based systems due to their ability to model regardless of domain. Text classification can be approached using supervised learning, where a model is trained with labelled training data, or unsupervised learning, where training data is clustered together to see if any natural grouping exists.
 
 \noindent
 \newline
@@ -254,7 +254,7 @@ the resulting representation for document \(D\) would be
 Two popular machine learning methods for text classification include the naive Bayes classifier and the Support Vector Machine. They are briefly outlined in the following section.
 
 \subsubsection{Naive Bayes}
-Naive Bayes classifiers are a class of supervised probabilistic classifiers which have been used in text classification for tasks such as Spam Filtering. At their core, these types of classifiers rely on Bayes theorem which is shown below.
+Naive Bayes classifiers are a class of supervised probabilistic classifiers which have been used in text classification for tasks such as Spam Filtering (\cite{Sahami1998}). At their core, these types of classifiers rely on Bayes theorem which is shown below.
 
 \begin{equation}
 P(A|B) = \dfrac{P(B|A)P(A)}{P(B)}
@@ -264,7 +264,7 @@ P(A|B) = \dfrac{P(B|A)P(A)}{P(B)}
 The \textit{naivety} of these classifiers comes from the assumption of conditional independence between features. Specifically, given an input \(x\), with \(n\) features, and a target class y, naive Bayes classifiers use the following approximation to assign the probability of input \(x\) belonging to class \(y\).
 
 \begin{equation}
-P(x_{1},...,x_{n}|y) \approx \prod_{i=1}^{n}P(x_{i}
+P(x_{1},...,x_{n}|y) \approx \prod_{i=1}^{n}P(x_{i})
 \end{equation}
 \noindent
 Given multiple classes, the classification of an input is given to the class with the maximum conditional probability as shown in the equation above. This is generalised in the formula below.
@@ -278,7 +278,12 @@ Support Vector Machines (SVM) (\cite{Cortes1995}) have also been applied success
 
 \noindent
 \newline 
-IMAGE OF SVM
+\begin{figure}[ht]
+	\includegraphics[width=12cm, height=5.5cm]{./figures/fig17}
+	\centering
+	\caption[Support Vector Machine]{Support Vector Machine - The left set of data points can be linearly separated by many lines, but the goal of the SVM on the right is to use the support vectors to maximise the margin between the two classes. The optimal separating hyperplane is in the middle of this maximised margin}
+	\label{fig:fig17}
+\end{figure}
 
 \subsubsection{Deep Learning Methods}
 Until recently, state of the art methods for text classification had long used linear predictors such as the SVM (with a linear kernel) and multinomial naive Bayes classifiers using feature representation techniques such as bag-of-words (\cite{Joachims1998} \cite{Lewis2004}). However, non-linear methods that are able to leverage dependencies between words ,such as recurrent neural networks, have provided better predictions (\cite{Dai2015a}) than previous bag-of-word approaches where features are assumed to be conditionally independent and unordered.
