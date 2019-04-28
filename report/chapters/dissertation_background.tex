@@ -9,7 +9,7 @@ This chapter provides an introduction to the theory and previous work within the
 Word embeddings are vectors of predefined size which aim to encode a distributional numerical representation of word features. Previous techniques for creating such representations can be categorised into two categories: matrix factorization methods and shallow window-based methods.
 \subsection{Previous Methods}
 \subsubsection{Global Matrix Factorization Methods}
-Global matrix factorization methods such as Latent Semantic Analysis (LSA) use low rank approximations to decompose large matrices containing corpus statistics. Typically these matrices take the form of a term-document matrix, which captures the frequencies of terms across a collection of documents, or a term-term matrix, which store co-occurrence counts of terms. Matrix factorisation methods such as LSA allow for fast training and perform well on word similarity tasks by leveraging word occurrence statistics however they suffer from the disproportionate importance given to large word counts.
+Global matrix factorization methods such as Latent Semantic Analysis (LSA) use low rank approximations to decompose large matrices containing corpus statistics. Typically, these matrices take the form of a term-document matrix, which captures the frequencies of terms across a collection of documents, or a term-term matrix, which store co-occurrence counts of terms. Matrix factorisation methods such as LSA allow for fast training and perform well on word similarity tasks by leveraging word occurrence statistics however they suffer from the disproportionate importance given to large word counts.
 
 \begin{figure}[h]
 	\includegraphics[width=12cm, height=6cm]{./figures/fig12}
@@ -25,11 +25,11 @@ Shallow window-based methods provide an alternative approach to learning word re
 \begin{figure}[h]
 	\includegraphics[width=12cm, height=8cm]{./figures/fig13}
 	\centering
-	\caption{Skip-gram and CBOW models}
+	\caption[Skip-gram and CBOW models]{Skip-gram models attempt to predict the proceeding and successive words of a given target word, whilst CBOW models attempt to predict a target word given its surrounding words}
 	\label{fig:fig13}
 \end{figure}
 \subsection{GloVe}
-Global Vectors for Word Representation (GloVe), is an unsupervised word embedding algorithm, introduced by \cite{Pennington2014}, which marries the benefits of both global matrix factorisation and shallow window-based methods. Presented as a log-bilinear regression model, GloVe makes use of global word co-occurrence statistics from a corpus. Specifically, given a  corpus has vocabulary size \(N\), a word-word co-occurrence matrix \(X\), with \(N\)x\(N\) dimensions, is computed with \(X_{ij}\) being a measure of the number of times words \(i\) and \(j\) co-occur within a given context window, which in GloVe is a inverse distance function, giving closer words higher counts. For example applying a right context window of size 3 over the sentence,
+Global Vectors for Word Representation (GloVe), is an unsupervised word embedding algorithm, introduced by \cite{Pennington2014}, which marries the benefits of both global matrix factorisation and shallow window-based methods. Presented as a log-bilinear regression model, GloVe makes use of global word co-occurrence statistics from a corpus. Specifically, given a  corpus, which has vocabulary size \(N\), a word-word co-occurrence matrix \(X\), with \(N\)x\(N\) dimensions, is computed with \(X_{ij}\) being a measure of the number of times words \(i\) and \(j\) co-occur within a given context window, which in GloVe is a inverse distance function, giving closer words higher counts. For example applying a right context window of size 3 over the sentence,
 
 \begin{center}
 	I'm looking at the man in the mirror
@@ -47,20 +47,17 @@ and assuming the focal word was "man", the counts for its context words in the w
 \noindent 
 \newline
 \newline
-As detailed in the paper, GloVe outperformed previous methods such as word2vec in word analogy, word similarity and named entity recognition tasks, and as seen in ... is able to capture linguistic substructures.
+As detailed in the paper, GloVe outperformed previous methods such as word2vec in word analogy, word similarity and named entity recognition tasks, and as seen in \autoref{fig:fig16} is able to capture linguistic substructures.
 
 \begin{figure}[h]
-	\includegraphics[width=8cm, height=8cm]{./figures/fig2}
+	\includegraphics[width=8cm, height=6cm]{./figures/fig16}
 	\centering
-	\caption{Example neural network, three input nodes, four hidden and two outputs}
-	\label{fig:fig2}
+	\caption[Word Embedding Visualisation]{Example of the male-female relationship encoded in the word embedding space.}
+	\label{fig:fig16}
 \end{figure}
 
 \noindent
-Conceptually, GloVe is based on the idea that ratios of probabilities of words co-occurring have the potential to encode meaning which is encoded as vector differences.(REFACTOR)
-
-\noindent
-Conceptually, GloVe is based on the idea that the similarity between pairs of words is related to the probability of  
+Conceptually, GloVe is based on the idea that ratios of probabilities of words co-occurring with respect to another word, can encode more meaning than using the raw probabilities of the words co-occurring itself.
 
 \noindent
 \newline
@@ -72,7 +69,7 @@ w_{i}^{T} \tilde{w_{j}} + b_{i} + \tilde{b}_{j} \approx \log{X_{ij}}^{2}
 
 \noindent
 \newline
-GloVe also utilises a weighting function \(f(X_{ij})\) to decrease noise caused by rare word co-occurrences. The following weighting function is used in the GloVe model.
+GloVe also utilises a weighting function \(f\) to decrease noise caused by rare word co-occurrences. The following weighting function is used in the GloVe model.
 
 \begin{equation}
 	f(x) =
@@ -88,12 +85,20 @@ Typically values of 0.75 and 100 are used for both \( \alpha \) and \(x_{max}\) 
 \begin{equation}
 	J = \sum_{i, j=1}^{N} f(X_{ij}) (w_{i}^{T} \tilde{w_{j}} + b_{i} + \tilde{b}_{j} - \log{X_{ij}})^{2}
 \end{equation}
-\subsection{CoVeR}
-Covariates such as author demographics, time and location often accompany documents within a corpus. A trivial approach to obtaining covariate specific word embeddings involves applying GloVe to each subset of corpus documents relating to a particular covariate. Unfortunately, utilising GloVe this way has certain drawbacks. Firstly, GloVe must be applied and optimised to each subset of corpus data, which, depending on the number of covariates, is computationally expensive. Also as a direct result of dividing the original corpus, global co-occurrence statistics are now split across covariate specific co-occurrence statistics. Consequently, global statistics are now not shared between embeddings, which may cause sub-optimal word representations, especially when subsets of corpus data contain minimal amounts of co-occurrences for GloVe to train on. 
 
 \noindent
 \newline
-Another issue with applying GloVe in this manner is interpretability. Apart from visual interpretation through dimensionality reduction and clustering as shown in Figure..., traditionally, interpreting the meaning of word vector dimensions has been challenging due to their random initialisation and due to the fact that dimensions are constructed relative to the order in which co-occurrence statistics are processed during training. As a result of this, applying GloVe this way makes it more challenging to relate the separate covariate word embeddings back together.
+Training of GloVe utilises the AdaGrad optimiser (\cite{Duchi2011}) to perform stochastic gradient descent, which is an iterative method of optimising an objective function using small random samples of training data, in order to minimise the objective function above.
+
+\noindent
+\newline
+\newline
+\subsection{CoVeR}
+Covariates such as author demographics, time and location often accompany documents within a corpus. A trivial approach to obtaining covariate specific word embeddings involves applying GloVe to each subset of corpus documents relating to a particular covariate. Unfortunately, utilising GloVe this way has certain drawbacks. Firstly, GloVe must be applied and optimised to each subset of corpus data, which, depending on the number of covariates, is computationally expensive. Also as a direct result of dividing the original corpus, global co-occurrence counts are now split across covariates. Consequently, global statistics are now not shared between embeddings, which may cause sub-optimal word representations, particularly when subsets of corpus data contain minimal amounts of co-occurrences for GloVe to train on. 
+
+\noindent
+\newline
+Another issue with applying GloVe in this manner is interpretability. Apart from visual interpretation through dimensionality reduction and clustering as shown in Figure..., traditionally, interpreting the meaning of word vector dimensions has been challenging because of their random initialisation and due to the fact that dimensions are constructed relative to the order in which co-occurrence statistics are processed during training. As a result of this, applying GloVe this way makes it more challenging to relate the separate covariate word embeddings back together.
 
 
 \noindent
@@ -118,7 +123,7 @@ Formal languages such as programming languages are fully specified with precise 
 
 \noindent
 \newline
-Language modelling (LM) is the task of estimating the probability distribution of various linguistic units such as characters, words and sentences. In recent years, the application of LM  has been essential to many NLP tasks such as Speech to Text and Text Summarization. Language models can be classified into two categories, count-based and continuous-space language models. 
+Language modelling (LM) is the task of estimating the probability distribution of various linguistic units such as characters, words and sentences. In recent years, the application of LM  has been essential to many NLP tasks such as Speech to Text and Text Summarization (\cite{Rush2015}). Language models can be classified into two categories, count-based and neural language models. 
 
 \subsection{Count Based Models}
 Count based models attempt to learn a probability distribution \(P(w_{1},...,w_{i}) \) over of a sequence of words \(w_{1},...,w_{i}\). An example of a count based model is the n-gram model.
@@ -132,7 +137,7 @@ An n-gram is a sequence of \(n\) words. Examples of two word sequences or bigram
 
 \noindent
 \newline
-An inherent problem with the n-gram model is sparsity as some word sequences occur rarely or not at all, even in large text corpora. Using the standard n-gram model would yield too many zero probabilities. To circumvent this, techniques such as back-off and smoothing exist(REF TO BACKOFF)(REF TO SMOOTHING). Another disadvantage of the n-gram model is that they rely on exact matches, meaning they fail to recognise syntactically and semantically similar sentences such as \textit{"what about animals"} and \textit{"what about elephants"}. N-gram models also suffer from the curse of dimensionality due to increased vocabulary sizes. As a result, limited window sizes are used, causing longer dependencies between words not be captured.
+An inherent problem with the n-gram model is sparsity as some word sequences occur rarely or not at all, even in large text corpora. Using the standard n-gram model would yield too many zero probabilities. To mitigate this, techniques such as back-off (\cite{Katz1987}) and smoothing exist. Another disadvantage of the n-gram model is that they rely on exact matches, meaning they fail to recognise syntactically and semantically similar sentences such as \textit{"what about animals"} and \textit{"what about elephants"}. N-gram models also suffer from the curse of dimensionality due to increased vocabulary sizes. As a result, limited window sizes are used, causing longer dependencies between words not be captured.
 
 \subsection{Neural Language Models}
 To overcome issues faced by count based models, deep learning methods have been used to create neural language models by simultaneously learning word embeddings and the parameters needed to create a joint probability distribution between the word embeddings. \cite{Bengio2003} proposed a feed forward neural language model to help tackle the problem of data sparsity. Recent state of the art approaches such as \cite{Mikolov2010}, abstract language modelling as a form of sequential data prediction and have implored RNN's to help encode longer dependencies between sequences of words. The strength of these models comes from their ability to consider several preceding words and thus generalise well.

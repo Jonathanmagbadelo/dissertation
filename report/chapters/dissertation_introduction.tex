@@ -94,10 +94,10 @@ With this in mind, a prototype solution, SONGIFAI is proposed. SONGIFAI provides
 
 \noindent
 \newline
-As stated before, RNN's have been used successfully in both language modelling and text classification tasks. The specific variant of the recurrent neural network which has been successfully utilised in these tasks is the Long Short-Term Memory (LSTM) (discussed in \autoref{chap:background}) network. This network architecture is used for both the language model and text classifier which are applied to the word prediction and lyric classification features respectively. The word suggestion feature utilises the covariate specific embeddings themselves. A high level system architecture of the prototype can be seen in \autoref{fig:fig7}5
+As stated before, RNN's have been used successfully in both language modelling and text classification tasks. The specific variant of the recurrent neural network which has been successfully utilised in these tasks is the Long Short-Term Memory (LSTM) network (discussed in \autoref{chap:background}). This network architecture is used for both the language model and text classifier which are applied to the word prediction and lyric classification features respectively. The word suggestion feature utilises the covariate specific embeddings themselves. A high level system architecture of the prototype can be seen in \autoref{fig:fig7}5
 \begin{figure}[h]	
 	\includegraphics[width=15cm, height=16cm]{./figures/fig7}
 	\centering
-	\caption[SONGIFAI: High Level Architecture]{From a high level, the system can be split into three sections: \textbf{Training}, where models are created \textbf{Server Side}, a Python based API used to access the models and \textbf{Client Side}} a user interface built using the React framework.
+	\caption[SONGIFAI: High Level Architecture]{From a high level, the system can be split into three sections: \textbf{Training}, where models are created. \textbf{Server Side}, a Python based API used to interface with the trained models.\textbf{Client Side} a user interface built using JavaScript}.
 	\label{fig:fig7}
 \end{figure}

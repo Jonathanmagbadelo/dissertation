@@ -5,12 +5,6 @@ Bengio, Y., Ducharme, R., Vincent, P., and Janvin, C. (2003).
 \newblock A neural probabilistic language model.
 \newblock {\em J. Mach. Learn. Res.}, 3:1137--1155.
 
-\bibitem[Bojanowski et~al., 2017]{Bojanowski2017}
-Bojanowski, P., Grave, E., Joulin, A., and Mikolov, T. (2017).
-\newblock Enriching word vectors with subword information.
-\newblock {\em Transactions of the Association for Computational Linguistics},
-  5:135--146.
-
 \bibitem[Chun Pui~Tang, 2018]{Pui2018}
 Chun Pui~Tang, Ka Long~Chui, Y. K. Y. Z. Z. K. H.~W. (2018).
 \newblock Music genre classification using a hierarchical long short term
@@ -23,6 +17,12 @@ Corinna~Cortes, V.~V. (1995).
 \bibitem[Dai and Le, 2015]{Dai2015a}
 Dai, A.~M. and Le, Q.~V. (2015).
 \newblock Semi-supervised sequence learning.
+
+\bibitem[Duchi et~al., 2011]{Duchi2011}
+Duchi, J., Hazan, E., and Singer, Y. (2011).
+\newblock Adaptive subgradient methods for online learning and stochastic
+  optimization.
+\newblock {\em J. Mach. Learn. Res.}, 12:2121--2159.
 
 \bibitem[Edwards and Rap, 2009]{Edwards2009}
 Edwards, P. and Rap, K. (2009).
@@ -49,6 +49,13 @@ Joachims, T. (1998).
   relevant features.
 \newblock In {\em European conference on machine learning}, pages 137--142.
   Springer.
+
+\bibitem[Katz, 1987]{Katz1987}
+Katz, S. (1987).
+\newblock Estimation of probabilities from sparse data for the language model
+  component of a speech recognizer.
+\newblock {\em IEEE Transactions on Acoustics, Speech, and Signal Processing},
+  35(3):400--401.
 
 \bibitem[Lewis et~al., 2004]{Lewis2004}
 Lewis, D.~D., Yang, Y., Rose, T.~G., and Li, F. (2004).
@@ -105,19 +112,10 @@ Rumelhart, D.~E., Hinton, G.~E., Williams, R.~J., et~al. (1986).
 \newblock Learning representations by back-propagating errors.
 \newblock {\em Cognitive modeling}.
 
-\bibitem[Socher et~al., 2013a]{Socher2013a}
-Socher, R., Bauer, J., Manning, C.~D., et~al. (2013a).
-\newblock Parsing with compositional vector grammars.
-\newblock In {\em Proceedings of the 51st Annual Meeting of the Association for
-  Computational Linguistics (Volume 1: Long Papers)}, volume~1, pages 455--465.
-
-\bibitem[Socher et~al., 2013b]{Socher2013}
-Socher, R., Perelygin, A., Wu, J., Chuang, J., Manning, C.~D., Ng, A., and
-  Potts, C. (2013b).
-\newblock Recursive deep models for semantic compositionality over a sentiment
-  treebank.
-\newblock In {\em Proceedings of the 2013 conference on empirical methods in
-  natural language processing}, pages 1631--1642.
+\bibitem[Rush et~al., 2015]{Rush2015}
+Rush, A.~M., Chopra, S., and Weston, J. (2015).
+\newblock A neural attention model for abstractive sentence summarization.
+\newblock In {\em EMNLP}.
 
 \bibitem[Srivastava et~al., 2014]{Srivastava2014}
 Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., and Salakhutdinov,

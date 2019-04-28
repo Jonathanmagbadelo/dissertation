@@ -6,7 +6,7 @@
 This chapter briefly outlines previous work relating to the tasks of language modelling and text classification in the area of music lyrics.
 
 \section{Lyric Language Modelling}
-Generally, hobbyist approaches to modelling the language used in lyrics have utilized Markov processes, which have the special property that the future is independent of the past given the present. Naturally, as only the present or recent past (in the case of higher order Markov chains) is considered, these types of models are unable to capture longer dependencies and complex structures, such as alliteration and complex rhyme schemes; examples of which are given below:
+Generally, hobbyist approaches to modelling the language used in lyrics have utilized Markov processes, which have the special property that the future is independent of the past given the present. Naturally, as only the present or recent past (in the case of higher order Markov chains) is considered, these types of models are unable to capture longer dependencies and complex structures that appear in lyrics, such as alliteration and complex rhyme schemes; examples of which are given below:
 
 \begin{figure}[ht]
 	\begin{center}
@@ -44,10 +44,10 @@ Generally, hobbyist approaches to modelling the language used in lyrics have uti
 
 \noindent
 \newline
-Recent attempts to model creative writing have utilised neural methods, such as \cite{Zhang2014}, who uses RNN's for Chinese poetry generation and \cite{Potash2015}, who uses an LSTM, to \textit{'ghostwrite'}\footnote{write in the style of X without giving credit} rap lyrics. 
+Recent attempts to model creative writing have utilised neural methods, such as \cite{Zhang2014}, who uses RNN's for Chinese poetry generation and \cite{Potash2015}, who uses an LSTM, to \textit{'ghostwrite'}\footnote{write in the style of X without giving credit} rap lyrics. Similarly in this project, an LSTM is used to train multiple covariate specific language models.
 
 \section{Lyric Genre Classification}
-Previous attempts at genre classification predominately use audio features as opposed to lyrics, (in part due to lyric availability). Apart from audio features, the genre of a song is also connected to its lyrics as songs of varying genres use language differently. This can be seen in the Hip Hop, where the use of slang, which are twisted existing words or self-made words (\cite{Edwards2009}) is prevalent. Examples of such words can be seen in \autoref{Tab:Slang}
+Previous attempts at genre classification predominately use audio features as opposed to lyrics, (in part due to lyric availability). Apart from audio features, the genre of a song is also connected to its lyrics as songs of varying genres use language differently. This can be seen in Hip Hop, where the use of slang, which are twisted existing words or self-made words (\cite{Edwards2009}) is prevalent. Examples of such words can be seen in \autoref{Tab:Slang}
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{ | p{5cm} | p{5cm} |}
@@ -57,8 +57,8 @@ Previous attempts at genre classification predominately use audio features as op
 		lit & fun\\ \hline
 		bread & money \\ \hline
 	\end{tabular}
-	\caption{Example slang words found in the dataset used in the project}
+	\caption[Example Slang Words]{Example slang words found in the dataset used in the project}
 	\label{Tab:Slang}
 \end{table}
 \newline
-Similar to the previous section, genre classification has also been tackled using neural methods. Using audio based features, (\cite{Irvin2016}) and (\cite{Pui2018}), utilise LSTM's for classification. In relation to song lyrics \cite{Tsaptsinos2017} utilises lyrics to train a Hierarchical Attention Network (\cite{Yang2016}), which provide state of the art results for document classification due to their ability to encode its knowledge about the composites of a document in a hierarchical way. In the same paper, a baseline LSTM is implemented for comparative reasons. 
+Similar to the previous section, genre classification has also been tackled using neural methods. Using audio based features, (\cite{Irvin2016}) and (\cite{Pui2018}), utilise LSTM's for classification. In relation to song lyrics, \cite{Tsaptsinos2017} utilises lyrics to train a Hierarchical Attention Network (\cite{Yang2016}), which provide state of the art results for document classification due to their ability to encode its knowledge about the composites of a document in a hierarchical way. In the same paper, a baseline LSTM is implemented for comparative reasons. In relation to this project, the aforementioned baseline LSTM forms the basis architecturally for both the language and classification models. Rational and detail for this decision is discussed more in \autoref{chap:implementation}. 

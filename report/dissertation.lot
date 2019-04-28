@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Example slang words found in the dataset used in the project}}{9}{table.3.1}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Example Slang Words}}{9}{table.3.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces MasterWriter Features}}{20}{table.5.1}
@@ -14,8 +14,8 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {7.1}{\ignorespaces Hardware Specification}}{28}{table.7.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces GlovePopClass}}{36}{table.8.1}
-\contentsline {table}{\numberline {8.2}{\ignorespaces GloveRockClass}}{36}{table.8.2}
-\contentsline {table}{\numberline {8.3}{\ignorespaces GloveHipHopClass}}{36}{table.8.3}
+\contentsline {table}{\numberline {8.1}{\ignorespaces GlovePopClass}}{34}{table.8.1}
+\contentsline {table}{\numberline {8.2}{\ignorespaces GloveRockClass}}{34}{table.8.2}
+\contentsline {table}{\numberline {8.3}{\ignorespaces GloveHipHopClass}}{34}{table.8.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

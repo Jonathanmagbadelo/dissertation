@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  28 APR 2019 03:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.24)  28 APR 2019 07:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -383,9 +383,6 @@ File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
 )
 (./dissertation.aux
 
-LaTeX Warning: Label `fig:fig2' multiply defined.
-
-
 LaTeX Warning: Label `fig:poploss' multiply defined.
 
 
@@ -607,7 +604,7 @@ Chapter 3.
 
 ] [9]
 Chapter 4.
-<./figures/fig12.png, id=567, 524.96124pt x 262.9825pt>
+<./figures/fig12.png, id=568, 524.96124pt x 262.9825pt>
 File: ./figures/fig12.png Graphic file (type png)
 <use ./figures/fig12.png>
 Package pdftex.def Info: ./figures/fig12.png  used on input line 15.
@@ -615,7 +612,7 @@ Package pdftex.def Info: ./figures/fig12.png  used on input line 15.
 [10
 
  <./figures/fig12.png>]
-<./figures/fig13.png, id=576, 814.04124pt x 502.87875pt>
+<./figures/fig13.png, id=577, 814.04124pt x 502.87875pt>
 File: ./figures/fig13.png Graphic file (type png)
 <use ./figures/fig13.png>
 Package pdftex.def Info: ./figures/fig13.png  used on input line 26.
@@ -626,45 +623,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
  []
 
 [11 <./figures/fig13.png>]
-<./figures/fig2.png, id=586, 292.09125pt x 272.01625pt>
-File: ./figures/fig2.png Graphic file (type png)
-<use ./figures/fig2.png>
-Package pdftex.def Info: ./figures/fig2.png  used on input line 53.
-(pdftex.def)             Requested size: 227.62967pt x 227.6329pt.
- [12 <./figures/fig2.png>] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 144--147
+<./figures/fig16.png, id=588, 394.47375pt x 314.17375pt>
+File: ./figures/fig16.png Graphic file (type png)
+<use ./figures/fig16.png>
+Package pdftex.def Info: ./figures/fig16.png  used on input line 53.
+(pdftex.def)             Requested size: 227.62119pt x 170.71553pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--147
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
+
+ []
+
+[12 <./figures/fig16.png>] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
 
  []
 
 [14]
 
 Package natbib Warning: Citation `Rumelhart1988' on page 15 undefined on input 
-line 156.
+line 161.
 
+<./figures/fig2.png, id=628, 292.09125pt x 272.01625pt>
 File: ./figures/fig2.png Graphic file (type png)
 <use ./figures/fig2.png>
-Package pdftex.def Info: ./figures/fig2.png  used on input line 159.
+Package pdftex.def Info: ./figures/fig2.png  used on input line 164.
 (pdftex.def)             Requested size: 227.62967pt x 227.6329pt.
-[15]
-<./figures/fig3.png, id=625, 530.98375pt x 323.2075pt>
+[15 <./figures/fig2.png>]
+<./figures/fig3.png, id=638, 530.98375pt x 323.2075pt>
 File: ./figures/fig3.png Graphic file (type png)
 <use ./figures/fig3.png>
-Package pdftex.def Info: ./figures/fig3.png  used on input line 196.
+Package pdftex.def Info: ./figures/fig3.png  used on input line 201.
 (pdftex.def)             Requested size: 284.53127pt x 170.71721pt.
-<./figures/fig4.png, id=629, 484.81125pt x 367.3725pt>
+<./figures/fig4.png, id=642, 484.81125pt x 367.3725pt>
 File: ./figures/fig4.png Graphic file (type png)
 <use ./figures/fig4.png>
-Package pdftex.def Info: ./figures/fig4.png  used on input line 213.
+Package pdftex.def Info: ./figures/fig4.png  used on input line 218.
 (pdftex.def)             Requested size: 284.54184pt x 227.62843pt.
  [16 <./figures/fig3.png>] [17 <./figures/fig4.png>])
 (./chapters/dissertation_requirements_analysis.tex [18]
 Chapter 5.
-<./figures/fig9.png, id=669, 513.92pt x 288.57813pt>
+<./figures/fig9.png, id=682, 513.92pt x 288.57813pt>
 File: ./figures/fig9.png Graphic file (type png)
 <use ./figures/fig9.png>
 Package pdftex.def Info: ./figures/fig9.png  used on input line 10.
@@ -674,7 +682,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
-<./figures/fig10.png, id=671, 1284.8pt x 1140.26pt>
+<./figures/fig10.png, id=684, 1284.8pt x 1140.26pt>
 File: ./figures/fig10.png Graphic file (type png)
 <use ./figures/fig10.png>
 Package pdftex.def Info: ./figures/fig10.png  used on input line 48.
@@ -728,7 +736,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--97
 
 [21]) (./chapters/dissertation_methodology.tex [22]
 Chapter 6.
-<./figures/fig6.png, id=696, 722.7pt x 722.7pt>
+<./figures/fig6.png, id=709, 722.7pt x 722.7pt>
 File: ./figures/fig6.png Graphic file (type png)
 <use ./figures/fig6.png>
 Package pdftex.def Info: ./figures/fig6.png  used on input line 25.
@@ -748,7 +756,7 @@ Chapter 7.
 [28
 
 ]
-<./figures/fig14.png, id=750, 684.5575pt x 283.0575pt>
+<./figures/fig14.png, id=763, 684.5575pt x 283.0575pt>
 File: ./figures/fig14.png Graphic file (type png)
 <use ./figures/fig14.png>
 Package pdftex.def Info: ./figures/fig14.png  used on input line 41.
@@ -758,7 +766,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
 
  []
 
-<./figures/fig5.png, id=751, 598.235pt x 287.0725pt>
+<./figures/fig5.png, id=764, 598.235pt x 287.0725pt>
 File: ./figures/fig5.png Graphic file (type png)
 <use ./figures/fig5.png>
 Package pdftex.def Info: ./figures/fig5.png  used on input line 53.
@@ -767,7 +775,7 @@ Package pdftex.def Info: ./figures/fig5.png  used on input line 53.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [29 <./figures/fig14.png>]
-<./figures/fig15.png, id=758, 1084.05pt x 1084.05pt>
+<./figures/fig15.png, id=771, 1084.05pt x 1084.05pt>
 File: ./figures/fig15.png Graphic file (type png)
 <use ./figures/fig15.png>
 Package pdftex.def Info: ./figures/fig15.png  used on input line 69.
@@ -783,116 +791,110 @@ Chapter 8.
 [33
 
 ]
-<./figures/poploss.png, id=782, 536.2434pt x 328.8285pt>
+<./figures/poploss.png, id=795, 536.2434pt x 328.8285pt>
 File: ./figures/poploss.png Graphic file (type png)
 <use ./figures/poploss.png>
-Package pdftex.def Info: ./figures/poploss.png  used on input line 34.
-(pdftex.def)             Requested size: 256.08472pt x 170.72086pt.
-<./figures/popper.png, id=783, 573.8238pt x 328.8285pt>
+Package pdftex.def Info: ./figures/poploss.png  used on input line 35.
+(pdftex.def)             Requested size: 312.99335pt x 213.40483pt.
+<./figures/popper.png, id=796, 573.8238pt x 328.8285pt>
 File: ./figures/popper.png Graphic file (type png)
 <use ./figures/popper.png>
-Package pdftex.def Info: ./figures/popper.png  used on input line 41.
-(pdftex.def)             Requested size: 256.07314pt x 170.72086pt.
-<./figures/rockloss.png, id=784, 536.2434pt x 328.8285pt>
+Package pdftex.def Info: ./figures/popper.png  used on input line 40.
+(pdftex.def)             Requested size: 312.97731pt x 213.40483pt.
+<./figures/rockloss.png, id=797, 536.2434pt x 328.8285pt>
 File: ./figures/rockloss.png Graphic file (type png)
 <use ./figures/rockloss.png>
-Package pdftex.def Info: ./figures/rockloss.png  used on input line 48.
-(pdftex.def)             Requested size: 256.08472pt x 170.72086pt.
+Package pdftex.def Info: ./figures/rockloss.png  used on input line 44.
+(pdftex.def)             Requested size: 312.99335pt x 213.40483pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Float too large for page by 16.61884pt on input line 47.
 
-<./figures/rockper.png, id=785, 573.8238pt x 328.8285pt>
+<./figures/rockper.png, id=798, 573.8238pt x 328.8285pt>
 File: ./figures/rockper.png Graphic file (type png)
 <use ./figures/rockper.png>
-Package pdftex.def Info: ./figures/rockper.png  used on input line 55.
-(pdftex.def)             Requested size: 256.07314pt x 170.72086pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<./figures/hiphoploss.png, id=786, 536.2434pt x 328.8285pt>
+Package pdftex.def Info: ./figures/rockper.png  used on input line 51.
+(pdftex.def)             Requested size: 312.97731pt x 213.40483pt.
+<./figures/hiphoploss.png, id=799, 536.2434pt x 328.8285pt>
 File: ./figures/hiphoploss.png Graphic file (type png)
 <use ./figures/hiphoploss.png>
-Package pdftex.def Info: ./figures/hiphoploss.png  used on input line 62.
-(pdftex.def)             Requested size: 256.08472pt x 170.72086pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<./figures/hiphopper.png, id=787, 573.8238pt x 328.8285pt>
+Package pdftex.def Info: ./figures/hiphoploss.png  used on input line 55.
+(pdftex.def)             Requested size: 312.99335pt x 213.40483pt.
+<./figures/hiphopper.png, id=800, 573.8238pt x 328.8285pt>
 File: ./figures/hiphopper.png Graphic file (type png)
 <use ./figures/hiphopper.png>
-Package pdftex.def Info: ./figures/hiphopper.png  used on input line 69.
-(pdftex.def)             Requested size: 256.07314pt x 170.72086pt.
+Package pdftex.def Info: ./figures/hiphopper.png  used on input line 59.
+(pdftex.def)             Requested size: 312.97731pt x 213.40483pt.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Float too large for page by 16.61884pt on input line 62.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--77
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []\OT1/lmr/bx/n/10.95 Training
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []\OT1/lmr/bx/n/10.95 Training
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []\OT1/lmr/bx/n/10.95 Validation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--86
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
 []\OT1/lmr/bx/n/10.95 Validation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []\OT1/lmr/bx/n/10.95 Training
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []\OT1/lmr/bx/n/10.95 Training
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []\OT1/lmr/bx/n/10.95 Validation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--98
+Underfull \hbox (badness 10000) in paragraph at lines 87--87
 []\OT1/lmr/bx/n/10.95 Validation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []\OT1/lmr/bx/n/10.95 Training
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []\OT1/lmr/bx/n/10.95 Training
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []\OT1/lmr/bx/n/10.95 Validation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--110
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
 []\OT1/lmr/bx/n/10.95 Validation
  []
 
-) (./chapters/dissertation_conclusion.tex [34 <./figures/poploss.png> <./figure
-s/popper.png>] [35 <./figures/rockloss.png> <./figures/rockper.png>] [36 <./fig
+) (./chapters/dissertation_conclusion.tex [34] [35 <./figures/poploss.png> <./f
+igures/popper.png> <./figures/rockloss.png>] [36 <./figures/rockper.png> <./fig
 ures/hiphoploss.png> <./figures/hiphopper.png>]
 Chapter 9.
 ) [37
@@ -924,22 +926,27 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
 (rerunfilecheck)             Checksum: B8CB12E67922B6C5D79C94808BB998D2;4088.
-Package rerunfilecheck Info: File `dissertation.brf' has not changed.
-(rerunfilecheck)             Checksum: 6D89849761717FCEA648D32709E58DF3;1290.
 
+
+Package rerunfilecheck Warning: File `dissertation.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `dissertation.brf':
+(rerunfilecheck)             Before: 9AD2BB6BF601B09F93AA28B2681B2A2A;1386
+(rerunfilecheck)             After:  E1CDA66F23E65B12F68725748D6C5537;1436.
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
  ) 
 Here is how much of TeX's memory you used:
- 8062 strings out of 494923
- 118083 string characters out of 6180742
- 215081 words of memory out of 5000000
- 10934 multiletter control sequences out of 15000+600000
+ 8068 strings out of 494923
+ 118128 string characters out of 6180742
+ 215077 words of memory out of 5000000
+ 10939 multiletter control sequences out of 15000+600000
  79424 words of font info for 51 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 42i,12n,51p,1118b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,12n,51p,1118b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -958,10 +965,10 @@ mf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri1
 0.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/font
 s/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
 </usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on dissertation.pdf (49 pages, 1781530 bytes).
+Output written on dissertation.pdf (49 pages, 1788213 bytes).
 PDF statistics:
- 973 PDF objects out of 1000 (max. 8388607)
- 854 compressed objects within 9 object streams
+ 985 PDF objects out of 1000 (max. 8388607)
+ 864 compressed objects within 9 object streams
  236 named destinations out of 1000 (max. 500000)
- 594 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 599 words of extra memory for PDF output out of 10000 (max. 10000000)
 
