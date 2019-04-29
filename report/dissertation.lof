@@ -20,16 +20,21 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Rhymer's Block}}{21}{figure.5.2}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Average Song Word Count by Genre}}{25}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Model Architecture}}{28}{figure.6.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces MapReduce Word Count Example}}{30}{figure.7.1}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces MapReduce Word Count Example}}{31}{figure.7.1}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces High level view of the Spark Architecture. The spark context is where the main program is defined, which is then split into tasks to be completed via numerous executors.}}{31}{figure.7.2}
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Co-occurrence benchmarks}}{32}{figure.7.3}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces poploss}}{36}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces popper}}{36}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces rockloss.}}{36}{figure.8.3}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces rockper.}}{37}{figure.8.4}
-\contentsline {figure}{\numberline {8.5}{\ignorespaces hiphoploss}}{37}{figure.8.5}
-\contentsline {figure}{\numberline {8.6}{\ignorespaces hiphopper}}{37}{figure.8.6}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces SONGIFAI Architecture}}{34}{figure.7.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Pop Language Model Loss}}{42}{figure.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Pop Language Model Perplexity}}{42}{figure.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Rock Language Model Loss}}{43}{figure.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Rock Language Model Perplexity}}{43}{figure.A.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Hip Hop Language Model Loss}}{44}{figure.A.5}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Hip Hop Language Model Perplexity}}{44}{figure.A.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces SONGIFAI Home Page}}{45}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces SONGIFAI Lyric Editor}}{46}{figure.B.2}

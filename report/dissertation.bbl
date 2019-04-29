@@ -34,6 +34,12 @@ Edwards, P. and Rap, K. (2009).
 \newblock {\em How to Rap}.
 \newblock Chicago Review Press, Incorporated.
 
+\bibitem[Goodfellow et~al., 2016]{Goodfellow-et-al-2016}
+Goodfellow, I., Bengio, Y., and Courville, A. (2016).
+\newblock {\em Deep Learning}.
+\newblock MIT Press.
+\newblock \url{http://www.deeplearningbook.org}.
+
 \bibitem[Harris, 1954]{Harris1954}
 Harris, Z.~S. (1954).
 \newblock Distributional structure.
@@ -70,6 +76,14 @@ Kingma, D.~P. and Ba, J. (2014).
 \bibitem[Lewis et~al., 2004]{Lewis2004}
 Lewis, D.~D., Yang, Y., Rose, T.~G., and Li, F. (2004).
 \newblock Rcv1: A new benchmark collection for text categorization research.
+
+\bibitem[Lin, 2008]{Lin2008}
+Lin, J. (2008).
+\newblock Scalable language processing algorithms for the masses: A case study
+  in computing word co-occurrence matrices with mapreduce.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, EMNLP '08, pages 419--428, Stroudsburg, PA, USA.
+  Association for Computational Linguistics.
 
 \bibitem[Manning et~al., 2008]{Manning2008}
 Manning, C.~D., Raghavan, P., and Sch\"{u}tze, H. (2008).
@@ -133,6 +147,12 @@ Rush, A.~M., Chopra, S., and Weston, J. (2015).
 \newblock A neural attention model for abstractive sentence summarization.
 \newblock In {\em EMNLP}.
 
+\bibitem[S.~Bridle, 1990]{Bridle1990}
+S.~Bridle, J. (1990).
+\newblock {\em Probabilistic Interpretation of Feedforward Classification
+  Network Outputs, with Relationships to Statistical Pattern Recognition},
+  pages 227--236.
+
 \bibitem[Sahami et~al., 1998]{Sahami1998}
 Sahami, M., Dumais, S., Heckerman, D., and Horvitz, E. (1998).
 \newblock A bayesian approach to filtering junk e-mail.
@@ -155,6 +175,12 @@ Tian, K., Zhang, T., and Zou, J. (2018).
 Tsaptsinos, A. (2017).
 \newblock Music genre classification by lyrics using a hierarchical attention
   network.
+
+\bibitem[Wittek and Dar\'{a}Nyi, 2013]{Wittek2013}
+Wittek, P. and Dar\'{a}Nyi, S. (2013).
+\newblock Accelerating text mining workloads in a mapreduce-based distributed
+  gpu environment.
+\newblock {\em J. Parallel Distrib. Comput.}, 73(2):198--206.
 
 \bibitem[Yang et~al., 2016]{Yang2016}
 Yang, Z., Yang, D., Dyer, C., He, X., Smola, A., and Hovy, E. (2016).

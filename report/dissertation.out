@@ -41,22 +41,19 @@
 \BOOKMARK [1][-]{section.7.1}{7.1 Hardware Specification}{chapter.7}% 41
 \BOOKMARK [1][-]{section.7.2}{7.2 Calculating Co-occurrence Statistics}{chapter.7}% 42
 \BOOKMARK [1][-]{section.7.3}{7.3 CoVeR Implementation}{chapter.7}% 43
-\BOOKMARK [1][-]{section.7.4}{7.4 LSTM Implementations}{chapter.7}% 44
-\BOOKMARK [2][-]{subsection.7.4.1}{7.4.1 Language Model}{section.7.4}% 45
-\BOOKMARK [2][-]{subsection.7.4.2}{7.4.2 Text Classifier}{section.7.4}% 46
-\BOOKMARK [1][-]{section.7.5}{7.5 SONGIFAI}{chapter.7}% 47
-\BOOKMARK [2][-]{subsection.7.5.1}{7.5.1 Architecture}{section.7.5}% 48
-\BOOKMARK [2][-]{subsection.7.5.2}{7.5.2 Class Overview}{section.7.5}% 49
-\BOOKMARK [0][-]{chapter.8}{8 Evaluation}{}% 50
-\BOOKMARK [1][-]{section.8.1}{8.1 CoVeR Evaluation}{chapter.8}% 51
-\BOOKMARK [2][-]{subsection.8.1.1}{8.1.1 Validating Implementation}{section.8.1}% 52
-\BOOKMARK [1][-]{section.8.2}{8.2 Model Evaluations}{chapter.8}% 53
-\BOOKMARK [2][-]{subsection.8.2.1}{8.2.1 Language Model}{section.8.2}% 54
-\BOOKMARK [2][-]{subsection.8.2.2}{8.2.2 Text Classification}{section.8.2}% 55
-\BOOKMARK [1][-]{section.8.3}{8.3 SONGIFAI}{chapter.8}% 56
-\BOOKMARK [2][-]{subsection.8.3.1}{8.3.1 Requirements Evaluation}{section.8.3}% 57
-\BOOKMARK [0][-]{chapter.9}{9 Conclusion}{}% 58
-\BOOKMARK [1][-]{section.9.1}{9.1 Limitations}{chapter.9}% 59
-\BOOKMARK [1][-]{section.9.2}{9.2 Future Work}{chapter.9}% 60
-\BOOKMARK [0][-]{section*.33}{Bibliography}{}% 61
-\BOOKMARK [0][-]{appendix.A}{A Code}{}% 62
+\BOOKMARK [1][-]{section.7.4}{7.4 Model Implementations}{chapter.7}% 44
+\BOOKMARK [1][-]{section.7.5}{7.5 SONGIFAI}{chapter.7}% 45
+\BOOKMARK [2][-]{subsection.7.5.1}{7.5.1 Architecture}{section.7.5}% 46
+\BOOKMARK [0][-]{chapter.8}{8 Evaluation}{}% 47
+\BOOKMARK [1][-]{section.8.1}{8.1 Validating CoVeR Implementation}{chapter.8}% 48
+\BOOKMARK [1][-]{section.8.2}{8.2 Model Evaluations}{chapter.8}% 49
+\BOOKMARK [2][-]{subsection.8.2.1}{8.2.1 Language Model}{section.8.2}% 50
+\BOOKMARK [2][-]{subsection.8.2.2}{8.2.2 Text Classification}{section.8.2}% 51
+\BOOKMARK [1][-]{section.8.3}{8.3 SONGIFAI}{chapter.8}% 52
+\BOOKMARK [2][-]{subsection.8.3.1}{8.3.1 Requirements Evaluation}{section.8.3}% 53
+\BOOKMARK [0][-]{chapter.9}{9 Conclusion}{}% 54
+\BOOKMARK [1][-]{section.9.1}{9.1 Limitations}{chapter.9}% 55
+\BOOKMARK [1][-]{section.9.2}{9.2 Future Work}{chapter.9}% 56
+\BOOKMARK [0][-]{section*.35}{Bibliography}{}% 57
+\BOOKMARK [0][-]{appendix.A}{A Language Model Perplexities}{}% 58
+\BOOKMARK [0][-]{appendix.B}{B SONGIFAI Screens}{}% 59

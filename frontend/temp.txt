@@ -1,6 +1,0 @@
-			{/*<nav className="navbar">*/}
-				{/*<h1><Link to="/">Lyrics</Link></h1>*/}
-				{/*<div className="navbar-button">*/}
-					{/*<Link to="/new" className="btn">New Lyric</Link>*/}
-				{/*</div>*/}
-			{/*</nav>*/}

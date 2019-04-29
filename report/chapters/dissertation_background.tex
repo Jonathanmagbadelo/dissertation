@@ -137,7 +137,7 @@ An n-gram is a sequence of \(n\) words. Examples of two word sequences or bigram
 
 \noindent
 \newline
-An inherent problem with the n-gram model is sparsity as some word sequences occur rarely or not at all, even in large text corpora. Using the standard n-gram model would yield too many zero probabilities. To mitigate this, techniques such as back-off (\cite{Katz1987}) and smoothing exist. Another disadvantage of the n-gram model is that they rely on exact matches, meaning they fail to recognise syntactically and semantically similar sentences such as \textit{"what about animals"} and \textit{"what about elephants"}. N-gram models also suffer from the curse of dimensionality due to increased vocabulary sizes. As a result, limited window sizes are used, causing longer dependencies between words not be captured.
+An inherent problem with the n-gram model is sparsity as some word sequences occur rarely or not at all, even in large text corpora. Using the standard n-gram model would yield too many zero probabilities. To mitigate this, techniques such as back-off  and smoothing exist (\cite{Katz1987}). Another disadvantage of the n-gram model is that they rely on exact matches, meaning they fail to recognise syntactically and semantically similar sentences such as \textit{"what about animals"} and \textit{"what about elephants"}. N-gram models also suffer from the curse of dimensionality due to increased vocabulary sizes. As a result, limited window sizes are used, causing longer dependencies between words not be captured.
 
 \subsection{Neural Language Models}
 To overcome issues faced by count based models, deep learning methods have been used to create neural language models by simultaneously learning word embeddings and the parameters needed to create a joint probability distribution between the word embeddings. \cite{Bengio2003} proposed a feed forward neural language model to help tackle the problem of data sparsity. Recent state of the art approaches such as \cite{Mikolov2010}, abstract language modelling as a form of sequential data prediction and have implored RNN's to help encode longer dependencies between sequences of words. The strength of these models comes from their ability to consider several preceding words and thus generalise well.
@@ -264,7 +264,7 @@ P(A|B) = \dfrac{P(B|A)P(A)}{P(B)}
 The \textit{naivety} of these classifiers comes from the assumption of conditional independence between features. Specifically, given an input \(x\), with \(n\) features, and a target class y, naive Bayes classifiers use the following approximation to assign the probability of input \(x\) belonging to class \(y\).
 
 \begin{equation}
-P(x_{1},...,x_{n}|y) \approx \prod_{i=1}^{n}P(x_{i})
+P(x_{1},...,x_{n}|y) \approx \prod_{i=1}^{n}P(x_{i} | y)
 \end{equation}
 \noindent
 Given multiple classes, the classification of an input is given to the class with the maximum conditional probability as shown in the equation above. This is generalised in the formula below.
@@ -286,4 +286,4 @@ Support Vector Machines (SVM) (\cite{Cortes1995}) have also been applied success
 \end{figure}
 
 \subsubsection{Deep Learning Methods}
-Until recently, state of the art methods for text classification had long used linear predictors such as the SVM (with a linear kernel) and multinomial naive Bayes classifiers using feature representation techniques such as bag-of-words (\cite{Joachims1998} \cite{Lewis2004}). However, non-linear methods that are able to leverage dependencies between words ,such as recurrent neural networks, have provided better predictions (\cite{Dai2015a}) than previous bag-of-word approaches where features are assumed to be conditionally independent and unordered.
+Until recently, state of the art methods for text classification had long used linear classifiers such as the SVM (with a linear kernel) and variants of the naive Bayes classifiers using feature representation techniques such as bag-of-words (\cite{Joachims1998} \cite{Lewis2004}). However, non-linear methods that are able to leverage dependencies between words ,such as recurrent neural networks, have provided better predictions (\cite{Dai2015a}) than previous bag-of-word approaches where features are assumed to be conditionally independent and unordered. 
